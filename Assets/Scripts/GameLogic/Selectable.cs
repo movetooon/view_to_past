@@ -5,17 +5,21 @@ using UnityEngine.EventSystems;
 
 public abstract class Selectable : MonoBehaviour
 {
-    public abstract void Select();
-    public virtual void Unselect() { }
+    protected bool selected;
 
-    public virtual void OnMouseEnter()
-    { 
-        if(!EventSystem.current.IsPointerOverGameObject())
-        gameObject.layer = LayerMask.NameToLayer("Outline");
+    public abstract void Select();
+    public virtual void Unselect() => selected = false;
+
+    public virtual void EnableOutline()
+    {
+        if (!EventSystem.current.IsPointerOverGameObject() && !selected) 
+            gameObject.layer = LayerMask.NameToLayer("Outline");
     }
-    public virtual void OnMouseExit()
+    public virtual void DisableOutline()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
+        { 
             gameObject.layer = LayerMask.NameToLayer("Default");
+        }
     }
 }

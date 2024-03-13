@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InactionState : State
+public class InactionState : State<Player>
 { 
 
-    public InactionState (StateMachine SM):base (SM)
+    public InactionState (Player SM):base (SM)
     {
          
     }

@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MovingState : State
-{
-    private Transform transform;
-      
+public class MovingState : State<Player>
+{  
     private Vector3 currentPos;
     private Quaternion currentRot;
     private Location nextLocation;
@@ -19,10 +17,9 @@ public class MovingState : State
     private float lerp = 0;
      
 
-    public MovingState(StateMachine SM,Transform _transform, Location _nextLocation , AnimationCurve _speedChange,float _speed):base(SM)
+    public MovingState(Player SM , Location _nextLocation , AnimationCurve _speedChange,float _speed):base(SM)
     {
-        speed = _speed;
-        transform = _transform;
+        speed = _speed; 
         nextLocation = _nextLocation; 
         speedChange = _speedChange; 
     }
@@ -30,18 +27,18 @@ public class MovingState : State
 
     public override void Enter()
     { 
-        currentPos = transform.position; 
-        currentRot = transform.rotation;
+        currentPos = SM.transform.position; 
+        currentRot = SM.transform.rotation;
         nextTransform = nextLocation.GetView();
 
-        //Debug.Log("Enter moving \n " + nextLocation.transform.position);
+        Debug.Log("Enter moving ");
     }
 
     public override void Exit()
     {
-        //Debug.Log("Exit moving"); 
-        transform.position = nextTransform.position;
-        transform.rotation = nextTransform.rotation;
+         Debug.Log("Exit moving"); 
+        SM.transform.position = nextTransform.position;
+        SM.transform.rotation = nextTransform.rotation;
         lerp = 0;
     }
 
@@ -51,15 +48,17 @@ public class MovingState : State
          
         lerp += speed * Time.fixedDeltaTime ;
 
-        transform.position = Vector3.Lerp(currentPos, nextTransform.position, speedChange.Evaluate(lerp));
-        transform.rotation = Quaternion.Lerp(currentRot, nextTransform.rotation, speedChange.Evaluate(lerp)); 
+        SM.transform.position = Vector3.Lerp(currentPos, nextTransform.position, speedChange.Evaluate(lerp));
+        SM.transform.rotation = Quaternion.Lerp(currentRot, nextTransform.rotation, speedChange.Evaluate(lerp)); 
 
         if (lerp >= 1)
         {
             //Debug.Log("End transform");
             lerp = 0;
-            nextLocation?.onEntered(nextLocation.GetNearLocations());
-            SM.EnterIn<IdleState>(); 
+            
+            nextLocation.onEntered(nextLocation.GetNearLocations()); 
+            SM.EnterIn<IdleState>();
+             
         }
           
     }

@@ -21,10 +21,9 @@ public class Item : Selectable
         Destroy(gameObject);
     } 
 
-    public override void OnMouseEnter() => base.OnMouseEnter();
+    public override void EnableOutline() => base.EnableOutline(); 
 
-
-    public override void OnMouseExit()=>base.OnMouseExit();
+    public void OnMouseExit()=>base.DisableOutline();
      
 
 }

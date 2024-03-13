@@ -12,52 +12,34 @@ public class Location : Selectable
     [SerializeField] private List<NearLocation> nearLocations;
   
     public Action<List<NearLocation>> onEntered;
-
-    private bool selected;
+    public Action<Location> onSelected;
+     
 
     private void Start()
     {
+        onSelected += FindObjectOfType<Player>().GetState<IdleState>().MoveToNextLocation;
         onEntered+=FindObjectOfType<ArrowsManager>().UpdateArrows;
         
     }
 
-    public Transform GetView()
-    {
-        return view; 
-    }
+    public Transform GetView() => view; 
+    public List<NearLocation> GetNearLocations() => nearLocations;
 
-    public List<NearLocation> GetNearLocations() 
-    {
-        return nearLocations;    
-    }
 
 
     public override void Select()
     {
-        Debug.Log("Selected"); 
         selected = true;
-        gameObject.layer = LayerMask.NameToLayer("Default"); 
+        onSelected?.Invoke(this);
+        //Debug.Log("Selected"); 
+        //selected = true;
+        //gameObject.layer = LayerMask.NameToLayer("Default"); 
     }
 
-    public override void Unselect()
-    {
-        Debug.Log("Unselect");
-        selected = false; 
-    }
+    public override void Unselect() => base.Unselect();  
+    public override void EnableOutline() => base.EnableOutline(); 
+    public void OnMouseExit() => base.DisableOutline();
 
-
-    public override void OnMouseEnter()
-    {
-        if (selected == false)
-            gameObject.layer = LayerMask.NameToLayer("Outline");
-    }
-   
-    public override void OnMouseExit()
-    {
-        if (selected == false) 
-            gameObject.layer = LayerMask.NameToLayer("Default");
-
-    }
 
 }
 

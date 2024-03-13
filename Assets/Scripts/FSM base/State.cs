@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class State 
+public abstract class State<T> where T : IStateMachine
 {
-    protected StateMachine SM; 
+    protected T SM; 
 
-    public State(StateMachine _SM)
+    public State(T _SM)
     {
         SM = _SM;
     }
+
+    
 
     public virtual void Enter() { }
     public virtual void Exit() { }

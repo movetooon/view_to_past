@@ -15,10 +15,10 @@ public class Book : MonoBehaviour
     private void Start()
     {
         anim=GetComponent<Animator>();
-        onOpened.AddListener(FindObjectOfType<Player>().EnterState<InactionState>);
+        onOpened.AddListener(FindObjectOfType<Player>().EnterIn<InactionState>);
         onOpened.AddListener(inventoryPanel.UpdateItemsList);
 
-        onClosed.AddListener(FindObjectOfType<Player>().EnterState<IdleState>);
+        onClosed.AddListener(FindObjectOfType<Player>().EnterIn<IdleState>);
     }
 
     public async void Close()

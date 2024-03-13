@@ -4,47 +4,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class StateMachine 
+public abstract class StateMachine<T>:MonoBehaviour where T : IStateMachine 
 {
-    public State currentState;
-    protected Dictionary<Type,State> states;
+    public State<T> currentState;
+    protected Dictionary<Type,State<T>> states;
 
     public StateMachine()
     {
-        states = new Dictionary<System.Type, State>();
-    }
+        states = new Dictionary<System.Type, State<T>>();
+    } 
 
-    public void EnterIn<T>() where T:State 
+    public virtual void EnterIn<S>() where S : State<T>
     { 
-        if(states.TryGetValue(typeof(T), out State state))
+        if(states.TryGetValue(typeof(S), out State<T> state))
         {
             currentState?.Exit();
             currentState = state;
             currentState.Enter();
         }
          
-    }
+    } 
 
-    public void EnterIn(State state)
-    { 
-        currentState?.Exit();
-        currentState = state;
-        currentState.Enter();
-         
-    }
+    public virtual void UpdateCurrent() => currentState?.Update(); 
+    // public State<IStateMachine> GetState(Type state) => states[state ]; 
 
-    public void Update()
+    public S GetState<S>()where S : State<T>
     {
-        currentState?.Update();
+        return (S)states[typeof(S)];
     }
 
-    public T GetState<T>() where T: State
-    {
-        return (T)states[typeof(T)];
-    }
+    public virtual void AddState<S>(State<T> state)where S:State<T> => states.Add(state.GetType(), state);
 
-    public void AddState(State T) 
-    {
-        states.Add(T.GetType(), T);
-    }
+}
+
+public interface IStateMachine
+{
+    //void EnterIn<S>();
+    void UpdateCurrent();
+    //State<IStateMachine> GetState(State<IStateMachine> state);
+    // T GetState<T>() where T : State<IStateMachine>;
+    //void AddState<T>(State<IStateMachine> state) where T : State<IStateMachine>;
+
 }

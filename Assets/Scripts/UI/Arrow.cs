@@ -22,18 +22,14 @@ public class Arrow : MonoBehaviour
         //Debug.Log("from arrow " + name + " | " + nextLoc.transform.position.ToString());
     }
 
-    public void Press()
-    {
-        onPressed?.Invoke(nextLoc);
-    }
+    public void Press() => onPressed?.Invoke(nextLoc);
+
 
     public void SetNextLocation(Location next)
     {
         nextLoc = next;
     }
 
-    public NearLocation.Direction GetDirection()
-    {
-        return direction;
-    }
+    public NearLocation.Direction GetDirection()=> direction;
+
 }

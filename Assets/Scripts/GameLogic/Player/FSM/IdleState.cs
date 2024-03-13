@@ -1,35 +1,43 @@
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
-using UnityEngine; 
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using UnityEngine.Rendering;
 
 
-public class IdleState : State
+public class IdleState : State<Player>
 {
     private Transform currentTransform;
     private Location currentLocation;
       
 
-    public IdleState(StateMachine SM, Location _currentLocation) : base(SM)
+    public IdleState(Player SM, Location _currentLocation) : base(SM)
     {
         currentLocation = _currentLocation;
+         
     }
     public override void Enter()
     {
-       // Debug.Log("Enter idle");
-        currentTransform = currentLocation.GetView();  
+        Debug.Log("Enter idle");
+        currentTransform = SM.transform;  
+        
     }
 
     public override void Update()
     {
         //Debug.Log("Update idle");  
-        var hit = UserInput.GetMouseHitOnScreen(); 
-        if (hit.transform == null) return;
+        var hit = UserInput.GetMouseHitOnScreen();
 
-        TryGetItem(hit.transform);
-        TryStartMoving(hit.transform);
+        if (UserInput.GetMouseClick())
+            hit.transform?.GetComponent<Selectable>()?.Select();
+
+        hit.transform?.GetComponent<Selectable>()?.EnableOutline();
+        //TryGetItem(hit.transform);
+        //TryStartMoving(hit.transform);
           
     }
 
+    /*
     private void TryGetItem(Transform hit)
     {
         bool isItem = hit.transform.tag == "Item" && UserInput.GetMouseClick();
@@ -54,15 +62,24 @@ public class IdleState : State
         UpdateCurrentLocation(nextLocation);
         nextLocation.Select();
 
-        currentTransform.GetComponent<Player>().EnterMovingState(nextLocation);
-        
+        //currentTransform.GetComponent<Player>().EnterMovingState(nextLocation);
+        SM.EnterMovingState(nextLocation);
+         
 
+    }
+    */
 
+    public void MoveToNextLocation(Location loc)
+    {
+        //if (currentLocation != loc) 
+        currentLocation.Unselect();
+        if (Vector3.Distance(currentLocation.transform.position,SM.transform.position)>0.1) 
+            SM.EnterMovingState(loc); 
     }
 
     public override void Exit() 
     {
-       // Debug.Log("Exit Idle");
+       Debug.Log("Exit Idle");
 
     }
 

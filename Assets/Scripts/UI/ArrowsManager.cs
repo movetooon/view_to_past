@@ -15,7 +15,7 @@ public class ArrowsManager : MonoBehaviour
             { 
                 if (arrow.GetDirection() == nearLoc.GetDirection())
                 {
-                    Debug.Log(arrow.name + " | " + nearLoc.GetLocation().transform.position.ToString());
+                    //Debug.Log(arrow.name + " | " + nearLoc.GetLocation().transform.position.ToString());
                     arrow.SetNextLocation(nearLoc.GetLocation());
                     arrow.gameObject.SetActive(true);
                     
