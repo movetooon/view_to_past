@@ -1,15 +1,11 @@
-using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine; 
 
 public class MovingState : State<Player>
 {  
     private Vector3 currentPos;
     private Quaternion currentRot;
     private Location nextLocation;
-    private Transform nextTransform;
-
-    //public delegate void OnEteredHandle(Location nextLoc);
-    //public OnEteredHandle onEntered;
+    private Transform nextTransform; 
 
     private AnimationCurve speedChange;
     private float speed;
@@ -31,12 +27,12 @@ public class MovingState : State<Player>
         currentRot = SM.transform.rotation;
         nextTransform = nextLocation.GetView();
 
-        Debug.Log("Enter moving ");
+        //Debug.Log("Enter moving ");
     }
 
     public override void Exit()
     {
-         Debug.Log("Exit moving"); 
+        //Debug.Log("Exit moving"); 
         SM.transform.position = nextTransform.position;
         SM.transform.rotation = nextTransform.rotation;
         lerp = 0;
@@ -57,8 +53,7 @@ public class MovingState : State<Player>
             lerp = 0;
             
             nextLocation.onEntered(nextLocation.GetNearLocations()); 
-            SM.EnterIn<IdleState>();
-             
+            SM.EnterIn<IdleState>(); 
         }
           
     }

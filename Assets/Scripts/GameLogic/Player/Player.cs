@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Player : StateMachine<Player>,IStateMachine
 {
@@ -11,7 +9,7 @@ public class Player : StateMachine<Player>,IStateMachine
     [SerializeField] private Location currentLocation;
 
     private void Awake()
-    {
+    { 
         InitializeStateMachine(); 
          
     }
@@ -33,9 +31,7 @@ public class Player : StateMachine<Player>,IStateMachine
 
 
     public override void EnterIn<T>() 
-    {
-        
-        //if(currentState.GetType()!=typeof(MovingState))
+    { 
         base.EnterIn<T>();
     }
 
@@ -56,13 +52,6 @@ public class Player : StateMachine<Player>,IStateMachine
         }
     }
 
-
-    /*
-    public void EnterInactionState()
-    { 
-        if(stateMachine.currentState.GetType()!=typeof(MovingState))
-            stateMachine.EnterIn<InactionState>();
-    }
-    */
+ 
 
 }

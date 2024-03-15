@@ -51,6 +51,7 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
     "com.unityfx.outline": "0.8.5",
-    "com.unityfx.outline.urp": "0.5.0"
+    "com.unityfx.outline.urp": "0.5.0",
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
   }
 }

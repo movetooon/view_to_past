@@ -1,0 +1,63 @@
+{  
+ 
+"charachters":
+{
+    "farmer":
+        { 
+            "dialogs":
+            [  
+                {
+                "replics":
+                [
+                        {
+                        "isPlayer":false,
+                        "text": "а я ФЕРМЕР"   
+                        }
+                ]
+                },
+                {
+                    "replics":
+                    [
+                        {
+                        "isPlayer":false,
+                        "text": "а я ФЕРМЕР"   
+                        }
+                    ]
+                }
+                
+            ]
+        },
+    "granny":
+    { 
+            "dialogs":
+            [  
+                {
+                    "replics":
+                    [
+                            {
+                                "isPlayer":false,
+                                "text": "я бабуля"   
+                            },
+                            {
+                                "isPlayer":true,
+                                "text":"привте я такой игрок вот вот я игрок "
+                            }
+                    ]
+                },
+                {
+                    "replics":
+                    [
+                        {
+                            "isPlayer":false,
+                            "text": "а я бабуля два"   
+                        }
+                    ]
+                }
+                
+            ]
+        }
+
+
+}
+      
+}

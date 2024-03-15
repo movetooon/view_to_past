@@ -11,9 +11,7 @@ public abstract class State<T> where T : IStateMachine
     {
         SM = _SM;
     }
-
-    
-
+     
     public virtual void Enter() { }
     public virtual void Exit() { }
     public virtual void Update() { }

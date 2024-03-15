@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public abstract class Selectable : MonoBehaviour
@@ -17,9 +15,8 @@ public abstract class Selectable : MonoBehaviour
     }
     public virtual void DisableOutline()
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
-        { 
-            gameObject.layer = LayerMask.NameToLayer("Default");
-        }
+        
+         gameObject.layer = LayerMask.NameToLayer("Default");
+        
     }
 }

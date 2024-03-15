@@ -1,13 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+using System; 
+using UnityEngine; 
 
 public class Item : Selectable
 {
-    [SerializeField] private ItemData data;
-    //UnityEvent onTaken;
+    [SerializeField] private ItemData data; 
     public Action <ItemData>onTaken;
 
     private void Start()

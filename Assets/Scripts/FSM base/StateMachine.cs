@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+using System; 
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,8 +24,7 @@ public abstract class StateMachine<T>:MonoBehaviour where T : IStateMachine
          
     } 
 
-    public virtual void UpdateCurrent() => currentState?.Update(); 
-    // public State<IStateMachine> GetState(Type state) => states[state ]; 
+    public virtual void UpdateCurrent() => currentState?.Update();  
 
     public S GetState<S>()where S : State<T>
     {

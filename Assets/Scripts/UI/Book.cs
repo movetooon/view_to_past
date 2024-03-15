@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,18 +6,30 @@ using UnityEngine.Events;
 public class Book : MonoBehaviour
 {
     private Animator anim;
-    [SerializeField] private UnityEvent onClosed;
-    [SerializeField] private UnityEvent onOpened;
+    private UnityEvent onClosed ;
+    private UnityEvent onOpened;
+
     [SerializeField] private InventoryWindow inventoryPanel;
 
     private void Start()
     {
-        anim=GetComponent<Animator>();
+        anim=GetComponent<Animator>(); 
+    }
+
+    
+    private void OnEnable()
+    {
+        if (onOpened != null) return;
+
+        onOpened=new UnityEvent();
+        onClosed=new UnityEvent();
+
         onOpened.AddListener(FindObjectOfType<Player>().EnterIn<InactionState>);
         onOpened.AddListener(inventoryPanel.UpdateItemsList);
 
-        onClosed.AddListener(FindObjectOfType<Player>().EnterIn<IdleState>);
+        onClosed.AddListener(FindObjectOfType<Player>().EnterIn<IdleState>); 
     }
+    
 
     public async void Close()
     {
@@ -31,10 +41,8 @@ public class Book : MonoBehaviour
              
     }
 
-    public void Open()
-    {
-        onOpened?.Invoke();
-    }
+    public void Open() => onOpened?.Invoke();
+
 
 
 

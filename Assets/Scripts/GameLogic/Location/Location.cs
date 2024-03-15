@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
-using UnityEngine.Events;
+using System; 
+using System.Collections.Generic; 
+using UnityEngine; 
 
 [System.Serializable]
 public class Location : Selectable
@@ -30,10 +27,7 @@ public class Location : Selectable
     public override void Select()
     {
         selected = true;
-        onSelected?.Invoke(this);
-        //Debug.Log("Selected"); 
-        //selected = true;
-        //gameObject.layer = LayerMask.NameToLayer("Default"); 
+        onSelected?.Invoke(this); 
     }
 
     public override void Unselect() => base.Unselect();  
@@ -48,15 +42,9 @@ public class NearLocation
 {
     [SerializeField] Location location;
     [SerializeField] Direction direction;
-     
-    public Location GetLocation()
-    {
-        return location;
-    }
-    public Direction GetDirection()
-    {
-        return direction;
-    }
+
+    public Location GetLocation() => location; 
+    public Direction GetDirection() => direction; 
 
     public enum Direction
     {
