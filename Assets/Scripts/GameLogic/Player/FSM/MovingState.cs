@@ -52,8 +52,8 @@ public class MovingState : State<Player>
             //Debug.Log("End transform");
             lerp = 0;
             
-            nextLocation.onEntered(nextLocation.GetNearLocations()); 
-            SM.EnterIn<IdleState>(); 
+            nextLocation.Enter(); 
+            
         }
           
     }

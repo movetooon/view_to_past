@@ -7,6 +7,7 @@ public class Player : StateMachine<Player>,IStateMachine
     [SerializeField] public AnimationCurve speedChange; 
     [SerializeField] private float speed;
     [SerializeField] private Location currentLocation;
+    [SerializeField] private float lookingAroundStrength;
 
     private void Awake()
     { 
@@ -23,7 +24,7 @@ public class Player : StateMachine<Player>,IStateMachine
     private void InitializeStateMachine()
     { 
         AddState(new MovingState(this, currentLocation, speedChange, speed));
-        AddState(new IdleState(this,currentLocation));
+        AddState(new IdleState(this,currentLocation, lookingAroundStrength));
         AddState(new InactionState(this));
 
         base.EnterIn<IdleState>();

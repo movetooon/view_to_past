@@ -6,9 +6,10 @@ using UnityEngine;
 public class Location : Selectable
 {
     [SerializeField] private Transform view;
-    [SerializeField] private List<NearLocation> nearLocations;
+    [SerializeField] protected List<NearLocation> nearLocations;
   
     public Action<List<NearLocation>> onEntered;
+    public Action onEnded;
     public Action<Location> onSelected;
      
 
@@ -16,18 +17,26 @@ public class Location : Selectable
     {
         onSelected += FindObjectOfType<Player>().GetState<IdleState>().MoveToNextLocation;
         onEntered+=FindObjectOfType<ArrowsManager>().UpdateArrows;
+        onEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
         
     }
 
     public Transform GetView() => view; 
     public List<NearLocation> GetNearLocations() => nearLocations;
 
-
+    public virtual void Enter()
+    {
+        onEntered?.Invoke(nearLocations);
+        onEnded?.Invoke();
+    }
 
     public override void Select()
     {
-        selected = true;
-        onSelected?.Invoke(this); 
+        if (selected == false)
+        {
+            onSelected?.Invoke(this);
+            selected = true;
+        }
     }
 
     public override void Unselect() => base.Unselect();  
