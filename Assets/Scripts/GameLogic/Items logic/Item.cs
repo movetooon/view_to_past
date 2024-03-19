@@ -9,6 +9,7 @@ public class Item : Selectable
     private void Start()
     {
         onTaken+=(FindObjectOfType<Inventory>().AddItem);
+        onTaken+= FindObjectOfType<ItemsMonologsDisplayer>().ShowItemInfo;
     }
 
     public override void Select()
@@ -16,7 +17,7 @@ public class Item : Selectable
         onTaken?.Invoke(data);
         Destroy(gameObject);
     } 
-
+    
     public override void EnableOutline() => base.EnableOutline(); 
 
     public void OnMouseExit()=>base.DisableOutline();

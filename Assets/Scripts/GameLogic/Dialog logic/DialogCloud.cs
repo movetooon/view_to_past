@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[RequireComponent(typeof(Animator))]
 public class DialogCloud : MonoBehaviour
 {
     [SerializeField] Transform[] smallClouds;  
     [SerializeField] float directionMultiplier;
- 
+    public Animator anim { get; private set; }
+
+    private void OnValidate()
+    {
+        anim=GetComponent<Animator>();
+    }
 
     public void SetSmallCloudTransforms(Vector3 npcPosition,float height)
     {

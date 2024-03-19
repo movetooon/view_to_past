@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowsManager : MonoBehaviour
 {
     [SerializeField] private List<Arrow> arrows = new List<Arrow>();
-    private bool[] cache=new bool[4];
+    private bool[] enebledCache=new bool[4];
 
 
     public void DisableAllArrows()
@@ -15,36 +15,29 @@ public class ArrowsManager : MonoBehaviour
             arrow.gameObject.SetActive(false);
         }
     }
-
-    public void EnableAllArrows()
-    {
-        foreach (var arrow in arrows)
-        {
-            arrow.gameObject.SetActive(true);
-        }
-    }
+     
 
     public void UpdateArrows(List<NearLocation> nearLocs)
-    { 
-        foreach(Arrow arrow in arrows)
+    {
+        int count = 0;
+        foreach (Arrow arrow in arrows)
         {
             arrow.gameObject.SetActive(false);
 
-            int count = 0;
-            cache[count] = false;
+             
+            enebledCache[count] = false;
 
             foreach (NearLocation nearLoc in nearLocs)
             { 
                 if (arrow.GetDirection() == nearLoc.GetDirection())
                 {
-                    cache[count] = true;
+                    enebledCache[count] = true;
                     arrow.SetNextLocation(nearLoc.GetLocation());
                     arrow.gameObject.SetActive(true);
-                    
+                     
                     break;
                 } 
-            }
-
+            } 
             count++;
         }  
     }
@@ -55,7 +48,7 @@ public class ArrowsManager : MonoBehaviour
         for(int i = 0; i < arrows.Count; i++)
         {
             arrows[i].gameObject.SetActive(false);
-            if (cache[i])
+            if (enebledCache[i])
             {
                 arrows[i].gameObject.SetActive(true);
             }

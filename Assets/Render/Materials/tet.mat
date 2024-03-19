@@ -61,5 +61,8 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _distortionStrenght: 0.0125
+    - _leftEdge: 26.14
+    - _rightEdge: 0.02
     m_Colors: []
   m_BuildTextureStacks: []

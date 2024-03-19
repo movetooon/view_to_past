@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class NPC : Location
 { 
-    private int dialogNumber;
-    [SerializeField] private float height;
+    private int currentDialogNumber;
+    [SerializeField] private float height; 
     public new Action onEntered;
-    public new Action<List<NearLocation>> onEnded;
+    public Action<List<NearLocation>> onArrowUpdateRequest;
     public Action<string,int,Vector3,float> onDialogDisplayRequested;
+
+    private bool waitingForTaskDone = false;
 
     private void Start()
     { 
@@ -17,19 +19,24 @@ public class NPC : Location
        
         onEntered += FindObjectOfType<Player>().EnterIn<InactionState>;
         onEntered += FindObjectOfType<ArrowsManager>().DisableAllArrows;
-        onEnded += FindObjectOfType<ArrowsManager>().UpdateArrows;
+        onArrowUpdateRequest += FindObjectOfType<ArrowsManager>().UpdateArrows;
         
-        onDialogDisplayRequested += FindObjectOfType<DialogManager>().StartDialog;
+        onDialogDisplayRequested += FindObjectOfType<DialogDisplayer>().StartDialog;
 
     }
+    
 
     public override void Enter()
-    { 
-         
-        onDialogDisplayRequested?.Invoke(name,dialogNumber,transform.position,height);
-        onEnded?.Invoke(nearLocations);
+    {  
+        onDialogDisplayRequested?.Invoke(name,currentDialogNumber,transform.position,height);
+        onArrowUpdateRequest?.Invoke(nearLocations);
         onEntered?.Invoke();
-        //TODO исправить эту тупую хуйню
+        currentDialogNumber++;
+    }
+
+    public override void Select()
+    { 
+        base.Select();
     }
 
 
