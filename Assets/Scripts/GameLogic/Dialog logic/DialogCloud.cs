@@ -15,14 +15,17 @@ public class DialogCloud : MonoBehaviour
         anim=GetComponent<Animator>();
     }
 
-    public void SetSmallCloudTransforms(Vector3 npcPosition,float height)
+    public void SetPositions(Transform npcTransform,Vector3 newPosition, float height)
     {
+        transform.position = newPosition;
+        transform.rotation = npcTransform.rotation;
+
         for(int i = 0; i < smallClouds.Length; i++)
         {
             Vector3 npcHeadPosition = new Vector3(
-                npcPosition.x,
-                npcPosition.y+height/2,
-                npcPosition.z);
+                npcTransform.position.x,
+                npcTransform.position.y+height/2,
+                npcTransform.position.z);
 
             Vector3 newCloudPosition = npcHeadPosition -
                 (npcHeadPosition - transform.position) *

@@ -8,16 +8,20 @@ public class Location : Selectable
     [SerializeField] private Transform view;
     [SerializeField] protected List<NearLocation> nearLocations;
   
-    public Action<List<NearLocation>> onEntered;
+    public Action<List<NearLocation>> onLocationsUpdateRequested;
+    public Action onDisableClickingRequested;
     public Action onEnded;
     public Action<Location> onSelected;
      
 
     private void Start()
     {
-        onSelected += FindObjectOfType<Player>().GetState<IdleState>().MoveToNextLocation;
-        onEntered+=FindObjectOfType<ArrowsManager>().UpdateArrows;
+        onSelected += FindObjectOfType<Player>().GetState<IdleState>().MoveToNextLocation; 
+        onDisableClickingRequested += FindObjectOfType<ArrowsManager>().DisableClickingAllArrows;
+        onLocationsUpdateRequested+=FindObjectOfType<ArrowsManager>().UpdateArrows;
+       
         onEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
+        onEnded += FindObjectOfType<ArrowsManager>().EnableClickingAllArrows;
         
     }
 
@@ -26,14 +30,16 @@ public class Location : Selectable
 
     public virtual void Enter()
     {
-        onEntered?.Invoke(nearLocations);
+        onLocationsUpdateRequested?.Invoke(nearLocations); 
         onEnded?.Invoke();
+        
     }
 
     public override void Select()
     {
         if (selected == false)
         {
+            onDisableClickingRequested?.Invoke();
             onSelected?.Invoke(this);
             selected = true;
         }

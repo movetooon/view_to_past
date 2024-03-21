@@ -15,7 +15,7 @@ public class ItemsMonologsDisplayer : MonologDisplayer
         StartCoroutine(ShowMonolog(monolog, 0.01f, 1f));
     }
 
-    public override bool canMoveToNextReplic(string replic)
+    public override bool CanMoveToNextReplic(string replic)
     {
         return playerTextContainter.text == replic;
     }

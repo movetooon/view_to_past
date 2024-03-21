@@ -12,19 +12,34 @@ public class ArrowsManager : MonoBehaviour
     {
         foreach (var arrow in arrows)
         {
-            arrow.gameObject.SetActive(false);
+            arrow.DisableAnim();
         }
     }
-     
+
+    public void DisableClickingAllArrows()
+    {
+        foreach (var arrow in arrows)
+        {
+            arrow.DisableClicking();
+        }
+    }
+    public void EnableClickingAllArrows()
+    {
+        foreach (var arrow in arrows)
+        {
+            arrow.EnableClicking();
+        }
+    }
+
 
     public void UpdateArrows(List<NearLocation> nearLocs)
     {
         int count = 0;
         foreach (Arrow arrow in arrows)
         {
-            arrow.gameObject.SetActive(false);
 
-             
+
+            bool active = false; 
             enebledCache[count] = false;
 
             foreach (NearLocation nearLoc in nearLocs)
@@ -33,24 +48,59 @@ public class ArrowsManager : MonoBehaviour
                 {
                     enebledCache[count] = true;
                     arrow.SetNextLocation(nearLoc.GetLocation());
-                    arrow.gameObject.SetActive(true);
+                    arrow.Enable();
+                    active = true;
                      
                     break;
-                } 
-            } 
+                }
+                
+            }
+            if (active == false&&arrow.enabled==true)
+                arrow.DisableAnim();
+
             count++;
         }  
     }
+
+    public void UpdateArrowsCache(List<NearLocation> nearLocs)
+    {
+        int count = 0;
+        foreach (Arrow arrow in arrows)
+        {
+             
+            enebledCache[count] = false;
+
+            foreach (NearLocation nearLoc in nearLocs)
+            {
+                if (arrow.GetDirection() == nearLoc.GetDirection())
+                {
+                    arrow.SetNextLocation(nearLoc.GetLocation());
+                    enebledCache[count] = true; 
+
+                    break;
+                }
+
+            } 
+
+            count++;
+        }
+    }
+
+
 
     public void ReUpdateArrows()
     {
 
         for(int i = 0; i < arrows.Count; i++)
         {
-            arrows[i].gameObject.SetActive(false);
+             
             if (enebledCache[i])
             {
-                arrows[i].gameObject.SetActive(true);
+                arrows[i].Enable();
+            }
+            else
+            {
+                arrows[i].DisableAnim();
             }
         }
          

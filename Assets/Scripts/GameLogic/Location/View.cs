@@ -22,6 +22,7 @@ public class View : MonoBehaviour
 
     private void Start()
     {
+        checkVeiw = false;
         mesh.enabled = false;
     }
 

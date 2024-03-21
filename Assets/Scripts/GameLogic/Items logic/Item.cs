@@ -8,6 +8,7 @@ public class Item : Selectable
 
     private void Start()
     {
+        GetComponent<SpriteRenderer>().sprite = data.Texture();
         onTaken+=(FindObjectOfType<Inventory>().AddItem);
         onTaken+= FindObjectOfType<ItemsMonologsDisplayer>().ShowItemInfo;
     }

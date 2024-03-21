@@ -26,7 +26,9 @@ public class Book : MonoBehaviour
 
         onOpened.AddListener(FindObjectOfType<Player>().EnterIn<InactionState>);
         onOpened.AddListener(inventoryPanel.UpdateItemsList);
-
+        onOpened.AddListener(FindObjectOfType<ArrowsManager>().DisableAllArrows);
+       
+        onClosed.AddListener(FindObjectOfType<ArrowsManager>().ReUpdateArrows); 
         onClosed.AddListener(FindObjectOfType<Player>().EnterIn<IdleState>); 
     }
     

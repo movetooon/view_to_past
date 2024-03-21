@@ -7,7 +7,7 @@ using UnityEngine;
 public class MonologDisplayer : MonoBehaviour
 {
     [SerializeField] protected TMP_Text playerTextContainter;
-    [SerializeField] private Animator playerDialogPanel;
+    [SerializeField] protected Animator playerPanel;
 
     Action onMonologEnded;
     Action onMonologStarted;
@@ -15,7 +15,9 @@ public class MonologDisplayer : MonoBehaviour
     private void Start()
     {
         onMonologStarted += FindObjectOfType<Player>().EnterIn<InactionState>;
+        onMonologStarted += FindObjectOfType<ArrowsManager>().DisableAllArrows;
         onMonologEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
+        onMonologEnded += FindObjectOfType<ArrowsManager>().ReUpdateArrows;
     }
 
     public virtual void StartShowingMonolog(Monolog monolog)
@@ -28,40 +30,42 @@ public class MonologDisplayer : MonoBehaviour
     {
         onMonologStarted?.Invoke();
         EneblePlayerPanel();
-        
+        yield return null;
+        yield return new WaitUntil(() => playerPanel.GetCurrentAnimatorStateInfo(layerIndex: 0).normalizedTime>=1);
 
-        foreach(string replic in monolog.replics)
+        foreach (string replic in monolog.replics)
         {
             ShowReplic(replic, delay);
-            yield return new WaitUntil(() => canMoveToNextReplic(replic));
+            yield return new WaitUntil(() => CanMoveToNextReplic(replic));
             yield return new WaitForSeconds(delayBetweenReplics);
         }
 
-        DisablePlayerPanel();
+        StartCoroutine(DisablePlayerPanel());
         onMonologEnded?.Invoke();
 
     }
 
-    public virtual bool canMoveToNextReplic(string replic)
+    public virtual bool CanMoveToNextReplic(string replic)
     {
         return playerTextContainter.text == replic && UserInput.GetMouseClick();
     }
 
-    private void EneblePlayerPanel()
+    protected void EneblePlayerPanel()
     {
-        playerDialogPanel.gameObject.SetActive(true);
-        playerDialogPanel.SetBool("turnOn", true);
+        playerPanel.gameObject.SetActive(true);
+        playerTextContainter.text = ""; 
+        playerPanel.SetBool("turnOn", true);
     }
-    private void DisablePlayerPanel()
+    protected IEnumerator DisablePlayerPanel()
     {
-        playerDialogPanel.SetBool("turnOn", false); 
-        //while(!(playerDialogPanel.GetCurrentAnimatorStateInfo(layerIndex:0).normalizedTime>=1)) await Task.Delay(10);
-
-        //playerDialogPanel.gameObject.SetActive(false);
         
+        playerPanel.SetBool("turnOn", false); 
+        yield return new WaitUntil(() => playerPanel.GetCurrentAnimatorStateInfo(layerIndex: 0).normalizedTime<=1);
+        playerPanel.gameObject.SetActive(false);
+
     }
 
-    private void ShowReplic(string text,float delay)
+    protected void ShowReplic(string text,float delay)
     {
         StartCoroutine(TMPutilities.SetTextWithDelay(playerTextContainter, text, delay));
     }

@@ -7,9 +7,12 @@ public class NPC : Location
 { 
     private int currentDialogNumber;
     [SerializeField] private float height; 
-    public new Action onEntered;
+    [SerializeField] public Vector3 cloudPosition; 
+    public  Action onEntered;
+
     public Action<List<NearLocation>> onArrowUpdateRequest;
-    public Action<string,int,Vector3,float> onDialogDisplayRequested;
+    public Action<Dialog> onDialogDisplayRequested;
+    public Action<Transform, Vector3, float> onCloudUpdateRequested;
 
     private bool waitingForTaskDone = false;
 
@@ -19,25 +22,34 @@ public class NPC : Location
        
         onEntered += FindObjectOfType<Player>().EnterIn<InactionState>;
         onEntered += FindObjectOfType<ArrowsManager>().DisableAllArrows;
-        onArrowUpdateRequest += FindObjectOfType<ArrowsManager>().UpdateArrows;
-        
+        onArrowUpdateRequest += FindObjectOfType<ArrowsManager>().UpdateArrowsCache;
+         
         onDialogDisplayRequested += FindObjectOfType<DialogDisplayer>().StartDialog;
-
+        onCloudUpdateRequested += FindObjectOfType<DialogCloud>().SetPositions;
     }
     
 
     public override void Enter()
-    {  
-        onDialogDisplayRequested?.Invoke(name,currentDialogNumber,transform.position,height);
-        onArrowUpdateRequest?.Invoke(nearLocations);
+    { 
         onEntered?.Invoke();
+        onArrowUpdateRequest?.Invoke(nearLocations);
+
+        Dialog newDialog = DialogStorage.getCharachterDialog(name, currentDialogNumber);
+        
+        onDialogDisplayRequested?.Invoke(newDialog);
+         
+        onCloudUpdateRequested?.Invoke(transform , transform.rotation*cloudPosition+transform.position, height);
+
         currentDialogNumber++;
+        
     }
 
     public override void Select()
     { 
         base.Select();
     }
+
+    public float Height() => height;
 
 
 }
