@@ -12,10 +12,11 @@ public class MonologDisplayer : MonoBehaviour
     Action onMonologEnded;
     Action onMonologStarted;
 
-    private void Start()
+    private void Awake()
     {
         onMonologStarted += FindObjectOfType<Player>().EnterIn<InactionState>;
         onMonologStarted += FindObjectOfType<ArrowsManager>().DisableAllArrows;
+
         onMonologEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
         onMonologEnded += FindObjectOfType<ArrowsManager>().ReUpdateArrows;
     }
@@ -41,6 +42,7 @@ public class MonologDisplayer : MonoBehaviour
         }
 
         StartCoroutine(DisablePlayerPanel());
+        Debug.Log("AAAAAAAA");
         onMonologEnded?.Invoke();
 
     }

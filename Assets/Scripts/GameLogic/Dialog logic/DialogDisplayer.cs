@@ -15,11 +15,11 @@ public class DialogDisplayer : MonologDisplayer
     Action  onDialogStarted;
 
     private void Start()
-    {
-        onDialogEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
-        onDialogEnded += FindObjectOfType<ArrowsManager>().ReUpdateArrows; 
-
+    {  
         onDialogStarted += FindObjectOfType<ArrowsManager>().DisableAllArrows;
+
+        onDialogEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
+        onDialogEnded += FindObjectOfType<ArrowsManager>().ReUpdateArrows;
     }
 
     public void StartDialog(Dialog dialog)

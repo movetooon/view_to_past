@@ -17,6 +17,7 @@ public static class DialogStorage
     public static void setMonologsForCurrentLevel(string levelName)
     {
         string jsonString = File.ReadAllText(Application.dataPath + "/Resources/DialogsSource/" + levelName + "_monologs.json");
+        Debug.Log(jsonString);
         monologList = JsonConvert.DeserializeObject<MonologList>(jsonString);
     }
 

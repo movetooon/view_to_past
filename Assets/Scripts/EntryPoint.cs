@@ -7,5 +7,7 @@ public class EntryPoint : MonoBehaviour
     private void Awake()
     {
         DialogStorage.setDialogsForCurrentLevel("BeforeRevolution");
+        DialogStorage.setMonologsForCurrentLevel("BeforeRevolution");
+
     }
 }

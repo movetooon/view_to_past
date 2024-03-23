@@ -16,13 +16,18 @@ public class Location : Selectable
 
     private void Start()
     {
-        onSelected += FindObjectOfType<Player>().GetState<IdleState>().MoveToNextLocation; 
+        SetListeners();
+        
+    }
+
+    public virtual void SetListeners()
+    {
+        onSelected += FindObjectOfType<Player>().GetState<IdleState>().MoveToNextLocation;
         onDisableClickingRequested += FindObjectOfType<ArrowsManager>().DisableClickingAllArrows;
-        onLocationsUpdateRequested+=FindObjectOfType<ArrowsManager>().UpdateArrows;
-       
+        onLocationsUpdateRequested += FindObjectOfType<ArrowsManager>().UpdateArrows;
+
         onEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
         onEnded += FindObjectOfType<ArrowsManager>().EnableClickingAllArrows;
-        
     }
 
     public Transform GetView() => view; 
