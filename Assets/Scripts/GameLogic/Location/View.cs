@@ -23,7 +23,9 @@ public class View : MonoBehaviour
     private void Start()
     {
         checkVeiw = false;
-        mesh.enabled = false;
+       if(mesh!=null) mesh.enabled = false;
+        else mesh = GetComponent<MeshRenderer>();
+        
     }
 
     private void Update()

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 7769f33fb4fa2e5458344a36556ad760
+  - enabled: 1
+    path: Assets/Scenes/BeforeRevolution.unity
+    guid: b22ddb3a95ec85244aa27cddb3becb31
   m_configObjects: {}

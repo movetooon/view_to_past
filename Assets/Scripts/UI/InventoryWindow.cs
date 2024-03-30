@@ -20,17 +20,13 @@ public class InventoryWindow : MonoBehaviour
         var itemsData = inventory.GetItems();
 
         for (int i = 0; i < itemsData.Count; i++)
-        {
-            Debug.Log("BITCH YOU NOW IM SEXY "+i);
+        { 
             if (i < items.Count)
-            {
-                Debug.Log("HI BABE");
+            { 
                 items[i].Init(itemsData[i]);
             }
             else
-            {
-                Debug.Log("NEW HI BABE");
-
+            {  
                 var newItem = Instantiate(itemPrefab,InventoryPanel);
                 newItem.Init(itemsData[i]);
                 items.Add(newItem);

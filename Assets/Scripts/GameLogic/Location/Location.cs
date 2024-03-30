@@ -7,17 +7,30 @@ public class Location : Selectable
 {
     [SerializeField] private Transform view;
     [SerializeField] protected List<NearLocation> nearLocations;
+    [SerializeField] public List<Transform> mustIntersectDuringMoving=new List<Transform>();
   
     public Action<List<NearLocation>> onLocationsUpdateRequested;
     public Action onDisableClickingRequested;
     public Action onEnded;
     public Action<Location> onSelected;
-     
 
-    private void Start()
+    private void OnValidate()
     {
-        SetListeners();
-        
+        if (view == null)
+        {
+            view = ((GameObject)Instantiate(Resources.Load("view"),transform.position,transform.rotation)).transform;
+            
+            view.parent = transform;
+        }
+        if (mustIntersectDuringMoving.Count==0)
+        {
+            mustIntersectDuringMoving=new List<Transform>() { view };
+        }
+    }
+
+    private void Init()
+    {
+        SetListeners(); 
     }
 
     public virtual void SetListeners()

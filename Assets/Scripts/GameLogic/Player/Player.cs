@@ -9,10 +9,12 @@ public class Player : StateMachine<Player>,IStateMachine
     [SerializeField] private Location currentLocation;
     [SerializeField] private float lookingAroundStrength;
 
-    private void Awake()
+    public void Init()
     { 
-        InitializeStateMachine(); 
-         
+        InitializeStateMachine();
+        currentLocation.SetListeners();
+        currentLocation.Enter();
+
     }
 
     private void Update()

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine; 
 
 public class MovingState : State<Player>
@@ -6,6 +8,7 @@ public class MovingState : State<Player>
     private Quaternion currentRot;
     private Location nextLocation;
     private Transform nextTransform; 
+    private List<Transform> way; 
 
     private AnimationCurve speedChange;
     private float speed;
@@ -38,28 +41,40 @@ public class MovingState : State<Player>
         lerp = 0;
     }
 
-    public override void Update()
-    {
-        //Debug.Log("Update moving");
+    public override  void Update()
+    { 
+        int count; 
+        lerp += speed * Time.fixedDeltaTime;
          
-        lerp += speed * Time.fixedDeltaTime ;
+        count = (int)(speedChange.Evaluate(lerp) * (way.Count));
+        //count = (int)(lerp * (way.Count));
 
-        SM.transform.position = Vector3.Lerp(currentPos, nextTransform.position, speedChange.Evaluate(lerp));
-        SM.transform.rotation = Quaternion.Lerp(currentRot, nextTransform.rotation, speedChange.Evaluate(lerp)); 
-
-        if (lerp >= 1)
+        if (count != 0)
         {
-            //Debug.Log("End transform");
-            lerp = 0;
-            
-            nextLocation.Enter(); 
-            
+            currentPos = way[count - 1].position;
+            currentRot = way[count - 1].rotation;
         }
-          
+        if (count == way.Count)
+        {
+            lerp = 0;
+            nextLocation.Enter();
+        }
+        else
+        { 
+            float lerpEvaluate = (speedChange.Evaluate(lerp) * way.Count) % 1;
+
+            SM.transform.position = Vector3.Lerp(currentPos, way[count].position, lerpEvaluate);
+            SM.transform.rotation = Quaternion.Lerp(currentRot, way[count].rotation, lerpEvaluate);
+        }
+
+         
+
     }
 
     public void UpdateNextLocation(Location newLoc)
     {
+        
         nextLocation = newLoc;
+        way = nextLocation.mustIntersectDuringMoving;
     }
 }
