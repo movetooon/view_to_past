@@ -16,6 +16,7 @@ public class Item : Selectable
     public override void Select()
     {
         onTaken?.Invoke(data);
+        onSelectedEvent?.Invoke();
         Destroy(gameObject);
     } 
     

@@ -22,12 +22,12 @@ public class DialogDisplayer : MonologDisplayer
         onDialogEnded += FindObjectOfType<ArrowsManager>().ReUpdateArrows;
     }
 
-    public void StartDialog(Dialog dialog)
+    public void StartDialog(Dialog dialog,EventHandler eventHandler)
     {  
-        StartCoroutine(ShowDialog(dialog));   
+        StartCoroutine(ShowDialog(dialog, eventHandler));   
     }
 
-    public IEnumerator ShowDialog(Dialog dialog)
+    public IEnumerator ShowDialog(Dialog dialog,EventHandler eventHandler)
     {
         onDialogStarted?.Invoke();
         EneblePlayerPanel();
@@ -35,6 +35,8 @@ public class DialogDisplayer : MonologDisplayer
         foreach (Replic replic in dialog.replics)
         { 
             TMP_Text currentSpeakerContainer=charachterTextContainter;
+
+            
 
             if (replic.isPlayer) 
             { 
@@ -45,10 +47,20 @@ public class DialogDisplayer : MonologDisplayer
                 EnebleCharacterPanel(); 
             }
 
-            ShowReplic(currentSpeakerContainer, replic.text); 
+            ShowReplic(currentSpeakerContainer, replic.text);
+            
+            if (replic.eventsCount > 0)
+            {
+                eventHandler?.InvokeEvents(replic.eventsCount);
+            }
+
             yield return new WaitUntil(() => CanMoveToNextReplic(replic.text,currentSpeakerContainer));
+           
+            
         }
+        
          
+
         StartCoroutine(DisableCharacterPanel()); 
         StartCoroutine(DisablePlayerPanel());
         onDialogEnded?.Invoke();

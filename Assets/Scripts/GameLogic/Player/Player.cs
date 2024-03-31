@@ -11,10 +11,11 @@ public class Player : StateMachine<Player>,IStateMachine
 
     public void Init()
     { 
-        InitializeStateMachine();
-        currentLocation.SetListeners();
-        currentLocation.Enter();
-
+        InitializeStateMachine();  
+    }
+    public void EnterStartLocation()
+    {
+        currentLocation.Select();
     }
 
     private void Update()
@@ -24,10 +25,12 @@ public class Player : StateMachine<Player>,IStateMachine
     }
 
     private void InitializeStateMachine()
-    { 
-        AddState(new MovingState(this, currentLocation, speedChange, speed));
-        AddState(new IdleState(this,currentLocation, lookingAroundStrength));
+    {
         AddState(new InactionState(this));
+        AddState(new IdleState(this, currentLocation, lookingAroundStrength));
+        AddState(new MovingState(this, currentLocation, speedChange, speed));
+         
+        
 
         base.EnterIn<IdleState>();
     }

@@ -6,13 +6,13 @@ using UnityEngine;
 public class MonologHandler : Location
 {
     [SerializeField] string monologName;
-    private Action<Monolog> onMonologDisplayRequested;
+    public Action<Monolog> onMonologDisplayRequested;
 
     private void Start()
     {
-        SetListeners();   
+      //  SetListeners();   
     }
-
+    /*
     public override void SetListeners()
     {
         onMonologDisplayRequested += FindObjectOfType<MonologDisplayer>().StartShowingMonolog;
@@ -23,6 +23,7 @@ public class MonologHandler : Location
         onEnded += FindObjectOfType<Player>().EnterIn<InactionState>;
         onEnded += FindObjectOfType<ArrowsManager>().DisableAllArrows;
     }
+    */
 
     public override void Enter()
     {

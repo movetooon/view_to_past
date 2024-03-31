@@ -111,11 +111,12 @@
                     [
                             {
                             "isPlayer":false,
-                            "text": "внучок принеси мне лопату , буду могилу себе копать"   
+                            "text": "я щас деревню разъебу нахуй"   
                             },
                             {
+                                "eventsCount":1,
                                 "isPlayer":false,
-                                "text":"смилуйся над бабушкой"
+                                "text":"опа!"
                             }  ,
                             {
                                 "isPlayer":true,
@@ -124,7 +125,7 @@
                     ]
                 },
                 {
-                    "countOfTasks":0,
+                     
                     "replics":
                     [
                         {
@@ -134,7 +135,7 @@
                     ]
                 },
                 {
-                    "countOfTasks":0,
+                    
                     "replics":
                     [
                         {
@@ -155,7 +156,54 @@
                         }
 
                     ]
+                },
+                {
+                    
+                    "countOfTasks":1,
+                    "replics":
+                    [
+                        {
+                        "isPlayer":false,
+                        "text": "а принеси ка мне еще одну лопату "   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "ок "   
+                        } 
+
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                            "isPlayer":false,
+                            "text": "Я СКАЗАЛА НЕСИ МНЕ ЛОПАТУ ТВАРИНА "   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "ок "   
+                        } 
+
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                            "isPlayer":false,
+                            "text": "спс долбаеб"   
+                        },
+                        { 
+                            "isPlayer":true,
+                            "text": "ок "   
+                        } 
+
+                    ]
                 }
+
                 
             ]
         }

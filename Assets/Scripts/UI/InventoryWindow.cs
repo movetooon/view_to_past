@@ -10,17 +10,15 @@ public class InventoryWindow : MonoBehaviour
 
     [SerializeField] private Inventory inventory;
 
-    private void Start()
-    {
-       // inventory.onUpdated +=UpdateItemsList; 
-    }
+    
 
     public void UpdateItemsList()
     {
         var itemsData = inventory.GetItems();
+        int itemsDataCount = itemsData.Count; 
 
         for (int i = 0; i < itemsData.Count; i++)
-        { 
+        {   
             if (i < items.Count)
             { 
                 items[i].Init(itemsData[i]);
@@ -30,6 +28,24 @@ public class InventoryWindow : MonoBehaviour
                 var newItem = Instantiate(itemPrefab,InventoryPanel);
                 newItem.Init(itemsData[i]);
                 items.Add(newItem);
+            }
+        }
+
+        if (itemsDataCount < items.Count)
+        {
+            if (itemsDataCount == 0)
+            {
+                GameObject toDestroy = items[0].gameObject;
+                items.Remove(items[0]);
+                Destroy(toDestroy);
+                return;
+            }
+
+            for (int i = (itemsDataCount-1); i < (items.Count-1); i++)
+            {
+                GameObject toDestroy = items[i].gameObject;
+                items.Remove(items[i]);
+                Destroy(toDestroy);
             }
         }
     }

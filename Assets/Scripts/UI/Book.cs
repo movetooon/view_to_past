@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,8 +7,9 @@ using UnityEngine.Events;
 public class Book : MonoBehaviour
 {
     private Animator anim;
-    private UnityEvent onClosed ;
-    private UnityEvent onOpened;
+    public Action onClosed;
+    public Action onOpened;
+  
 
     [SerializeField] private InventoryWindow inventoryPanel;
 
@@ -20,16 +22,15 @@ public class Book : MonoBehaviour
     private void OnEnable()
     {
         if (onOpened != null) return;
-
-        onOpened=new UnityEvent();
-        onClosed=new UnityEvent();
-
+         
+        /*
         onOpened.AddListener(FindObjectOfType<Player>().EnterIn<InactionState>);
         onOpened.AddListener(inventoryPanel.UpdateItemsList);
         onOpened.AddListener(FindObjectOfType<ArrowsManager>().DisableAllArrows);
        
         onClosed.AddListener(FindObjectOfType<ArrowsManager>().ReUpdateArrows); 
         onClosed.AddListener(FindObjectOfType<Player>().EnterIn<IdleState>); 
+        */
     }
     
 

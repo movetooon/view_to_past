@@ -46,8 +46,7 @@ public class MovingState : State<Player>
         int count; 
         lerp += speed * Time.fixedDeltaTime;
          
-        count = (int)(speedChange.Evaluate(lerp) * (way.Count));
-        //count = (int)(lerp * (way.Count));
+        count = (int)(speedChange.Evaluate(lerp) * (way.Count)); 
 
         if (count != 0)
         {

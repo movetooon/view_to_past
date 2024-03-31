@@ -1,6 +1,7 @@
 using System; 
 using System.Collections.Generic; 
-using UnityEngine; 
+using UnityEngine;
+using UnityEngine.Rendering;
 
 [System.Serializable]
 public class Location : Selectable
@@ -13,6 +14,7 @@ public class Location : Selectable
     public Action onDisableClickingRequested;
     public Action onEnded;
     public Action<Location> onSelected;
+ 
 
     private void OnValidate()
     {
@@ -27,6 +29,7 @@ public class Location : Selectable
             mustIntersectDuringMoving=new List<Transform>() { view };
         }
     }
+    /*
 
     private void Init()
     {
@@ -42,6 +45,8 @@ public class Location : Selectable
         onEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
         onEnded += FindObjectOfType<ArrowsManager>().EnableClickingAllArrows;
     }
+    */
+
 
     public Transform GetView() => view; 
     public List<NearLocation> GetNearLocations() => nearLocations;

@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public abstract class Selectable : MonoBehaviour
 {
     protected bool selected;
+    [SerializeField] protected GameEvent onSelectedEvent;
 
     public abstract void Select();
     public virtual void Unselect() => selected = false;

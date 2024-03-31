@@ -53,7 +53,8 @@ struct Charachter
 [System.Serializable]
 public struct Dialog
 {
-    int countOfTasks;
+    
+    public int countOfTasks;
     public List<Replic> replics; 
 }
 
@@ -66,6 +67,7 @@ public struct Monolog
 [System.Serializable]
 public struct Replic
 {
+    public int eventsCount;
     public bool isPlayer;
     public string text;
 } 

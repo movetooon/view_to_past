@@ -19,9 +19,10 @@ public class Inventory : MonoBehaviour
         onUpdated?.Invoke(items);
     }
 
-    public void RemoveItem(ItemData newItem)
+    public void RemoveItem(ItemData itemToRemove)
     {
-        items.Remove(newItem);
+        items.Remove(itemToRemove);
+        onUpdated?.Invoke(items);
     }
 
      
