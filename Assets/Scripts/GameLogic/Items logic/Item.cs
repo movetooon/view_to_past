@@ -13,7 +13,7 @@ public class Item : Selectable
         onTaken+= FindObjectOfType<ItemsMonologsDisplayer>().ShowItemInfo;
     }
 
-    public override void Select()
+    public override void Select(float distance = 0)
     {
         onTaken?.Invoke(data);
         onSelectedEvent?.Invoke();

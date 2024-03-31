@@ -45,7 +45,7 @@ public class IdleState : State<Player>
         hit.transform?.GetComponent<Selectable>()?.EnableOutline();
 
         if (UserInput.GetMouseClick())
-            hit.transform?.GetComponent<Selectable>()?.Select();  
+            hit.transform?.GetComponent<Selectable>()?.Select(Vector3.Distance(hit.transform.position,SM.transform.position));  
     }
  
 

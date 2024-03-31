@@ -80,7 +80,7 @@ public class NPC : Location
         if (setNext) nextDialogNumber++;
     }
 
-    public override void Select()
+    public override void Select(float distance = 0)
     { 
         base.Select();
     }

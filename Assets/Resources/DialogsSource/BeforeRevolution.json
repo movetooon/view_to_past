@@ -110,13 +110,12 @@
                     "replics":
                     [
                             {
-                            "isPlayer":false,
-                            "text": "я щас деревню разъебу нахуй"   
-                            },
-                            {
-                                "eventsCount":1,
                                 "isPlayer":false,
-                                "text":"опа!"
+                                "text": "ПРИНЕСИ ЛОПАТУ УЕБИЩЕ"   
+                            },
+                            { 
+                                "isPlayer":false,
+                                "text":"БЫСТРО БЛЯТТЬЬ НЕСИ ПОДОНОК"
                             }  ,
                             {
                                 "isPlayer":true,
@@ -128,7 +127,7 @@
                      
                     "replics":
                     [
-                        {
+                        { 
                         "isPlayer":false,
                         "text": "я жду свою лопату, сученыш!"   
                         }
@@ -142,7 +141,9 @@
                         "isPlayer":false,
                         "text": "ох спасибо внучок миленький"   
                         },
+                        
                         {
+                            "eventsCount":2,
                             "isPlayer":false,
                             "text": "..."   
                         },

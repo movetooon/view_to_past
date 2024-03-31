@@ -1441,12 +1441,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 982501264}
   nearLocations:
   - location: {fileID: 2007404063}
     direction: 3
   - location: {fileID: 1607274744}
     direction: 0
+  mustIntersectDuringMoving:
+  - {fileID: 982501264}
 --- !u!65 &225589898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3205,10 +3209,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1165762989}
   nearLocations:
   - location: {fileID: 881440720}
     direction: 3
+  mustIntersectDuringMoving:
+  - {fileID: 1165762989}
 --- !u!65 &436951665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3328,10 +3336,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 608689317}
   nearLocations:
   - location: {fileID: 881440720}
     direction: 3
+  mustIntersectDuringMoving:
+  - {fileID: 608689317}
 --- !u!65 &450876906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4945,6 +4957,8 @@ GameObject:
   - component: {fileID: 607175015}
   - component: {fileID: 607175017}
   - component: {fileID: 607175016}
+  - component: {fileID: 607175019}
+  - component: {fileID: 607175018}
   m_Layer: 0
   m_Name: roof_end_wide.014
   m_TagString: Untagged
@@ -5017,6 +5031,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607175014}
   m_Mesh: {fileID: 1591811378694098800, guid: 05d0dcbe2e37f7c4a9ba340de427e5c5, type: 3}
+--- !u!64 &607175018
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607175014}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1591811378694098800, guid: 05d0dcbe2e37f7c4a9ba340de427e5c5, type: 3}
+--- !u!54 &607175019
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607175014}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &608689316
 GameObject:
   m_ObjectHideFlags: 0
@@ -5244,10 +5307,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1339618240}
   nearLocations:
   - location: {fileID: 881440720}
     direction: 3
+  mustIntersectDuringMoving:
+  - {fileID: 1339618240}
 --- !u!65 &625182054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6106,10 +6173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 654647840}
   nearLocations:
   - location: {fileID: 881440720}
     direction: 3
+  mustIntersectDuringMoving:
+  - {fileID: 654647840}
 --- !u!65 &741310689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6721,12 +6792,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1575180325}
   nearLocations:
   - location: {fileID: 2007404063}
     direction: 1
   - location: {fileID: 1019568773}
     direction: 0
+  mustIntersectDuringMoving:
+  - {fileID: 1575180325}
 --- !u!65 &846554098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7156,12 +7231,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 450924493}
   nearLocations:
   - location: {fileID: 1274212844}
     direction: 1
   - location: {fileID: 625182053}
     direction: 3
+  mustIntersectDuringMoving:
+  - {fileID: 450924493}
 --- !u!65 &881440721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8160,10 +8239,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1013652458}
   nearLocations:
   - location: {fileID: 846554097}
     direction: 2
+  mustIntersectDuringMoving:
+  - {fileID: 1013652458}
 --- !u!65 &1019568774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8832,6 +8915,7 @@ GameObject:
   - component: {fileID: 1137364549}
   - component: {fileID: 1137364551}
   - component: {fileID: 1137364552}
+  - component: {fileID: 1137364553}
   m_Layer: 0
   m_Name: farmer
   m_TagString: Untagged
@@ -8888,12 +8972,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d770bf70b03cf4eb1e8f781453b1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1586763862}
   nearLocations:
   - location: {fileID: 1274212844}
     direction: 2
+  mustIntersectDuringMoving:
+  - {fileID: 1586763862}
   height: 1.75
   cloudPosition: {x: 1.63, y: 0.56, z: 1.03}
+  taskHandler: {fileID: 0}
+  eventHandler: {fileID: 0}
+  waitingForTaskDone: 0
 --- !u!212 &1137364551
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8962,6 +9053,33 @@ MonoBehaviour:
   newPos: {x: 1.63, y: 0.56, z: 1.03}
   test: 1
   npc: {fileID: 1137364550}
+--- !u!54 &1137364553
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137364544}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1140862430
 GameObject:
   m_ObjectHideFlags: 0
@@ -9482,6 +9600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1400922911}
   nearLocations:
   - location: {fileID: 625182053}
@@ -9490,6 +9610,8 @@ MonoBehaviour:
     direction: 1
   - location: {fileID: 881440720}
     direction: 3
+  mustIntersectDuringMoving:
+  - {fileID: 1400922911}
 --- !u!65 &1209988475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9890,10 +10012,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4523eff43c4d56c4bb1151d4e0ae7225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 592249828}
   nearLocations:
   - location: {fileID: 450876905}
     direction: 2
+  mustIntersectDuringMoving:
+  - {fileID: 592249828}
   monologName: something
 --- !u!135 &1238969478
 SphereCollider:
@@ -10207,12 +10333,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 499952010}
   nearLocations:
   - location: {fileID: 625182053}
     direction: 1
   - location: {fileID: 1969251436}
     direction: 0
+  mustIntersectDuringMoving:
+  - {fileID: 499952010}
 --- !u!65 &1274212845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10504,10 +10634,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 821076639}
   nearLocations:
   - location: {fileID: 1209988474}
     direction: 2
+  mustIntersectDuringMoving:
+  - {fileID: 821076639}
 --- !u!1 &1318205330
 GameObject:
   m_ObjectHideFlags: 0
@@ -10728,6 +10862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a6d33c0502cea4db975910a49e4c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   data: {fileID: 11400000, guid: 26b391cd408fdca45bd3bdc873534e73, type: 2}
 --- !u!65 &1339043495
 BoxCollider:
@@ -11074,10 +11210,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 2036650780}
   nearLocations:
   - location: {fileID: 881440720}
     direction: 3
+  mustIntersectDuringMoving:
+  - {fileID: 2036650780}
 --- !u!65 &1349643065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12154,6 +12294,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 29683643}
+  notesText: {fileID: 0}
+  bookmarks: []
+  bookmarkPanel: {fileID: 0}
+  lastbookmark: {fileID: 0}
 --- !u!1 &1527496452
 GameObject:
   m_ObjectHideFlags: 0
@@ -12337,12 +12481,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d770bf70b03cf4eb1e8f781453b1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1580346084}
   nearLocations:
   - location: {fileID: 1349643064}
     direction: 1
+  mustIntersectDuringMoving:
+  - {fileID: 1580346084}
   height: 1.75
   cloudPosition: {x: 1.67, y: 0.52, z: 0.05}
+  taskHandler: {fileID: 0}
+  eventHandler: {fileID: 0}
+  waitingForTaskDone: 0
 --- !u!65 &1547921025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13120,12 +13271,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 2063570542}
   nearLocations:
   - location: {fileID: 2120503935}
     direction: 3
   - location: {fileID: 225589897}
     direction: 2
+  mustIntersectDuringMoving:
+  - {fileID: 2063570542}
 --- !u!65 &1607274745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15125,6 +15280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 467969980}
   nearLocations:
   - location: {fileID: 846554097}
@@ -15133,6 +15290,8 @@ MonoBehaviour:
     direction: 1
   - location: {fileID: 2120503935}
     direction: 0
+  mustIntersectDuringMoving:
+  - {fileID: 467969980}
 --- !u!65 &1969251437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15519,6 +15678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 553366684}
   nearLocations:
   - location: {fileID: 846554097}
@@ -15527,6 +15688,8 @@ MonoBehaviour:
     direction: 1
   - location: {fileID: 2120503935}
     direction: 0
+  mustIntersectDuringMoving:
+  - {fileID: 553366684}
 --- !u!65 &2007404064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15997,6 +16160,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e56e48c63a766d438b0166e526bcbf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  arrowsManager: {fileID: 0}
+  book: {fileID: 0}
+  inventoryPanel: {fileID: 0}
+  inventory: {fileID: 0}
+  dialog: {fileID: 0}
+  monolog: {fileID: 0}
+  dialogCloud: {fileID: 0}
 --- !u!4 &2058652881
 Transform:
   m_ObjectHideFlags: 0
@@ -16392,6 +16563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a6d33c0502cea4db975910a49e4c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   data: {fileID: 11400000, guid: e1afd8b7445478e4abfe3be659ec3abb, type: 2}
 --- !u!65 &2086939002
 BoxCollider:
@@ -16596,10 +16769,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f07eee5166384f924a1c102020d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSelectedEvent: {fileID: 0}
+  maxViewDistance: 1000
   view: {fileID: 1763892381}
   nearLocations:
   - location: {fileID: 2007404063}
     direction: 2
+  mustIntersectDuringMoving:
+  - {fileID: 1763892381}
 --- !u!65 &2120503936
 BoxCollider:
   m_ObjectHideFlags: 0

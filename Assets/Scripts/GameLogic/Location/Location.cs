@@ -9,6 +9,7 @@ public class Location : Selectable
     [SerializeField] private Transform view;
     [SerializeField] protected List<NearLocation> nearLocations;
     [SerializeField] public List<Transform> mustIntersectDuringMoving=new List<Transform>();
+    
   
     public Action<List<NearLocation>> onLocationsUpdateRequested;
     public Action onDisableClickingRequested;
@@ -17,7 +18,7 @@ public class Location : Selectable
  
 
     private void OnValidate()
-    {
+    { 
         if (view == null)
         {
             view = ((GameObject)Instantiate(Resources.Load("view"),transform.position,transform.rotation)).transform;
@@ -58,9 +59,9 @@ public class Location : Selectable
         
     }
 
-    public override void Select()
+    public override void Select(float distance = 0)
     {
-        if (selected == false)
+        if (selected == false&&distance<maxViewDistance)
         {
             onDisableClickingRequested?.Invoke();
             onSelected?.Invoke(this);

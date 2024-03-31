@@ -63,14 +63,7 @@ public class EntryPoint : MonoBehaviour
 
     private void InitBook()
     { 
-
-        book.onOpened+=player.EnterIn<InactionState>;
-        book.onOpened+=inventoryPanel.UpdateItemsList;
-        book.onOpened+=arrowsManager.DisableAllArrows;
-
-        book.onClosed+=arrowsManager.ReUpdateArrows;
-        book.onClosed += player.EnterIn<IdleState>;
-          
+        book.Init(player, arrowsManager);
 
     }
     private void InitLocations()

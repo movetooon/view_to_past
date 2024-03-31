@@ -5,8 +5,8 @@ public abstract class Selectable : MonoBehaviour
 {
     protected bool selected;
     [SerializeField] protected GameEvent onSelectedEvent;
-
-    public abstract void Select();
+    [SerializeField] protected float maxViewDistance=1000;
+    public abstract void Select(float distance=0);
     public virtual void Unselect() => selected = false;
 
     public virtual void EnableOutline()

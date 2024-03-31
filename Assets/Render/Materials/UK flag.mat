@@ -46,7 +46,7 @@ Material:
     - _QueueOffset: 0
     - _frequency: 5
     - _speed: 0.5
-    - _strength: 0.01
+    - _strength: 0.025
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &5434667102758178997
