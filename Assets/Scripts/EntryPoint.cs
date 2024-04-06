@@ -18,19 +18,22 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] Inventory  inventory ;
     [SerializeField] DialogDisplayer dialog; 
     [SerializeField] MonologDisplayer monolog; 
-    [SerializeField] DialogCloud dialogCloud; 
+    [SerializeField] DialogCloud dialogCloud;
+    [SerializeField] public GameObject startScene; 
 
 
 
     private void Start()
     {
+        book.gameObject.SetActive(true);
+
         taskHandler = FindObjectsByType<TaskHandler>(FindObjectsSortMode.None);
         eventHandler = FindObjectsByType<EventHandler>(FindObjectsSortMode.None);
         locations = FindObjectsByType<Location>(FindObjectsSortMode.None);
         npcs = FindObjectsByType<NPC>(FindObjectsSortMode.None);
         monologHandlers = FindObjectsByType<MonologHandler>(FindObjectsSortMode.None);
-        DialogStorage.setDialogsForCurrentLevel("BeforeRevolution");
-        DialogStorage.setMonologsForCurrentLevel("BeforeRevolution");
+        DialogStorage.SetDialogsForCurrentLevel("BeforeRevolution");
+        DialogStorage.SetMonologsForCurrentLevel("BeforeRevolution");
 
         player.Init();
         InitBook();
@@ -39,10 +42,13 @@ public class EntryPoint : MonoBehaviour
         InitNPCs();
         InitMonologhandlers();
 
-        InitEventHandlers();
+        //InitEventHandlers();
         InitTaskHandlers();
         
         player.EnterStartLocation();
+
+        book.gameObject.SetActive(false);
+        startScene.SetActive(true);
     }
 
     private void InitTaskHandlers()
@@ -53,6 +59,7 @@ public class EntryPoint : MonoBehaviour
         }
     }
 
+    /*
     private void InitEventHandlers()
     {
         foreach (var handler in eventHandler)
@@ -60,6 +67,7 @@ public class EntryPoint : MonoBehaviour
             handler.Init();
         }
     }
+    */
 
     private void InitBook()
     { 
@@ -74,8 +82,8 @@ public class EntryPoint : MonoBehaviour
             loc.onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
             loc.onLocationsUpdateRequested += arrowsManager.UpdateArrows;
 
-            loc.onEnded += player.EnterIn<IdleState>;
-            loc.onEnded += arrowsManager.EnableClickingAllArrows;
+            loc.onEntered += player.EnterIn<IdleState>;
+            loc.onEntered += arrowsManager.EnableClickingAllArrows;
         }
     }
 
@@ -92,13 +100,8 @@ public class EntryPoint : MonoBehaviour
         foreach (MonologHandler mh in monologHandlers)
         {
 
-            mh.onMonologDisplayRequested += monolog.StartShowingMonolog;
-            mh.onSelected += player.GetState<IdleState>().MoveToNextLocation;
-            mh.onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
-            mh.onLocationsUpdateRequested += arrowsManager.UpdateArrows;
-
-            mh.onEnded += player.EnterIn<InactionState>;
-            mh.onEnded += arrowsManager.DisableAllArrows;
+            mh.Init(player, monolog, arrowsManager);
+             
         }
     }
 }

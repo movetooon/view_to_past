@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[ExecuteInEditMode]
+ 
 public class View : MonoBehaviour
 {
     [SerializeField] private bool checkVeiw;
     [SerializeField] private CameraInfo camInfo;
     private MeshRenderer mesh;
 
+    /*
+#if UNITY_EDITOR
     private void OnValidate()
     {
         mesh= GetComponent<MeshRenderer>();
@@ -19,12 +20,18 @@ public class View : MonoBehaviour
             mesh.enabled = true;
         }
     }
+#endif
+    */
 
     private void Start()
     {
         checkVeiw = false;
-       if(mesh!=null) mesh.enabled = false;
-        else mesh = GetComponent<MeshRenderer>();
+        if (mesh != null) mesh.enabled = false;
+        else
+        {
+            mesh = GetComponent<MeshRenderer>();
+            mesh.enabled = false;
+        }
         
     }
 

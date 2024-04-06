@@ -1,10 +1,11 @@
  using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public abstract class Selectable : MonoBehaviour
 {
     protected bool selected;
-    [SerializeField] protected GameEvent onSelectedEvent;
+    [SerializeField] protected UnityEvent onSelectedEvent; 
     [SerializeField] protected float maxViewDistance=1000;
     public abstract void Select(float distance=0);
     public virtual void Unselect() => selected = false;
@@ -19,5 +20,10 @@ public abstract class Selectable : MonoBehaviour
         
          gameObject.layer = LayerMask.NameToLayer("Default");
         
+    }
+
+    public virtual void InvokeEvent()
+    {
+        onSelectedEvent.Invoke();
     }
 }

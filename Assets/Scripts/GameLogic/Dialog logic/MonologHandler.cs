@@ -1,39 +1,53 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MonologHandler : Location
 {
     [SerializeField] string monologName;
-    public Action<Monolog> onMonologDisplayRequested;
+    [SerializeField] public bool playOnEnable;
+    [SerializeField] public bool playOnce;
+     
+    public EventHandler eventHandler;
+    
 
-    private void Start()
-    {
-      //  SetListeners();   
-    }
-    /*
-    public override void SetListeners()
-    {
-        onMonologDisplayRequested += FindObjectOfType<MonologDisplayer>().StartShowingMonolog;
-        onSelected += FindObjectOfType<Player>().GetState<IdleState>().MoveToNextLocation;
-        onDisableClickingRequested += FindObjectOfType<ArrowsManager>().DisableClickingAllArrows;
-        onLocationsUpdateRequested += FindObjectOfType<ArrowsManager>().UpdateArrows;
+    private bool played;
+    public Action<Monolog,EventHandler> onMonologDisplayRequested;
+    public Action<List<NearLocation>> onArrowUpdateRequest;
 
-        onEnded += FindObjectOfType<Player>().EnterIn<InactionState>;
-        onEnded += FindObjectOfType<ArrowsManager>().DisableAllArrows;
+    public void Init(Player player, MonologDisplayer monolog, ArrowsManager arrowsManager)
+    {
+        onMonologDisplayRequested += monolog.StartShowingMonolog;
+        onSelected += player.GetState<IdleState>().MoveToNextLocation;
+        //onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
+
+        onEntered += player.EnterIn<InactionState>;
+        onEntered += arrowsManager.DisableAllArrows;
+        onArrowUpdateRequest += arrowsManager.UpdateArrowsCache;
+
+       
+        
+
+        onEntered += player.EnterIn<InactionState>;
+         onEntered += arrowsManager.DisableAllArrows;
+
+        TryGetComponent<EventHandler>(out eventHandler);
     }
-    */
 
     public override void Enter()
     {
-        Monolog newMonolog = DialogStorage.getMonologByName(monologName);
-        onMonologDisplayRequested?.Invoke(newMonolog);
-
-        Debug.Log(newMonolog.replics[0]);
-
-        base.Enter();   
+        selected = true;
+        if (playOnce == true && played) return;
          
+        Monolog newMonolog = DialogStorage.GetMonologByName(monologName);
+        onMonologDisplayRequested?.Invoke(newMonolog,eventHandler); 
+        played = true;
+       
+         
+        onLocationsUpdateRequested?.Invoke(nearLocations);
+        onEntered?.Invoke();
+
+
     }
 
      

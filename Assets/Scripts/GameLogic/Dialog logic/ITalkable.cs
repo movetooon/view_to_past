@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public abstract class ITalkable  
-{
-    private TMP_Text textContainer;
+public interface ITalkable  
+{ 
 
-    public abstract void SetText(string text, float delay);
+    public abstract void StartTalking();
+    public abstract void EndTalking();
      
      
     

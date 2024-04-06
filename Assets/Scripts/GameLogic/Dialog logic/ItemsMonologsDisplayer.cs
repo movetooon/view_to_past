@@ -10,7 +10,7 @@ public class ItemsMonologsDisplayer : MonologDisplayer
          
     }
 
-    public override void StartShowingMonolog(Monolog monolog)
+    public override void StartShowingMonolog(Monolog monolog,EventHandler eventHandler=null)
     {
         StartCoroutine(ShowMonolog(monolog, 0.01f, 1f));
     }

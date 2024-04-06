@@ -1,22 +1,25 @@
 using System; 
 using System.Collections.Generic; 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
-[System.Serializable]
+[System.Serializable] 
+
 public class Location : Selectable
 {
     [SerializeField] private Transform view;
     [SerializeField] protected List<NearLocation> nearLocations;
     [SerializeField] public List<Transform> mustIntersectDuringMoving=new List<Transform>();
-    
+
+    [SerializeField] private UnityEvent onEnteredEvent; 
   
     public Action<List<NearLocation>> onLocationsUpdateRequested;
     public Action onDisableClickingRequested;
-    public Action onEnded;
+    public Action onEntered;
     public Action<Location> onSelected;
  
-
+    /*
     private void OnValidate()
     { 
         if (view == null)
@@ -30,6 +33,7 @@ public class Location : Selectable
             mustIntersectDuringMoving=new List<Transform>() { view };
         }
     }
+    */
     /*
 
     private void Init()
@@ -55,8 +59,8 @@ public class Location : Selectable
     public virtual void Enter()
     {
         onLocationsUpdateRequested?.Invoke(nearLocations); 
-        onEnded?.Invoke();
-        
+        onEntered?.Invoke();
+        onEnteredEvent?.Invoke();
     }
 
     public override void Select(float distance = 0)
@@ -71,7 +75,7 @@ public class Location : Selectable
 
     public override void Unselect() => base.Unselect();  
     public override void EnableOutline() => base.EnableOutline(); 
-    public void OnMouseExit() => base.DisableOutline();
+    public virtual void OnMouseExit() => base.DisableOutline();
 
 
 }

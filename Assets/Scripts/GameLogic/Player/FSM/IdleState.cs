@@ -1,10 +1,5 @@
-using System;
-using Unity.Burst.CompilerServices;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
-using UnityEngine.Rendering;
+using System;  
+using UnityEngine; 
 
 
 public class IdleState : State<Player>

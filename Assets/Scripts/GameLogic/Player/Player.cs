@@ -15,7 +15,7 @@ public class Player : StateMachine<Player>,IStateMachine
     }
     public void EnterStartLocation()
     {
-        currentLocation.Select();
+        //currentLocation.Select();
     }
 
     private void Update()
@@ -49,7 +49,8 @@ public class Player : StateMachine<Player>,IStateMachine
 
     public void EnterMovingState(Location newLoc) 
     {
-        if (currentState.GetType() != typeof(InactionState)&& currentState.GetType() != typeof(MovingState))
+        //currentState.GetType() != typeof(InactionState)
+        if ( currentState.GetType() != typeof(MovingState))
         {
             GetState<MovingState>().UpdateNextLocation(newLoc);
             currentLocation.Unselect(); 

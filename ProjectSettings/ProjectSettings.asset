@@ -12,14 +12,14 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: view to past
+  companyName: krestyane
+  productName: view to past1
   defaultCursor: {fileID: 2800000, guid: 1a8a32ad7a844204495c6dd9ce087205, type: 3}
   cursorHotspot: {x: 21, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.08235294, g: 0.007843138, b: 0.003921569, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.11372549, g: 0.039215695, b: 0.05542809, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
-  m_SplashScreenOverlayOpacity: 1
+  m_SplashScreenOverlayOpacity: 0.5
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
   m_SplashScreenDrawMode: 0
@@ -782,9 +782,10 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 0}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 9172f520c61fc634082d0e1953310faa,
+    type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
-  blurSplashScreenBackground: 1
+  blurSplashScreenBackground: 0
   spritePackerPolicy: 
   webGLMemorySize: 32
   webGLExceptionSupport: 1

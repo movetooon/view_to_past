@@ -3,6 +3,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.Video.VideoPlayer;
 
 public class MonologDisplayer : MonoBehaviour
 {
@@ -21,28 +22,31 @@ public class MonologDisplayer : MonoBehaviour
         onMonologEnded += FindObjectOfType<ArrowsManager>().ReUpdateArrows;
     }
 
-    public virtual void StartShowingMonolog(Monolog monolog)
+    public virtual void StartShowingMonolog(Monolog monolog, EventHandler eventHandler=null)
     {
-        StartCoroutine(ShowMonolog(monolog, 0.01f));
+        StartCoroutine(ShowMonolog(monolog, 0.01f, eventHandler:eventHandler));
         //fix that shit, please add delay
     }
 
-    protected  IEnumerator ShowMonolog(Monolog monolog,float delay, float delayBetweenReplics=0)
+    protected  IEnumerator ShowMonolog(Monolog monolog, float delay, float delayBetweenReplics=0, EventHandler eventHandler=null)
     {
         onMonologStarted?.Invoke();
         EneblePlayerPanel();
         yield return null;
         yield return new WaitUntil(() => playerPanel.GetCurrentAnimatorStateInfo(layerIndex: 0).normalizedTime>=1);
 
-        foreach (string replic in monolog.replics)
+        foreach (Replic replic in monolog.replics)
         {
-            ShowReplic(replic, delay);
-            yield return new WaitUntil(() => CanMoveToNextReplic(replic));
+            ShowReplic(replic.text, delay);
+
+            if (replic.eventsCount > 0) eventHandler?.InvokeEvents(replic.eventsCount);
+
+            yield return new WaitUntil(() => CanMoveToNextReplic(replic.text));
             yield return new WaitForSeconds(delayBetweenReplics);
         }
 
         StartCoroutine(DisablePlayerPanel());
-        Debug.Log("AAAAAAAA");
+ 
         onMonologEnded?.Invoke();
 
     }

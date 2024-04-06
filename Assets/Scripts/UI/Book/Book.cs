@@ -62,6 +62,10 @@ public class Book : MonoBehaviour
         notesText.text = text;
     }
     
+    public void UpdateLastBookmarkText(string addText)
+    {
+        lastbookmark.UpdateText(addText);
+    }
 
     public async void Close()
     {

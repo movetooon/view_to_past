@@ -43,6 +43,8 @@ public class MovingState : State<Player>
 
     public override  void Update()
     { 
+        if(nextTransform.transform.position==currentPos)nextLocation.Enter();
+
         int count; 
         lerp += speed * Time.fixedDeltaTime;
          

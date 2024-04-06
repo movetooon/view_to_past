@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EventHandler : MonoBehaviour
 {
-    [SerializeField] private List<GameEvent> events;
+    [SerializeField] private List<UnityEvent> events;
     private int currentEvent = 0;
 
     public void InvokeEvents(int eventsCount)
@@ -16,6 +17,7 @@ public class EventHandler : MonoBehaviour
         currentEvent+=eventsCount;
     }
 
+    /*
     public void Init()
     {
         foreach (GameEvent e in events)
@@ -23,4 +25,5 @@ public class EventHandler : MonoBehaviour
             e.Init();
         }
     }
+    */
 }

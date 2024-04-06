@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417c227c5dab52246a19283403103c2f, type: 3}
+  m_Name: Man40
+  m_EditorClassIdentifier: 
+  default_sounds:
+  - {fileID: 8300000, guid: 995120ed559cb2841827bfa08fa19ddd, type: 3}
+  - {fileID: 8300000, guid: 32480a3969dfc494d9ac3aeb89c0013e, type: 3}
+  - {fileID: 8300000, guid: 5b1cb9c8ecdf0bd488b51a1bf369439b, type: 3}
+  anger: {fileID: 8300000, guid: 0a1a980b31108be4cbc778c3007be687, type: 3}
+  consent: {fileID: 8300000, guid: c6651235ed73b9942a17748e77b36413, type: 3}
+  disagreement: {fileID: 8300000, guid: cf9e218f68c8cc64b90802baa73f75b3, type: 3}
+  misunderstanding: {fileID: 8300000, guid: af68131f0165323479f5cb88f5d8200e, type: 3}
+  surprise: {fileID: 8300000, guid: ad84bab72a40eaa49975d63990c6bc64, type: 3}
