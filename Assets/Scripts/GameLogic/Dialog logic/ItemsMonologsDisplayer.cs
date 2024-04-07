@@ -6,7 +6,7 @@ public class ItemsMonologsDisplayer : MonologDisplayer
 { 
     public void ShowItemInfo(ItemData item)
     {
-        StartShowingMonolog(item.PlayerDescription());
+        StartShowingMonolog(item.GetPlayerDescription());
          
     }
 

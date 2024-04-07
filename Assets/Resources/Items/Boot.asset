@@ -24,3 +24,4 @@ MonoBehaviour:
         \u0437\u0430\u043B\u0430\u0442\u0430\u043D\u043D\u044B\u0435 \u0434\u044B\u0440\u044B\u2026"
   icon: {fileID: 21300000, guid: 6d39faa3c6a46af4a964565c762076f0, type: 3}
   texture: {fileID: 21300000, guid: aa7cd21d87d91014c924da8379cbbd88, type: 3}
+  sound: 3

@@ -58,7 +58,17 @@ public class Player : StateMachine<Player>,IStateMachine
             base.EnterIn<MovingState>();
         }
     }
+    public void SelectNextLocation(Location newLoc)
+    {
+        //currentState.GetType() != typeof(InactionState)
+        if (currentState.GetType() != typeof(MovingState))
+        {
+            GetState<MovingState>().UpdateNextLocation(newLoc);
+            currentLocation.Unselect();
+            currentLocation = newLoc;
+            newLoc.Select();
+        }
+    }
 
- 
 
 }

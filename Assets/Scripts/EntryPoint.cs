@@ -11,29 +11,41 @@ public class EntryPoint : MonoBehaviour
     EventHandler[] eventHandler;
     NPC[] npcs;
     MonologHandler[] monologHandlers;
+    Item[] items;
 
     [SerializeField] ArrowsManager arrowsManager;
     [SerializeField] Book book;
     [SerializeField] InventoryWindow inventoryPanel;
+    
     [SerializeField] Inventory  inventory ;
+   
     [SerializeField] DialogDisplayer dialog; 
     [SerializeField] MonologDisplayer monolog; 
     [SerializeField] DialogCloud dialogCloud;
+    [SerializeField] ItemsMonologsDisplayer itemsMonolog;
+    
     [SerializeField] public GameObject startScene; 
-
+    [SerializeField] ItemSoundPlayer itemSoundPlayer;
+    [SerializeField] WeatherSystem weatherSystem;
 
 
     private void Start()
     {
         book.gameObject.SetActive(true);
+        DialogStorage.SetDialogsForCurrentLevel("BeforeRevolution");
+        DialogStorage.SetMonologsForCurrentLevel("BeforeRevolution");
 
         taskHandler = FindObjectsByType<TaskHandler>(FindObjectsSortMode.None);
         eventHandler = FindObjectsByType<EventHandler>(FindObjectsSortMode.None);
+        
         locations = FindObjectsByType<Location>(FindObjectsSortMode.None);
         npcs = FindObjectsByType<NPC>(FindObjectsSortMode.None);
         monologHandlers = FindObjectsByType<MonologHandler>(FindObjectsSortMode.None);
-        DialogStorage.SetDialogsForCurrentLevel("BeforeRevolution");
-        DialogStorage.SetMonologsForCurrentLevel("BeforeRevolution");
+        items = FindObjectsByType<Item>(FindObjectsSortMode.None);
+
+
+        itemSoundPlayer.audioPlayer=itemSoundPlayer.GetComponent<AudioSource>();
+        InitItems();
 
         player.Init();
         InitBook();
@@ -44,6 +56,7 @@ public class EntryPoint : MonoBehaviour
 
         //InitEventHandlers();
         InitTaskHandlers();
+        weatherSystem.Init();
         
         player.EnterStartLocation();
 
@@ -56,6 +69,14 @@ public class EntryPoint : MonoBehaviour
         foreach (var handler in taskHandler)
         {
             handler.Init();
+        }
+    }
+
+    private void InitItems()
+    {
+        foreach (var item in items)
+        {
+            item.Init(inventory,itemsMonolog,itemSoundPlayer);
         }
     }
 

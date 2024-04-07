@@ -11,11 +11,24 @@ public class ItemData : ScriptableObject
     [SerializeField] private Monolog playerDescription;
     [SerializeField] private Sprite icon;
     [SerializeField] private Sprite texture;
+    [SerializeField] private soundType sound;
 
-    public Monolog PlayerDescription() => playerDescription;
-    public string Name() => itemName;
-    public Sprite Icon() => icon;
-    public Sprite Texture() => texture;
+    public soundType GetSoundType() => sound;
+    public Monolog GetPlayerDescription() => playerDescription;
+    public string GetName() => itemName;
+    public Sprite GetIcon() => icon;
+    public Sprite GetTexture() => texture;
      
+
+}
+
+public enum soundType 
+{
+    defaultType=0,
+    metal=1,
+    wood=2,
+    fabric=3,
+    water=4,
+    grass=5
 
 }

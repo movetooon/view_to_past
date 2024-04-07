@@ -43,7 +43,9 @@ public class ArrowsManager : MonoBehaviour
             enebledCache[count] = false;
 
             foreach (NearLocation nearLoc in nearLocs)
-            { 
+            {
+                if (nearLoc.GetLocation().blocked == true) continue;
+
                 if (arrow.GetDirection() == nearLoc.GetDirection())
                 {
                     enebledCache[count] = true;

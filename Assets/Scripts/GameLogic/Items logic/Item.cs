@@ -5,15 +5,28 @@ public class Item : Selectable
 {
     [SerializeField] private ItemData data; 
     public Action <ItemData>onTaken;
+    public Action <ItemData>onInfoShowRequested;
+  //  public Action <ItemData>onItemAudioPlayerRequested;
 
-    private void Start()
+    
+
+    public void Init(Inventory inventory,ItemsMonologsDisplayer itemsMonologs,ItemSoundPlayer soundPlayer)
     {
-        GetComponent<SpriteRenderer>().sprite = data.Texture();
-        onTaken+=(FindObjectOfType<Inventory>().AddItem);
-        onTaken+= FindObjectOfType<ItemsMonologsDisplayer>().ShowItemInfo;
+        GetComponent<SpriteRenderer>().sprite = data.GetTexture();
+        onTaken += inventory.AddItem;
+        onInfoShowRequested += itemsMonologs.ShowItemInfo;
+        onTaken += soundPlayer.PlaySound;
     }
 
     public override void Select(float distance = 0)
+    {
+        onTaken?.Invoke(data);
+        onInfoShowRequested?.Invoke(data);
+        onSelectedEvent?.Invoke();
+        Destroy(gameObject);
+    }
+
+    public void SelectWithoutInfo(float distance = 0)
     {
         onTaken?.Invoke(data);
         onSelectedEvent?.Invoke();
@@ -24,8 +37,8 @@ public class Item : Selectable
     {
         if (data != null)
         {
-            GetComponent<SpriteRenderer>().sprite = data.Texture();
-            GetComponent<BoxCollider>().size = new Vector3(data.Texture().bounds.size.x, data.Texture().bounds.size.y,0.2f);
+            GetComponent<SpriteRenderer>().sprite = data.GetTexture();
+            GetComponent<BoxCollider>().size = new Vector3(data.GetTexture().bounds.size.x, data.GetTexture().bounds.size.y,0.2f);
         }
 
     }

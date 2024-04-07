@@ -14,8 +14,8 @@ public class NPC : Location,ITalkable
 
     private TaskHandler taskHandler;
     private EventHandler eventHandler;
-    [SerializeField]bool waitingForTaskDone;
-    [SerializeField] private bool talkBarrier;
+    [SerializeField]bool waitingForTaskDone; 
+    [SerializeField] private bool disableOnStart;
 
     [SerializeField] NPCSound sound;
   
@@ -35,10 +35,11 @@ public class NPC : Location,ITalkable
         onDialogDisplayRequested += dialog.StartDialog;
         onCloudUpdateRequested += dialogCloud.SetPositions;
 
-        sprite = GetComponent<SpriteRenderer>();
-        Debug.Log(sprite.material.name);
+        sprite = GetComponent<SpriteRenderer>(); 
         TryGetComponent<TaskHandler>(out taskHandler);
         TryGetComponent<EventHandler>(out eventHandler);
+
+        if (disableOnStart) gameObject.SetActive(false);
          
     }
 
@@ -86,14 +87,11 @@ public class NPC : Location,ITalkable
 
     public override void Select(float distance = 0)
     {  
-        if (IsDialogsEnded()||talkBarrier==true) return; 
+        if (IsDialogsEnded()||blocked==true) return; 
             base.Select();
     } 
 
-    public void SetTalkingBarrier(bool canTalk)
-    {
-        talkBarrier = canTalk;
-    }
+   
 
     public override void Enter()
     {
@@ -106,7 +104,7 @@ public class NPC : Location,ITalkable
 
     public override void EnableOutline()
     {
-        if (IsDialogsEnded()||talkBarrier==true) return;
+        if (IsDialogsEnded()||blocked==true) return;
 
 
         if (!EventSystem.current.IsPointerOverGameObject() && !selected)
@@ -116,7 +114,7 @@ public class NPC : Location,ITalkable
     public override void DisableOutline()
     {  
             sprite.material.SetFloat("_OutlineStrength", 0.00f);
-        Debug.Log("outline zombie");
+ 
 
     }
 

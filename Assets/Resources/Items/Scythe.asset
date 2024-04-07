@@ -22,3 +22,4 @@ MonoBehaviour:
         \u0441\u0442\u043E\u0438\u0442 \u043F\u043E\u0434\u043B\u0430\u0442\u0430\u0442\u044C..."
   icon: {fileID: 21300000, guid: 74f5ed8c88d407e46bc9e0be727c6f4c, type: 3}
   texture: {fileID: 21300000, guid: 4067db8a515e30b4b8aaa90b5b7ada25, type: 3}
+  sound: 2

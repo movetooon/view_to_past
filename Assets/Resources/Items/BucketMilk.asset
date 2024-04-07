@@ -16,8 +16,10 @@ MonoBehaviour:
   playerDescription:
     replics:
     - eventsCount: 0
+      emotion: 
       isPlayer: 0
       text: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E, \u0442\u0435\u043F\u0435\u0440\u044C
         \u0443 \u043C\u0435\u043D\u044F \u0432\u0435\u0434\u0440\u043E \u0441 \u043C\u043E\u043B\u043E\u043A\u043E\u043C. "
   icon: {fileID: 21300000, guid: 8570f1a731738e24fa49e90e8892a5cb, type: 3}
   texture: {fileID: 21300000, guid: 7344466f45ef80442b7ffa433c0a1132, type: 3}
+  sound: 4

@@ -16,6 +16,7 @@ MonoBehaviour:
   playerDescription:
     replics:
     - eventsCount: 0
+      emotion: 
       isPlayer: 0
       text: "\u041E\u0431\u044B\u0447\u043D\u043E\u0435 \u0432\u0435\u0434\u0440\u043E
         \u0431\u0435\u0437 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438 \u0432\u043D\u0443\u0442\u0440\u0438.
@@ -24,3 +25,4 @@ MonoBehaviour:
         \u0437\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u044C."
   icon: {fileID: 21300000, guid: 3d56cbd7a507b554b90f584ac3726fc4, type: 3}
   texture: {fileID: 21300000, guid: 7344466f45ef80442b7ffa433c0a1132, type: 3}
+  sound: 1

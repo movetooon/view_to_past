@@ -9,8 +9,11 @@ using UnityEngine.Rendering;
 public class Location : Selectable
 {
     [SerializeField] private Transform view;
+    public bool blocked;
     [SerializeField] protected List<NearLocation> nearLocations;
     [SerializeField] public List<Transform> mustIntersectDuringMoving=new List<Transform>();
+
+    
 
     [SerializeField] private UnityEvent onEnteredEvent; 
   
@@ -19,7 +22,7 @@ public class Location : Selectable
     public Action onEntered;
     public Action<Location> onSelected;
  
-    /*
+     
     private void OnValidate()
     { 
         if (view == null)
@@ -33,7 +36,7 @@ public class Location : Selectable
             mustIntersectDuringMoving=new List<Transform>() { view };
         }
     }
-    */
+    
     /*
 
     private void Init()
@@ -56,6 +59,18 @@ public class Location : Selectable
     public Transform GetView() => view; 
     public List<NearLocation> GetNearLocations() => nearLocations;
 
+
+    public override void Select(float distance = 0)
+    {
+        if (blocked == true) return;
+
+        if (selected == false && distance < maxViewDistance)
+        {
+            onDisableClickingRequested?.Invoke();
+            onSelected?.Invoke(this);
+            selected = true;
+        }
+    }
     public virtual void Enter()
     {
         onLocationsUpdateRequested?.Invoke(nearLocations); 
@@ -63,18 +78,18 @@ public class Location : Selectable
         onEnteredEvent?.Invoke();
     }
 
-    public override void Select(float distance = 0)
+    
+    public void SetBlocked(bool block)
     {
-        if (selected == false&&distance<maxViewDistance)
-        {
-            onDisableClickingRequested?.Invoke();
-            onSelected?.Invoke(this);
-            selected = true;
-        }
+        blocked = block;
     }
 
-    public override void Unselect() => base.Unselect();  
-    public override void EnableOutline() => base.EnableOutline(); 
+    public override void Unselect() => base.Unselect();
+    public override void EnableOutline()
+    {
+        if (blocked == true) return;
+        base.EnableOutline();
+    }
     public virtual void OnMouseExit() => base.DisableOutline();
 
 
@@ -85,6 +100,7 @@ public class NearLocation
 {
     [SerializeField] Location location;
     [SerializeField] Direction direction;
+    
 
     public Location GetLocation() => location; 
     public Direction GetDirection() => direction; 

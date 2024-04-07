@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SnailTask : GameTask
 {
-    [SerializeField] snailRace race;
+    [SerializeField] SnailRace race;
     
     public override void Init()
     {  

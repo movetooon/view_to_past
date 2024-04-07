@@ -228,6 +228,7 @@ MonoBehaviour:
   bookmarkName: {fileID: 5330906662011475114}
   note: {fileID: 0}
   bookmarkText: 
+  clickSound: {fileID: 8300000, guid: ad8e1f75ed8e05149b6cd8a40782f0a2, type: 3}
 --- !u!114 &1389943932743348548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +280,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Bookmark, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
