@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine; 
 
 [RequireComponent(typeof(Animator))]
 public class DialogCloud : MonoBehaviour

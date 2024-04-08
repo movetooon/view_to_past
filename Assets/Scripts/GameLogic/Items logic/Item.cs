@@ -1,21 +1,24 @@
 using System; 
-using UnityEngine; 
-
+using UnityEngine;
+using UnityEngine.EventSystems;
 public class Item : Selectable
 {
     [SerializeField] private ItemData data; 
     public Action <ItemData>onTaken;
     public Action <ItemData>onInfoShowRequested;
-  //  public Action <ItemData>onItemAudioPlayerRequested;
+    private SpriteRenderer sprite;
+    //  public Action <ItemData>onItemAudioPlayerRequested;
 
-    
+
 
     public void Init(Inventory inventory,ItemsMonologsDisplayer itemsMonologs,ItemSoundPlayer soundPlayer)
     {
+        
         GetComponent<SpriteRenderer>().sprite = data.GetTexture();
         onTaken += inventory.AddItem;
         onInfoShowRequested += itemsMonologs.ShowItemInfo;
         onTaken += soundPlayer.PlaySound;
+        TryGetComponent<SpriteRenderer>(out sprite);
     }
 
     public override void Select(float distance = 0)
@@ -48,9 +51,19 @@ public class Item : Selectable
         base.InvokeEvent();
     }
 
-    public override void EnableOutline() => base.EnableOutline(); 
+    public override void EnableOutline()
+    { 
+         
+        if (!EventSystem.current.IsPointerOverGameObject() && !selected)
+            sprite.material.SetFloat("_OutlineStrength", 0.04f);
+        // base.EnableOutline();
+    }
 
     public void OnMouseExit()=>base.DisableOutline();
-     
 
+    public override void DisableOutline()
+    {
+        sprite.material.SetFloat("_OutlineStrength", 0.00f); 
+
+    }
 }

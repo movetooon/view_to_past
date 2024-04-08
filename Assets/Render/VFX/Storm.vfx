@@ -269,7 +269,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614829}
   - {fileID: 8926484042661614866}
   - {fileID: 8926484042661615134}
-  m_UIPosition: {x: 842.4761, y: 784.55804}
+  m_UIPosition: {x: 841, y: 785}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -304,7 +304,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614615}
   - {fileID: 8926484042661614619}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614614}
   m_MasterData:
@@ -313,7 +313,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":3.6874237060546877,"y":3.0518534183502199,"z":2.478353977203369}}'
+      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":27.600000381469728,"y":24.700000762939454,"z":55.099998474121097}}'
     m_Space: 0
   m_Property:
     name: bounds
@@ -476,7 +476,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614621}
   - {fileID: 8926484042661614622}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614614}
   m_MasterData:
@@ -12001,7 +12001,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615201}
   - {fileID: 8926484042661615205}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661615200}
   m_MasterData:
@@ -12010,7 +12010,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":3.6874237060546877,"y":3.0518534183502199,"z":2.478353977203369}}'
+      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":22.440000534057618,"y":20.030000686645509,"z":35.20000076293945}}'
     m_Space: 0
   m_Property:
     name: bounds
@@ -12038,7 +12038,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615203}
   - {fileID: 8926484042661615204}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661615200}
   m_MasterData:
@@ -15122,7 +15122,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615343}
   - {fileID: 8926484042661615347}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661615342}
   m_MasterData:
@@ -15131,7 +15131,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":3.6874237060546877,"y":3.0518534183502199,"z":2.478353977203369}}'
+      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":54.900001525878909,"y":64.4000015258789,"z":35.93000030517578}}'
     m_Space: 0
   m_Property:
     name: bounds
@@ -18469,7 +18469,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615619}
   - {fileID: 8926484042661615623}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661615618}
   m_MasterData:
@@ -18478,7 +18478,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":3.6874237060546877,"y":3.0518534183502199,"z":2.478353977203369}}'
+      m_SerializableObject: '{"center":{"x":-0.08967018127441406,"y":0.39300286769866946,"z":0.19125854969024659},"size":{"x":40.7400016784668,"y":43.459999084472659,"z":35.79999923706055}}'
     m_Space: 0
   m_Property:
     name: bounds

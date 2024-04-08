@@ -14,9 +14,10 @@ public class MonologHandler : Location
     private bool played;
     public Action<Monolog,EventHandler> onMonologDisplayRequested;
     public Action<List<NearLocation>> onArrowUpdateRequest;
+    
 
     public void Init(Player player, MonologDisplayer monolog, ArrowsManager arrowsManager)
-    {
+    { 
         onMonologDisplayRequested += monolog.StartShowingMonolog;
         onSelected += player.GetState<IdleState>().MoveToNextLocation;
         //onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
@@ -24,27 +25,24 @@ public class MonologHandler : Location
         onEntered += player.EnterIn<InactionState>;
         onEntered += arrowsManager.DisableAllArrows;
         onArrowUpdateRequest += arrowsManager.UpdateArrowsCache;
-
-       
-        
-
-        onEntered += player.EnterIn<InactionState>;
-         onEntered += arrowsManager.DisableAllArrows;
+         
+         
 
         TryGetComponent<EventHandler>(out eventHandler);
     }
 
     public override void Enter()
     {
-        selected = true;
-        if (playOnce == true && played) return;
-         
+         selected = true;
+          
+
+        onArrowUpdateRequest?.Invoke(nearLocations);
         Monolog newMonolog = DialogStorage.GetMonologByName(monologName);
         onMonologDisplayRequested?.Invoke(newMonolog,eventHandler); 
         played = true;
        
-         
-        onLocationsUpdateRequested?.Invoke(nearLocations);
+        if(playOnce==true)blocked = true;
+          
         onEntered?.Invoke();
 
 

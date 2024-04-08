@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Collections; 
 using TMPro; 
-using UnityEngine;
-using UnityEngine.Video;
+using UnityEngine; 
 
 public class DialogDisplayer : MonologDisplayer
 { 
@@ -12,18 +9,23 @@ public class DialogDisplayer : MonologDisplayer
     [SerializeField] private DialogCloud characterPanel;
 
     [SerializeField] private AudioSource soundPlayer;
+    
 
     ITalkable currentSpeaker = null;
 
     Action  onDialogEnded;
     Action  onDialogStarted;
 
-    private void Start()
-    {  
-        onDialogStarted += FindObjectOfType<ArrowsManager>().DisableAllArrows;
+     
 
-        onDialogEnded += FindObjectOfType<Player>().EnterIn<IdleState>;
-        onDialogEnded += FindObjectOfType<ArrowsManager>().ReUpdateArrows;
+    public void Init(ArrowsManager arrowsManager, Book book,Player player)
+    {
+        onDialogStarted += arrowsManager.DisableAllArrows;
+        onDialogStarted += book.DisableDiaryButton;
+
+        onDialogEnded += player.EnterIn<IdleState>;
+        onDialogEnded += arrowsManager.ReUpdateArrows;
+        onDialogEnded += book.EnableDiaryButton;
     }
 
     public void StartDialog(Dialog dialog,EventHandler eventHandler, ITalkable speaker,NPCSound npcSound)
@@ -65,21 +67,30 @@ public class DialogDisplayer : MonologDisplayer
             
 
             ShowReplic(currentSpeakerContainer, replic.text);
+
+            bool invoked = false;
             
-            if (replic.eventsCount > 0)
-            {
+            if (replic.eventsCount > 0 && replic.onEnd==false)
+            { 
                 eventHandler?.InvokeEvents(replic.eventsCount);
+                invoked = true;
+
             }
 
             yield return new WaitUntil(() => CanMoveToNextReplic(replic.text,currentSpeakerContainer));
-           
-            
+
+            if (invoked==false)
+            {
+                eventHandler?.InvokeEvents(replic.eventsCount);
+            }
         }
 
 
         EndDialog();
 
     }
+
+     
 
     public void EndDialog()
     {

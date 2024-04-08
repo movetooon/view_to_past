@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine; 
+using UnityEngine.UI;
 
 
 public class Book : MonoBehaviour
@@ -18,11 +18,12 @@ public class Book : MonoBehaviour
     [SerializeField] private TMP_Text notesText;
     [SerializeField] public List<Bookmark> bookmarks;
     [SerializeField] private RectTransform bookmarkPanel;
-    [SerializeField] private Animator diaryButton;
+    [SerializeField] private Animator diaryButtonAnim;
 
     public Bookmark lastbookmark;
     [SerializeField] private AudioSource audioPlayer;
     [SerializeField] private AudioClip openSound;
+    [SerializeField] private Button diaryButton;
 
 
     public void Init(Player player, ArrowsManager arrowsManager)
@@ -38,6 +39,7 @@ public class Book : MonoBehaviour
         lastbookmark = bookmarks.Last();
 
         audioPlayer = GetComponent<AudioSource>();
+        diaryButton= diaryButtonAnim.GetComponent<Button>();
         InitBookmarks();
 
     }
@@ -58,8 +60,18 @@ public class Book : MonoBehaviour
         {
             bookmark.Init(this);
         }
+        
     }
 
+    public void DisableDiaryButton()
+    {
+        diaryButton.interactable = false;
+    }
+
+    public void  EnableDiaryButton()
+    {
+        diaryButton.interactable = true;
+    }
 
     public void SetNotesText(string text)
     {
@@ -68,7 +80,7 @@ public class Book : MonoBehaviour
 
     public void UpdateLastBookmarkText(string addText)
     {
-        diaryButton.SetTrigger("write");
+        diaryButtonAnim.SetTrigger("write"); 
         lastbookmark.UpdateText(addText);
     }
 
@@ -91,6 +103,7 @@ public class Book : MonoBehaviour
 
     public void Open()  
     {
+        Debug.Log("Hello from book opening");
         PlaySound(openSound);
         onOpened?.Invoke();
     }

@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Bson;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +28,7 @@ public class NPC : Location,ITalkable
         onSelected += player.GetState<IdleState>().MoveToNextLocation;
 
         onEntered += player.EnterIn<InactionState>;
-        onEntered += arrowsManager.DisableAllArrows;
+        onEntered += arrowsManager.DisableAllArrows; 
         onArrowUpdateRequest += arrowsManager.UpdateArrowsCache;
 
         onDialogDisplayRequested += dialog.StartDialog;
@@ -38,6 +37,7 @@ public class NPC : Location,ITalkable
         sprite = GetComponent<SpriteRenderer>(); 
         TryGetComponent<TaskHandler>(out taskHandler);
         TryGetComponent<EventHandler>(out eventHandler);
+        disableDiaryButton = true;
 
         if (disableOnStart) gameObject.SetActive(false);
          
@@ -113,8 +113,7 @@ public class NPC : Location,ITalkable
     }
     public override void DisableOutline()
     {  
-            sprite.material.SetFloat("_OutlineStrength", 0.00f);
- 
+            sprite.material.SetFloat("_OutlineStrength", 0.00f); 
 
     }
 

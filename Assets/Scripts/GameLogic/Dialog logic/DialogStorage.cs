@@ -82,6 +82,7 @@ public struct Monolog
 [System.Serializable]
 public struct Replic
 {
+    public bool onEnd;
     public int eventsCount;
     public string emotion;
     public bool isPlayer;

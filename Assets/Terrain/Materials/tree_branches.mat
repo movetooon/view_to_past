@@ -32,11 +32,11 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _alphaCliping: 0.8
-    - _distortionForce: 0.0193
+    - _distortionForce: 0.1
     - _noiseScale: 5
     - _smoothness: 0.1
     m_Colors:
-    - _wobleSpeed: {r: 0.0465, g: 0, b: 0, a: 0}
+    - _wobleSpeed: {r: 0.02, g: 0.02, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7605469420055747204
 MonoBehaviour:

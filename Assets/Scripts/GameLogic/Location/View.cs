@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+ 
 using UnityEngine;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class View : MonoBehaviour
 {
     [SerializeField] private bool checkVeiw;
     [SerializeField] private CameraInfo camInfo;
     private MeshRenderer mesh;
 
-    
+    /*
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -22,7 +21,7 @@ public class View : MonoBehaviour
         }
     }
 #endif
- 
+ */
 
     private void Start()
     {

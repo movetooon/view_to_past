@@ -1,8 +1,7 @@
 using System; 
 using System.Collections.Generic; 
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Rendering;
+using UnityEngine.Events; 
 
 [System.Serializable] 
 
@@ -10,6 +9,7 @@ public class Location : Selectable
 {
     [SerializeField] private Transform view;
     public bool blocked;
+    public bool disableDiaryButton;
     [SerializeField] protected List<NearLocation> nearLocations;
     [SerializeField] public List<Transform> mustIntersectDuringMoving=new List<Transform>();
 
@@ -37,12 +37,22 @@ public class Location : Selectable
         }
     }
     
-    /*
+     
 
-    private void Init()
-    {
-        SetListeners(); 
+     public void Init(Player player,ArrowsManager arrowsManager,Book book)
+     {
+        onSelected += player.GetState<IdleState>().MoveToNextLocation;
+        onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
+        onLocationsUpdateRequested += arrowsManager.UpdateArrows;
+
+        onEntered += player.EnterIn<IdleState>;
+        onEntered += arrowsManager.EnableClickingAllArrows; 
+
+        if(disableDiaryButton)
+        onEntered += book.DisableDiaryButton;
+        else onEntered += book.EnableDiaryButton;
     }
+    /*
 
     public virtual void SetListeners()
     {

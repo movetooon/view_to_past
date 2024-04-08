@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Threading.Tasks;
-using TMPro;
-using UnityEngine;
-using static UnityEngine.Video.VideoPlayer;
+using System.Collections; 
+using TMPro; 
+using UnityEngine; 
 
 public class MonologDisplayer : MonoBehaviour
 {
@@ -39,9 +37,22 @@ public class MonologDisplayer : MonoBehaviour
         {
             ShowReplic(replic.text, delay);
 
-            if (replic.eventsCount > 0) eventHandler?.InvokeEvents(replic.eventsCount);
+            bool invoked=false;
+            if (replic.eventsCount > 0 && replic.onEnd == false)
+            {
+                eventHandler?.InvokeEvents(replic.eventsCount);
+                invoked = true;
+
+            }
 
             yield return new WaitUntil(() => CanMoveToNextReplic(replic.text));
+
+            if (invoked == false)
+            {
+                eventHandler?.InvokeEvents(replic.eventsCount);
+            }
+             
+            
             yield return new WaitForSeconds(delayBetweenReplics);
         }
 

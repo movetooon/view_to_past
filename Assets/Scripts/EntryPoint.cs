@@ -31,9 +31,12 @@ public class EntryPoint : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Hello from entry point");
+
         book.gameObject.SetActive(true);
         DialogStorage.SetDialogsForCurrentLevel("BeforeRevolution");
         DialogStorage.SetMonologsForCurrentLevel("BeforeRevolution");
+        dialog.Init(arrowsManager, book, player);
 
         taskHandler = FindObjectsByType<TaskHandler>(FindObjectsSortMode.None);
         eventHandler = FindObjectsByType<EventHandler>(FindObjectsSortMode.None);
@@ -99,12 +102,7 @@ public class EntryPoint : MonoBehaviour
     {
         foreach (Location loc in locations)
         {
-            loc.onSelected += player.GetState<IdleState>().MoveToNextLocation;
-            loc.onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
-            loc.onLocationsUpdateRequested += arrowsManager.UpdateArrows;
-
-            loc.onEntered += player.EnterIn<IdleState>;
-            loc.onEntered += arrowsManager.EnableClickingAllArrows;
+            loc.Init(player, arrowsManager,book);
         }
     }
 
