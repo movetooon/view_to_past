@@ -36,10 +36,11 @@ public class IdleState : State<Player>
             Quaternion.Euler(origRot.eulerAngles + offset * lookingAroundStrength)
             ,0.01f);
 
+
         var hit = UserInput.GetMouseHitOnScreen();
         hit.transform?.GetComponent<Selectable>()?.EnableOutline();
 
-        if (UserInput.GetMouseClick())
+        if ( UserInput.GetMouseClick())   
             hit.transform?.GetComponent<Selectable>()?.Select(Vector3.Distance(hit.transform.position,SM.transform.position));  
     }
  

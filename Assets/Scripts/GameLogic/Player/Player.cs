@@ -18,7 +18,7 @@ public class Player : StateMachine<Player>,IStateMachine
         //currentLocation.Select();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
          UpdateCurrent(); 
         
@@ -30,9 +30,8 @@ public class Player : StateMachine<Player>,IStateMachine
         AddState(new IdleState(this, currentLocation, lookingAroundStrength));
         AddState(new MovingState(this, currentLocation, speedChange, speed));
          
-        
-
-        base.EnterIn<IdleState>();
+         
+        base.EnterIn<InactionState>();
     }
 
 
@@ -40,6 +39,12 @@ public class Player : StateMachine<Player>,IStateMachine
     { 
         base.EnterIn<T>();
     }
+
+    public void EnterInInactionState()
+    {
+        base.EnterIn<InactionState>();
+    }
+
 
 
     public void AddState(State<Player> T)

@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
     private Animator anim;
     private Image selfImage;
 
-    private void Start()
+    public void Init()
     {
         selfImage = GetComponent<Image>();
         anim=GetComponent<Animator>(); 

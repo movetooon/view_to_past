@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a93574116f9bc4da153543dd8858e7, type: 3}
   m_Name: JarHoney
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: "\u0411\u0430\u043D\u043E\u0447\u043A\u0430 \u0441 \u043C\u0451\u0434\u043E\u043C"
   playerDescription:
     replics: []
   icon: {fileID: 21300000, guid: db865bd0c5ebc244bb4fe07ad64dca96, type: 3}
   texture: {fileID: 0}
+  sound: 0

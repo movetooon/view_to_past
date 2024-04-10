@@ -8,6 +8,17 @@ public class ArrowsManager : MonoBehaviour
     private bool[] enebledCache=new bool[4];
 
 
+    public void Init()
+    {
+        foreach(Arrow arrow in arrows)
+        {
+            arrow.gameObject.SetActive(true);
+            arrow.Init();
+            arrow.gameObject.SetActive(false);
+
+        }
+    }
+
     public void DisableAllArrows()
     {
         foreach (var arrow in arrows)

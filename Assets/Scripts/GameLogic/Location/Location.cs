@@ -76,6 +76,7 @@ public class Location : Selectable
 
         if (selected == false && distance < maxViewDistance)
         {
+            EnableOutline();
             onDisableClickingRequested?.Invoke();
             onSelected?.Invoke(this);
             selected = true;

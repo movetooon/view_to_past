@@ -10,6 +10,7 @@ public class WeatherSystem : MonoBehaviour
     [SerializeField] private Vector2 branchesMatSpeed;
     [SerializeField] private float startGrassSpeed;
     [SerializeField] private Material skyMat;
+    [SerializeField] private float startSkyExposure;
     [SerializeField] private Terrain terrain;
     [SerializeField] Color fogNormal;
     [SerializeField] Color fogBad;
@@ -41,9 +42,9 @@ public class WeatherSystem : MonoBehaviour
         terrain.terrainData.wavingGrassAmount = grassLerp;
 
 
-        skyMat.SetFloat("_Exposure", (1.2f - weatherBadness));
-        branchesMat.SetFloat("_distortionForce", weatherBadness * distortionMultiplier + 0.1f);
-        branchesMat.SetVector("_wobleSpeed", branchesMatSpeed * weatherBadness+Vector2.one/50f);
+        skyMat.SetFloat("_Exposure", (startSkyExposure - weatherBadness));
+        //branchesMat.SetFloat("_distortionForce", weatherBadness * distortionMultiplier + 0.1f);
+        branchesMat.SetVector("_wobleSpeed", branchesMatSpeed * weatherBadness+Vector2.one/100f);
 
         RenderSettings.fogColor = Color.Lerp(fogNormal, fogBad, weatherBadness);
     }

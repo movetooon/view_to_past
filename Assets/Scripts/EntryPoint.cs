@@ -33,6 +33,8 @@ public class EntryPoint : MonoBehaviour
     {
         Debug.Log("Hello from entry point");
 
+        arrowsManager.Init();
+        dialogCloud.Init();
         book.gameObject.SetActive(true);
         DialogStorage.SetDialogsForCurrentLevel("BeforeRevolution");
         DialogStorage.SetMonologsForCurrentLevel("BeforeRevolution");

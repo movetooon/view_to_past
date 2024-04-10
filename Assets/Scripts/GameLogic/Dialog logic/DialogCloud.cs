@@ -9,9 +9,10 @@ public class DialogCloud : MonoBehaviour
     [SerializeField] float directionMultiplier;
     public Animator anim { get; private set; }
 
-    private void OnValidate()
+    public void Init()
     {
         anim=GetComponent<Animator>();
+        gameObject.SetActive(false);
     }
 
     public void SetPositions(Transform npcTransform,Vector3 newPosition, float height)

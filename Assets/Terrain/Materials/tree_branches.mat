@@ -10,8 +10,8 @@ Material:
   m_Name: tree_branches
   m_Shader: {fileID: -6465566751694194690, guid: b43d97af55bc723449e0d8eb6a8658ca,
     type: 3}
-  m_Parent: {fileID: 2100000, guid: 6882996378bd4ea4ea3cfec53020890a, type: 2}
-  m_ModifiedSerializedProperties: 6
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -24,19 +24,36 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2DLOD_16a38bcd42ee42f0a0b21473280b694d_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: e616a6c1b36450c4caf67674c0b76daa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Tex:
         m_Texture: {fileID: 2800000, guid: 1d49d1e2d8a2b97478e3e0355dbf3a07, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
+    - _QueueOffset: 0
     - _alphaCliping: 0.8
-    - _distortionForce: 0.1
-    - _noiseScale: 5
+    - _distortionForce: 0.05
+    - _noiseScale: 0.5
     - _smoothness: 0.1
     m_Colors:
-    - _wobleSpeed: {r: 0.02, g: 0.02, b: 0, a: 0}
+    - _wobleSpeed: {r: 0.0567, g: 0.01, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7605469420055747204
 MonoBehaviour:

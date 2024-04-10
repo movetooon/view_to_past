@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 176d09f3c4b54c5468b950b88dae4ba3, type: 3}
+    - {fileID: 2800000, guid: ef63490165788d34d90323b3be1389be, type: 3}
+    - {fileID: 2800000, guid: d59af06ec120a3e4c95a0eacf250b126, type: 3}
+    - {fileID: 2800000, guid: 1a8a32ad7a844204495c6dd9ce087205, type: 3}
+    - {fileID: 2800000, guid: d2f3021b4258d0d45a3776da6f5a26a8, type: 3}
+    - {fileID: 2800000, guid: 201cb3894040b0847ad09e56f137ca03, type: 3}
+    - {fileID: 2800000, guid: cd791ee5247e7ad439ed4fa7db6b6de8, type: 3}
+    - {fileID: 2800000, guid: ebb63d2bad0f3674a9fa9d7ff005f07c, type: 3}
+    - {fileID: 2800000, guid: 1876106d13f717947b5f89f0de2bd896, type: 3}
+    - {fileID: 2800000, guid: b6bb0c184da19f5409228a98b8b05d61, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - ef63490165788d34d90323b3be1389be: 21300000
+    - 176d09f3c4b54c5468b950b88dae4ba3: 21300000
+    - cd791ee5247e7ad439ed4fa7db6b6de8: 21300000
+    - b6bb0c184da19f5409228a98b8b05d61: 21300000
+    - 201cb3894040b0847ad09e56f137ca03: 21300000
+    - d2f3021b4258d0d45a3776da6f5a26a8: -1946710547
+    - d2f3021b4258d0d45a3776da6f5a26a8: 1149779331
+    - d2f3021b4258d0d45a3776da6f5a26a8: 516100962
+    - ebb63d2bad0f3674a9fa9d7ff005f07c: 21300000
+    - 1876106d13f717947b5f89f0de2bd896: 21300000
+    - d59af06ec120a3e4c95a0eacf250b126: 417897101
+    - d59af06ec120a3e4c95a0eacf250b126: 2005084925
+    - d59af06ec120a3e4c95a0eacf250b126: -1100933919
+    - d59af06ec120a3e4c95a0eacf250b126: -1799768506
+    - d59af06ec120a3e4c95a0eacf250b126: 764229091
+    - d59af06ec120a3e4c95a0eacf250b126: -467747477
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: ef63490165788d34d90323b3be1389be, type: 3}
+  - {fileID: 21300000, guid: 176d09f3c4b54c5468b950b88dae4ba3, type: 3}
+  - {fileID: 21300000, guid: cd791ee5247e7ad439ed4fa7db6b6de8, type: 3}
+  - {fileID: 21300000, guid: b6bb0c184da19f5409228a98b8b05d61, type: 3}
+  - {fileID: 21300000, guid: 201cb3894040b0847ad09e56f137ca03, type: 3}
+  - {fileID: -1946710547, guid: d2f3021b4258d0d45a3776da6f5a26a8, type: 3}
+  - {fileID: 1149779331, guid: d2f3021b4258d0d45a3776da6f5a26a8, type: 3}
+  - {fileID: 516100962, guid: d2f3021b4258d0d45a3776da6f5a26a8, type: 3}
+  - {fileID: 21300000, guid: ebb63d2bad0f3674a9fa9d7ff005f07c, type: 3}
+  - {fileID: 21300000, guid: 1876106d13f717947b5f89f0de2bd896, type: 3}
+  - {fileID: 417897101, guid: d59af06ec120a3e4c95a0eacf250b126, type: 3}
+  - {fileID: 2005084925, guid: d59af06ec120a3e4c95a0eacf250b126, type: 3}
+  - {fileID: -1100933919, guid: d59af06ec120a3e4c95a0eacf250b126, type: 3}
+  - {fileID: -1799768506, guid: d59af06ec120a3e4c95a0eacf250b126, type: 3}
+  - {fileID: 764229091, guid: d59af06ec120a3e4c95a0eacf250b126, type: 3}
+  - {fileID: -467747477, guid: d59af06ec120a3e4c95a0eacf250b126, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - player dialog panel
+  - stylus
+  - close bookmark
+  - inventory border
+  - book button
+  - cloud_2
+  - cloud_1
+  - cloud_0
+  - bookmark
+  - item border
+  - interface elemets_4
+  - interface elemets_5
+  - interface elemets_0
+  - interface elemets_1
+  - interface elemets_2
+  - interface elemets_3
+  m_RenderDataMap: {}
+  m_Tag: UI
+  m_IsVariant: 0
