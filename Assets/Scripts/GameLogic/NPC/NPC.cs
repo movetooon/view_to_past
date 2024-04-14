@@ -56,15 +56,16 @@ public class NPC : Location,ITalkable
         if (newDialog.countOfTasks > 0)
         {
             taskHandler?.SetCurrentTasksCount(newDialog.countOfTasks);
+            taskHandler?.SetTaskNames(newDialog.taskNames, newDialog.countOfTasks);
 
-            Debug.Log("there are " + newDialog.countOfTasks + " at " + name + " charachter");
+            Debug.Log("there are " + newDialog.countOfTasks + " tasks at " + name + " charachter");
             StartDisplayingDialog(newDialog, false);
             nextDialogNumber += 2;
 
 
             waitingForTaskDone = true;
         }
-        else if (waitingForTaskDone == true && taskHandler?.checkTasksDone() == false)
+        else if (waitingForTaskDone == true && taskHandler?.CheckTasksDone() == false)
         {
             Debug.Log("tasks are still not done!");
 

@@ -1,5 +1,6 @@
 using System;
-using System.Collections; 
+using System.Collections;
+using System.Collections.Generic;
 using TMPro; 
 using UnityEngine; 
 
@@ -15,6 +16,8 @@ public class DialogDisplayer : MonologDisplayer
 
     Action  onDialogEnded;
     Action  onDialogStarted;
+    Action<List<string>> onTaskAddRequested;
+   
 
      
 
@@ -22,6 +25,7 @@ public class DialogDisplayer : MonologDisplayer
     {
         onDialogStarted += arrowsManager.DisableAllArrows;
         onDialogStarted += book.DisableDiaryButton;
+        onTaskAddRequested += book.AddTask;
 
         onDialogEnded += player.EnterIn<IdleState>;
         onDialogEnded += arrowsManager.ReUpdateArrows;
@@ -37,6 +41,13 @@ public class DialogDisplayer : MonologDisplayer
     {
         currentSpeaker = speaker;
         onDialogStarted?.Invoke();
+
+        try
+        {
+            onTaskAddRequested?.Invoke(dialog.taskNames);
+        }
+        catch (Exception e) { }
+        
         EneblePlayerPanel();
 
         foreach (Replic replic in dialog.replics)

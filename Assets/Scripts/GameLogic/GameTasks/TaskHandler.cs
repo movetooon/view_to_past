@@ -13,16 +13,16 @@ public class TaskHandler : MonoBehaviour
     //private List<bool> taskCache;
     public Action onTasksDone;
 
-    public void Init()
+    public void Init(Book book)
     {
         //taskCache = new List<bool>(Tasks.Count);
         foreach (var task in Tasks)
         {
-            task.Init();
+            task.Init(book);
         }
     }
 
-    public bool checkTasksDone()
+    public bool CheckTasksDone()
     {
         int tasksDone = 0;
         for(int i = doneTasksCount; i < (doneTasksCount + currentTasksCount); i++)
@@ -46,5 +46,13 @@ public class TaskHandler : MonoBehaviour
     public void SetCurrentTasksCount(int tasksCount)
     {
         currentTasksCount= tasksCount;
+    }
+
+    public void SetTaskNames(List<string> names,int count)
+    {
+        for(int i=doneTasksCount; i < (doneTasksCount + count); i++)
+        {
+            Tasks[i].taskName = names[i - doneTasksCount];
+        }
     }
 }

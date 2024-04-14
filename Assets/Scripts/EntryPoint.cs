@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
+    public string levelName = "BeforeRevolution";
+
     [SerializeField] Player player;
     Location[] locations;
     TaskHandler[] taskHandler;
@@ -36,8 +38,8 @@ public class EntryPoint : MonoBehaviour
         arrowsManager.Init();
         dialogCloud.Init();
         book.gameObject.SetActive(true);
-        DialogStorage.SetDialogsForCurrentLevel("BeforeRevolution");
-        DialogStorage.SetMonologsForCurrentLevel("BeforeRevolution");
+        DialogStorage.SetDialogsForCurrentLevel(levelName);
+        DialogStorage.SetMonologsForCurrentLevel(levelName);
         dialog.Init(arrowsManager, book, player);
 
         taskHandler = FindObjectsByType<TaskHandler>(FindObjectsSortMode.None);
@@ -73,7 +75,7 @@ public class EntryPoint : MonoBehaviour
     {
         foreach (var handler in taskHandler)
         {
-            handler.Init();
+            handler.Init(book);
         }
     }
 

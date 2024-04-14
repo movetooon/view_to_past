@@ -7,6 +7,11 @@
             "dialogs":
             [ 
                 {
+                    "taskNames":
+                    [
+                        "Найти инструменты",
+                        "Принести мёд от бабушки"
+                    ],
                 "countOfTasks":2,
                 "replics":
                 [
@@ -621,7 +626,7 @@
                 
             ]
         },
-    "GuyAtcart":
+    "GuyAtart":
         {    
             "dialogs":
                 [   

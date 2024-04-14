@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,11 @@ using UnityEngine;
 public class SnailTask : GameTask
 {
     [SerializeField] SnailRace race;
-    
-    public override void Init()
-    {  
+    Action<string> onRemoveTaskRequested; 
 
+    public override void Init(Book book)
+    {
+        onRemoveTaskRequested += book.RemoveTask;
     }
 
     public override bool CheckDone()
@@ -18,6 +20,6 @@ public class SnailTask : GameTask
 
     public override void Complete()
     {
-        
+        onRemoveTaskRequested?.Invoke(taskName);
     }
 }

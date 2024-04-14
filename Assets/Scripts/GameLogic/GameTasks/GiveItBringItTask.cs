@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,15 @@ using UnityEngine;
 [System.Serializable]
 public class GiveItBringItTask : GameTask
 {
-    [SerializeField] private List<ItemData> itemsToBring; 
+    [SerializeField] private List<ItemData> itemsToBring;  
     Inventory checkingInventory;
-     
+    Action<string> onRemoveTaskRequested; 
+
     //kostil'
-    public override void Init()
+    public override void Init(Book book)
     {
         checkingInventory = GameObject.FindObjectOfType<Inventory>();
+        onRemoveTaskRequested += book.RemoveTask;
     }
 
     public override bool CheckDone()
@@ -41,5 +44,6 @@ public class GiveItBringItTask : GameTask
        {
            checkingInventory.RemoveItem(item);
        }
+       onRemoveTaskRequested?.Invoke(taskName);
     }
 }

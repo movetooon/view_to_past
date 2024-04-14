@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FullScreen Color Limit
   m_EditorClassIdentifier: 
   m_Active: 1
-  injectionPoint: 550
+  injectionPoint: 600
   fetchColorBuffer: 1
   requirements: 0
   passMaterial: {fileID: 2100000, guid: 7569aa5b7b4424d4e8e0bb803c102b76, type: 2}

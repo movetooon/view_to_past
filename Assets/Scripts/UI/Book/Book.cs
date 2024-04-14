@@ -20,6 +20,10 @@ public class Book : MonoBehaviour
     [SerializeField] private RectTransform bookmarkPanel;
     [SerializeField] private Animator diaryButtonAnim;
 
+    Dictionary<string, TMP_Text> tasks=new Dictionary<string, TMP_Text>();
+    [SerializeField] private TMP_Text taskPrefab;
+    [SerializeField] private RectTransform taskPanel;
+
     public Bookmark lastbookmark;
     [SerializeField] private AudioSource audioPlayer;
     [SerializeField] private AudioClip openSound;
@@ -63,14 +67,38 @@ public class Book : MonoBehaviour
         
     }
 
+    public void AddTask(List<string> taskNames)
+    {
+        for(int i = 0; i < taskNames.Count; i++)
+        {
+            TMP_Text newTask = Instantiate(taskPrefab, parent: taskPanel);
+            newTask.text = taskNames[i];
+            tasks.Add(taskNames[i], newTask);
+        }
+       
+    }
+
+    public void RemoveTask(string taskName)
+    {
+        TMP_Text toDestroy;
+        tasks.TryGetValue(taskName, out toDestroy);
+         
+       
+        tasks.Remove(taskName);
+        Destroy(toDestroy);
+    }
+
     public void DisableDiaryButton()
     {
-        diaryButton.interactable = false;
+        diaryButton.image.raycastTarget = false;
+        //diaryButton.interactable = false;
     }
 
     public void  EnableDiaryButton()
     {
-        diaryButton.interactable = true;
+        diaryButton.image.raycastTarget = true;
+
+        //diaryButton.interactable = true;
     }
 
     public void SetNotesText(string text)

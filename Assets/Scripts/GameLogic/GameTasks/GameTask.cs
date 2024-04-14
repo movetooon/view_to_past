@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public abstract class GameTask:MonoBehaviour   
 {
-    public abstract void Init();
+    public string taskName;
+    public abstract void Init(Book book);
     public abstract bool CheckDone();
     public abstract void Complete();
      

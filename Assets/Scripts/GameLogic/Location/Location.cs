@@ -43,10 +43,12 @@ public class Location : Selectable
      {
         onSelected += player.GetState<IdleState>().MoveToNextLocation;
         onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
+        onDisableClickingRequested += book.DisableDiaryButton;
         onLocationsUpdateRequested += arrowsManager.UpdateArrows;
 
         onEntered += player.EnterIn<IdleState>;
-        onEntered += arrowsManager.EnableClickingAllArrows; 
+        onEntered += book.EnableDiaryButton;
+        onEntered += arrowsManager.EnableClickingAllArrows;  
 
         if(disableDiaryButton)
         onEntered += book.DisableDiaryButton;
