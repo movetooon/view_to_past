@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a93574116f9bc4da153543dd8858e7, type: 3}
+  m_Name: Gear
+  m_EditorClassIdentifier: 
+  itemName: "\u0428\u0435\u0441\u0442\u0435\u0440\u0451\u043D\u043A\u0430"
+  playerDescription:
+    replics:
+    - onEnd: 0
+      eventsCount: 0
+      emotion: 
+      isPlayer: 0
+      text: "\u043A\u043B\u0430\u0441\u0441\u043D\u0430\u044F \u0448\u0435\u0441\u0442\u0435\u0440\u0435\u043D\u043A\u0430"
+  icon: {fileID: 21300000, guid: 7f8ab4079e123d945a65dc5342c9dfef, type: 3}
+  texture: {fileID: 21300000, guid: 7f8ab4079e123d945a65dc5342c9dfef, type: 3}
+  sound: 1

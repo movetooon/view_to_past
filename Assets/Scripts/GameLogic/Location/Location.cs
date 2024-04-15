@@ -15,7 +15,7 @@ public class Location : Selectable
 
     
 
-    [SerializeField] private UnityEvent onEnteredEvent; 
+    [SerializeField] protected UnityEvent onEnteredEvent; 
   
     public Action<List<NearLocation>> onLocationsUpdateRequested;
     public Action onDisableClickingRequested;

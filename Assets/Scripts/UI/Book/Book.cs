@@ -72,7 +72,7 @@ public class Book : MonoBehaviour
         for(int i = 0; i < taskNames.Count; i++)
         {
             TMP_Text newTask = Instantiate(taskPrefab, parent: taskPanel);
-            newTask.text = taskNames[i];
+            newTask.text = "•" + taskNames[i];
             tasks.Add(taskNames[i], newTask);
         }
        
@@ -85,7 +85,7 @@ public class Book : MonoBehaviour
          
        
         tasks.Remove(taskName);
-        Destroy(toDestroy);
+        Destroy(toDestroy.gameObject);
     }
 
     public void DisableDiaryButton()

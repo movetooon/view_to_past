@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -56,6 +57,8 @@ public class NPC : Location,ITalkable
         if (newDialog.countOfTasks > 0)
         {
             taskHandler?.SetCurrentTasksCount(newDialog.countOfTasks);
+           
+            if(newDialog.taskNames?.Count!=0)
             taskHandler?.SetTaskNames(newDialog.taskNames, newDialog.countOfTasks);
 
             Debug.Log("there are " + newDialog.countOfTasks + " tasks at " + name + " charachter");
@@ -98,6 +101,7 @@ public class NPC : Location,ITalkable
     {
         onEntered?.Invoke();
         onArrowUpdateRequest?.Invoke(nearLocations);
+        onEnteredEvent?.Invoke();
 
         StartTalking();
 

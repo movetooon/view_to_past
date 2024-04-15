@@ -248,7 +248,13 @@
     {    
             "dialogs":
             [   
+                
                 {
+                    "taskNames":
+                    [
+                        "Отдать бабушке ведро воды" 
+                         
+                    ],
                     "countOfTasks":1,
                     "replics":
                     [
@@ -390,6 +396,11 @@
             "dialogs":
             [   
                 {
+                    "taskNames":
+                    [
+                        "Найти верёвку" 
+                         
+                    ],
                     "countOfTasks":1,
                     "replics":
                     [
@@ -525,6 +536,11 @@
             "dialogs":
                 [   
                     {
+                        "taskNames":
+                        [
+                            "Найти волокно" 
+                             
+                        ],
                     "countOfTasks":1,
                     "replics":
                     [
@@ -751,6 +767,11 @@
             "dialogs":
             [   
                 {
+                    "taskNames":
+                    [
+                        "Отдать шляпку фермеру" 
+                         
+                    ],
                     "countOfTasks":1,
                     "replics":
                     [
@@ -855,7 +876,13 @@
     {    
             "dialogs":
             [   
+                
                 {
+                    "taskNames":
+                    [
+                        "Отдать ботинок фермеру" 
+                         
+                    ],
                     "countOfTasks":1,
                     "replics":
                     [
