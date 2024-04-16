@@ -6,6 +6,7 @@ using UnityEngine;
 public class DialogCloud : MonoBehaviour
 {
     [SerializeField] Transform[] smallClouds;  
+    [SerializeField] Transform  bigCloud;  
     [SerializeField] float directionMultiplier;
     public Animator anim { get; private set; }
 
@@ -19,6 +20,7 @@ public class DialogCloud : MonoBehaviour
     {
         transform.position = newPosition;
         transform.rotation = npcTransform.rotation;
+        bigCloud.LookAt(Camera.main.transform);
 
         for(int i = 0; i < smallClouds.Length; i++)
         {
@@ -32,7 +34,7 @@ public class DialogCloud : MonoBehaviour
                 directionMultiplier * ((float)(i+1)/smallClouds.Length );
  
 
-            smallClouds[i].position = newCloudPosition;
+            smallClouds[i].position = newCloudPosition; 
         }
     }
 }

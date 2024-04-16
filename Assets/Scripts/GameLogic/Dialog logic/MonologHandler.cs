@@ -4,45 +4,56 @@ using UnityEngine;
 
 public class MonologHandler : Location
 {
-    [SerializeField] string monologName;
-    [SerializeField] public bool playOnEnable;
+    [SerializeField] string monologName; 
     [SerializeField] public bool playOnce;
      
-    public EventHandler eventHandler;
+    [HideInInspector] public EventHandler eventHandler;
     
 
     private bool played;
     public Action<Monolog,EventHandler> onMonologDisplayRequested;
-    public Action<List<NearLocation>> onArrowUpdateRequest;
+    public Action<List<NearLocation>> onArrowsCacheUpdateRequest;
+    public Action<List<NearLocation>> onArrowsUpdateRequest;
+ 
+    public Action onReturnToNormal;
     
 
-    public void Init(Player player, MonologDisplayer monolog, ArrowsManager arrowsManager)
+    public void Init(Player player, MonologDisplayer monolog, ArrowsManager arrowsManager, Book book)
     { 
         onMonologDisplayRequested += monolog.StartShowingMonolog;
         onSelected += player.GetState<IdleState>().MoveToNextLocation;
         //onDisableClickingRequested += arrowsManager.DisableClickingAllArrows;
+        onReturnToNormal += player.EnterIn<IdleState>;
+        onReturnToNormal += arrowsManager.EnableClickingAllArrows;
+        onReturnToNormal += book.EnableDiaryButton;
 
         onEntered += player.EnterIn<InactionState>;
         onEntered += arrowsManager.DisableAllArrows;
-        onArrowUpdateRequest += arrowsManager.UpdateArrowsCache;
+        onArrowsCacheUpdateRequest += arrowsManager.UpdateArrowsCache;
+        onArrowsUpdateRequest += arrowsManager.UpdateArrows;
          
-         
-
+          
         TryGetComponent<EventHandler>(out eventHandler);
     }
 
     public override void Enter()
     {
-         selected = true;
-          
+         //selected = true;
+       
 
-        onArrowUpdateRequest?.Invoke(nearLocations);
+        if (playOnce && played)
+        {
+            onArrowsUpdateRequest?.Invoke(nearLocations);
+            onReturnToNormal?.Invoke();
+            
+            return;
+        }
+
+        onArrowsCacheUpdateRequest?.Invoke(nearLocations);
         Monolog newMonolog = DialogStorage.GetMonologByName(monologName);
         onMonologDisplayRequested?.Invoke(newMonolog,eventHandler); 
         played = true;
-       
-        if(playOnce==true)blocked = true;
-          
+         
         onEntered?.Invoke();
 
 

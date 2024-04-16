@@ -22,7 +22,7 @@ public class Location : Selectable
     public Action onEntered;
     public Action<Location> onSelected;
  
-     
+     /*
     private void OnValidate()
     { 
         if (view == null)
@@ -36,7 +36,7 @@ public class Location : Selectable
             mustIntersectDuringMoving=new List<Transform>() { view };
         }
     }
-    
+    */
      
 
      public void Init(Player player,ArrowsManager arrowsManager,Book book)

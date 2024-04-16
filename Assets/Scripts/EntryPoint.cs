@@ -123,7 +123,7 @@ public class EntryPoint : MonoBehaviour
         foreach (MonologHandler mh in monologHandlers)
         {
 
-            mh.Init(player, monolog, arrowsManager);
+            mh.Init(player, monolog, arrowsManager,book);
              
         }
     }

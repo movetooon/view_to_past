@@ -38,9 +38,10 @@ public class Forge : MonoBehaviour
     {
         foreach (Gear gear in gearsToForge)
         {
-            gear.gameObject.SetActive(true);
+            //gear.gameObject.SetActive(true);
             gear.Init();
-            gear.gameObject.SetActive(false);
+            
+            //gear.gameObject.SetActive(false);
         }
     }
 
@@ -56,6 +57,7 @@ public class Forge : MonoBehaviour
 
     public void StartHeating()
     {
+        Debug.Log("heating");
         StartCoroutine(Heating());
         
     }
@@ -73,6 +75,7 @@ public class Forge : MonoBehaviour
         currentGear = gearsToForge[currentGearIndex];
         currentGear.gameObject.SetActive(true);
         currentGear.transform.position=gearMechPos.position;
+        currentGear.transform.rotation=gearMechPos.rotation;
         while (intensity < maxIntensity)
         {
             if (Input.GetMouseButtonDown(0))
@@ -94,6 +97,7 @@ public class Forge : MonoBehaviour
     {
 
         currentGear.transform.position = gearAnvilPos.position;
+        currentGear.transform.rotation = gearAnvilPos.rotation;
 
         while (intensity > 0)
         {
