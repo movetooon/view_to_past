@@ -1,0 +1,846 @@
+{  
+ 
+"charachters":
+{
+    "farmer":
+        { 
+            "dialogs":
+            [ 
+                {
+                "countOfTasks":0,
+                "replics":
+                [
+                        { 
+                            "emotion":"misunderstanding",
+                            "isPlayer":false,
+                            "text": "Чего-ж пришёл ты сюда?"   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "Я просто проходил мимо..."   
+                        },
+                        { 
+                            "isPlayer":true,
+                            "text": "А что у Вас здесь случилось?"   
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "Эх..."   
+                        }, 
+                        {
+                            "isPlayer":false,
+                            "text": "Позволь расскажу я тебе о событиях, связанных с фермой, уж коль ты проходил мимо."   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "Хорошо, я с удовольствием выслушаю Вас."   
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "Ох… На дворе застоялся 1840-й год, уж позабыли о нас совсем."   
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "До первой промышленной революции в Англии экономика страны была преимущественно основана на сельском хозяйстве и ручном производстве."   
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "Вспоминаю, да жили мы припеваючи..."   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "Технологии Вас заменили?"   
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "Ох, может и так, да растерялся я уж."   
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "Понимаешь, в основном люди работали на фермах или занимались ремесленным производством."
+                        } ,
+                        {
+                            "isPlayer":false,
+                            "text": "Технологии были довольно ограниченными, и процессы производства были в значительной степени ручными."
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "С развитием новых технологий, машин и фабрик повысилась промышленная база и экономическая структура страны изменилась."
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "Вас всё-таки заменили?"
+                        },
+                        {
+                            "emotion":"disagreement",
+                            "isPlayer":false,
+                            "text": "Да нет же."
+                        },
+                        {
+                            "isPlayer":false,
+                            "text":"Просто государство поставило в приоритет развитие фабричного производства."
+                        },
+                        {
+                            "eventsCount":1,
+                            "isPlayer":false,
+                            "text": "Мы уже не занимаем первое место, если быть условным."
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "Хорошо, я понимаю..."
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "Утомил уж я тебя."
+                        },
+                        {
+                            "isPlayer":false,
+                            "text": "Беги, добрый молодец."
+                        }
+
+                ]
+                }, 
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "emotion":"misunderstanding",
+                        "isPlayer":false,
+                        "text": "Эх, как жить-то будется?"   
+                        },
+                        {
+                        "isPlayer":true,
+                        "text": "..."   
+                        }
+                    ]
+                } 
+            ]
+        },
+    "granny":
+    {    
+        
+            "dialogs":
+            [   
+                {
+                    "emotion":2,
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                                "isPlayer":true,
+                                "text":"Бабушка, а чего Вы в такой глуши?"
+                            },
+                            {
+                                "isPlayer":false,
+                                "text":"Ох, молодец..."
+                            },
+                            {
+                                "isPlayer":false,
+                                "text":"Ферма уж увядает, да решила я помочь чем."
+                            },
+                            {
+                                "isPlayer":false,
+                                "text":"Теперь мёд здесь собираю, да для посевов уж полезны пчёлы."
+                            },
+                            {
+                                "isPlayer":true,
+                                "text":"А чего это, ферма-то увядает?"
+                            },
+                            {
+                                "isPlayer":false,
+                                "text":"Ох, уж очи мои не увидят этого."
+                            },
+                            {
+                                "isPlayer":false,
+                                "text":"Ты уж поговори с главным фермером, да расскажет он тебе..."
+                            },
+                            {
+                                "isPlayer":false,
+                                "text":"Всё, что могу я тебе сказать, дак это то, что произошёл уж аграрный переворот в стране нашей."
+                            },
+                            {
+                                "eventsCount":1,
+                                "isPlayer":true,
+                                "text":"Хорошо, не отчаивайтесь!"
+                            }
+                        ]
+                    },
+                    {
+                        "emotion":2,
+                        "countOfTasks":0,
+                        "replics":
+                        [
+                            {
+                            "emotion":"misunderstanding",
+                            "isPlayer":false,
+                            "text": "Что ж творится, Боже!"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "И что будет твориться позже?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Сельское хозяйство сделалось теперь второстепенной отраслью, год от года преходящей в упадок..."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "..."   
+                            }
+                            
+                        ]
+                    }
+            ]
+        },
+    "subordinateFarmer":
+    {    
+            "dialogs":
+            [   
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                            "isPlayer":true,
+                            "text": "Здравствуйте, а чего Вы тут работаете одни?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Ферма увядает, да боюсь я за посевы..."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Большинство разбежалось на фабрики."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Вытеснили уж большинство крестьян с земель, да стали мы дешёвой рабочей силой."
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Что-ж, понимаю..."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Ох, боюсь я, как бы голода не стало…"
+                            },
+                            {
+                            "emotion":"misunderstanding",
+                            "isPlayer":false,
+                            "text":"Да как бы луддиты чего не придумали…"
+                            },
+                            {
+                            "isPlayer":true,
+                            "text":"А кто это, луддиты-то?"
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Не всем уж понравился этот технологический прогресс, вот и появились луддиты."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Не по сердцу им всё это, вот они и становятся участниками стихийных протестов против технологий..."
+                            },
+                            {
+                            "isPlayer":true,
+                            "text":"Хорошо, пойду-ка я дальше."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Ступай."
+                            }
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "emotion":"misunderstanding",
+                        "isPlayer":false,
+                        "text": "Нужно подумать, как всё-таки спасти посевы..."   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "..."   
+                        }
+                                                     
+                    ]  
+                }
+            ]
+            },
+    "bourgeois":
+        {    
+            "dialogs":
+                [   
+                    {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                            "isPlayer":false,
+                            "text": "Подходите!"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Места на фабрике найдутся для каждого, хе-хе."
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Извините, а чего Вы тут кричите?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Ох, юноша."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Набираю я людей к ремесленной компании своей, хе-хе."
+                            },
+                            {
+                            "isPlayer":true,
+                            "text":"..."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Слушай, а не хотел бы ты попробовать себя в ремесле?"
+                            },{
+                            "isPlayer":true,
+                            "text":"Даже не знаю..."
+                            },
+                            {
+                            "isPlayer":true,
+                            "text":"Я не уверен, что справлюсь."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Да не бойся ты, уж мой ремесленник поможет тебе освоиться."
+                            },
+                            {
+                            "isPlayer":true,
+                            "text":"..."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Ну, куда пойдёшь ты, уж наберёшься опыта перед фабрикой."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Мы даже ребёнка забрали, уж труд любой нам понадобится."
+                            },
+                            {
+                            "isPlayer":true,
+                            "text":"Хорошо, я попробую..."
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"<b>Поди к ремесленнику, да скажи, что ты от меня.</b>"
+                            },
+                            {
+                                "eventsCount":1,
+                            "isPlayer":false,
+                            "text":"Уж работёнку он для тебя найдет."
+                            }
+                        ]
+                    } 
+                   
+                    
+                ]
+            },
+    "bourgeoisNewLoc":
+            {    
+                "dialogs":
+                    [   
+                        
+                        {
+                            "emotion":1,
+                            "countOfTasks":0,
+                            "replics":
+                            [
+                                {
+                                "isPlayer":true,
+                                "text": "..."   
+                                },
+                                {
+                                "isPlayer":false,
+                                "text": "Ох, фабрика у меня даже своя есть, хе-хе."   
+                                },
+                                {
+                                "isPlayer":false,
+                                "text": "Думаю, может найти ещё рабочую силу, да пристроить побольше фабрик?"   
+                                },
+                                {
+                                "isPlayer":false,
+                                "text": "Уж пала феодальная и теологическая система."   
+                                },
+                                {
+                                "isPlayer":false,
+                                "text": "Да здравствует промышленная и научная система!"   
+                                },
+                                {
+                                "isPlayer":true,
+                                "text": "Я, пожалуй, пойду..."   
+                                }
+                            ]
+                        },
+    
+                        {
+                            "countOfTasks":0,
+                            "replics":
+                            [
+                                {
+                                "isPlayer":false,
+                                "text": "Ты чего, молодец?"   
+                                },
+                                {
+                                "isPlayer":false,
+                                "text": "Быть может, спросить чего желаешь?"   
+                                },
+                                {
+                                "isPlayer":true,
+                                "text": "Да нет, я просто проходил мимо..."   
+                                },
+                                {
+                                "isPlayer":false,
+                                "text": "Вот оно как."   
+                                },
+                                {
+                                "emotion":"anger",  
+                                "isPlayer":false,
+                                "text": "Не задерживайся тогда уж тут."   
+                                }                           
+                            ]
+                        }
+                        
+                    ]
+                },
+    "craftsman":
+        {    
+            "dialogs":
+                [   
+                    {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                            "isPlayer":true,
+                            "text": "Чего-ж Вы такой грустный?"   
+                            },
+                            {
+                                "emotion":"consent",
+                                "isPlayer":false,
+                                "text": "Эх, предложил господин мне работу на фабрике..."   
+                            },
+                            {
+                                "isPlayer":true,
+                                "text": "И чего Вы?"   
+                            },
+                            {
+                                "emotion":"misunderstanding",
+                                "isPlayer":false,
+                                "text": "Да отказался, как уж жители без меня?"   
+                            },
+                            {
+                                "isPlayer":true,
+                                "text": "Не понимаю…"   
+                            },
+                            {
+                                "isPlayer":false,
+                                "text": "Если бы согласился работать на фабрику, то кто-ж занимался делами житейскими в деревне?"   
+                            },
+                            {
+                                "isPlayer":true,
+                                "text": "И правда, теперь я понимаю Вас..."   
+                            },
+                            {
+                                "isPlayer":false,
+                                "text": "Ступай, чего-ж слушать ворчуна."   
+                            }
+                                                    
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "emotion":"misunderstanding",
+                        "isPlayer":false,
+                        "text": "Ох, головушка моя..."   
+                        },
+                        {
+                        "isPlayer":false,
+                        "text": "Быть может, надобно было согласиться с господином..."   
+                        },
+                        {
+                        "isPlayer":true,
+                        "text": "..."   
+                        }
+                                                     
+                    ]
+                }    
+            ]
+        },
+    "npsNearBourgeois":
+        {    
+            "dialogs":
+                [   
+                    {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                            "isPlayer":true,
+                            "text": "Здравствуй!"   
+                            },
+                            {
+                            "emotion":"surprise",   
+                            "isPlayer":false,
+                            "text": "Ох, здравствуйте! "   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "А чего Вы тут стоите?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Радуюсь я уж."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Меня приняли на фабрику! "   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Что в этом хорошо?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Как же это?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Уж пообещали мне оплату за труд, да оплата хорошая..."   
+                            },
+                            { 
+                            "isPlayer":false,
+                            "text": "Раньше пытался работать я на пахотных землях, да устал уже..."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Хех, поздравляю тебя с новой работой."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Благодарю, молодец!"   
+                            }                  
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "emotion":"surprise",   
+                        "isPlayer":false,
+                        "text": "Ох, когда ж смогу я приступить к работе на фабрике..."   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "..."   
+                        }
+                                                  
+                    ]
+                }
+            ]
+        },
+    "craftsmanBourgeois":
+    {    
+            "dialogs":
+            [   
+                {
+                    "countOfTasks":1,
+                    "replics":
+                    [
+                            {
+                            "isPlayer":true,
+                            "text": "Здравствуйте, вы фабричный ремесленник?"   
+                            },
+                            {
+                            "emotion":"consent",   
+                            "isPlayer":false,
+                            "text": "Верно, молодец."   
+                            },
+                            {
+                            "emotion":"misunderstanding",
+                            "isPlayer":false,
+                            "text": "Чего тебя принесло сюда? "   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Господин послал меня сюда."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Сказал, мол работу дашь..."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Знаешь, ты бы мог начать с чего-то простого..."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Попробуй поковать шестерёнки для фабричных станков."   
+                            },
+                            {
+                                "eventsCount":1,
+                          
+                            "isPlayer":true,
+                            "text": "Давай попробую."   
+                            } ,
+                            { 
+                            "isPlayer":true,
+                            "text": "Думаю будет несложно..."   
+                            }                     
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        { 
+                        "isPlayer":false,
+                        "text": "Ну что, выковал?"   
+                        },
+                        {
+                            "isPlayer":true,
+                            "text": "Ещё нет."  
+                        } 
+
+                       
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "emotion":"surprise",
+                        "isPlayer":false,
+                        "text": "Очень хорошо получилось."   
+                        }, 
+                        {
+                        "isPlayer":false,
+                        "text": "Слушай, <b>отнеси эти шестерёнки к станции, да отдай машинисту.</b>Он как раз вот-вот приедет."   
+                        },
+                        {
+                        "isPlayer":false,
+                        "text": "Передай, что это от меня."   
+                        },
+
+                        {
+                            "eventsCount":1,
+                        "isPlayer":true,
+                        "text": "Хорошо, я поищу эту станцию..."   
+                        }
+                    ]
+                } 
+                
+            ]
+        },
+    "machinist":
+    {    
+            "dialogs":
+            [   
+                {
+                    "countOfTasks":1,
+                    "replics":
+                    [
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Чего тебе?"   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Вы ведь машинист, так?"   
+                            },
+                            {
+                            "emotion":"consent",
+                            "isPlayer":false,
+                            "text": "Верно."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Дак чего тебе?"   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Меня просил ремесленник передать Вам эти шестерёнки."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "А, за шестерёнки спасибо."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Я тороплюсь."   
+                            },
+                            {
+                            "eventsCount":1,
+                            "isPlayer":false,
+                            "text": "Передай ремесленнику, что оплату за труды я привезу в следующий раз."   
+                            }                   
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "emotion":"anger",
+                        "isPlayer":false,
+                        "text": "Юноша, я занят."   
+                        },
+                        {
+                        "isPlayer":false,
+                        "text": "Если тебе нужно чего доставить, то просто подай мне это."   
+                        },
+                        {
+                        "isPlayer":false,
+                        "text": "Также, тебе необходим билет на перевозку и адрес доставки..."   
+                        },
+                        {
+                        "isPlayer":true,
+                        "text": "Мне нечего больше доставлять..."   
+                        }
+                    ]
+                }
+                
+            ]
+        
+        },
+    "angryFarmer":
+    {    
+            "dialogs":
+                [   
+                    {
+                        "countOfTasks":0,
+                        "replics":
+                        [
+                            {
+                            "isPlayer":true,
+                            "text": "..."   
+                            },
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Ох, ну и попляшет же лорд..."   
+                            },
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Слишком долго терпели мы эти технологии..."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Думаю, мне лучше уйти..."   
+                            }             
+                        ]
+                    },
+                    {
+                        "countOfTasks":0,
+                        "replics":
+                        [
+                            {
+                            "isPlayer":false,
+                            "text": "..."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Как бы побоище не приняло существенный вид..."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "..."   
+                        }
+                    ]
+                }
+            ]
+        },
+    "luddites":
+    {    
+            "dialogs":
+                [   
+                    {
+                        "countOfTasks":0,
+                        "replics":
+                        [
+                            {
+                            "isPlayer":true,
+                            "text": "..."   
+                            },
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Хватит терпеть это!"   
+                            },
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Мы против внедрения машин!"   
+                            },
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "С нас достаточно этого!"   
+                            },
+                            {
+                                "eventsCount":1,
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Нам осточертело это всё!"   
+                            },
+                            { 
+                            "isPlayer":true,
+                            "text": "..."   
+                            }             
+                        ]
+                    }
+                
+            ]
+         },
+    "manFromCrowd":
+    {    
+            "dialogs":
+                [   
+                    {
+                        "countOfTasks":0,
+                        "replics":
+                        [
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Хей, я видел, что он работает на этого буржуя!"   
+                            },
+                            {
+                            "emotion":"anger",
+                            "isPlayer":false,
+                            "text": "Сейчас ты ответишь за участие в этом безобразии…"   
+                            },
+                            {
+                                "eventsCount":1,
+                                "onEnd":true,
+                            "isPlayer":true,
+                            "text": "Чёрт, мне пора убегать!"   
+                            }          
+                        ]
+                    }
+                
+            ]
+        }
+        
+    }
+
+}

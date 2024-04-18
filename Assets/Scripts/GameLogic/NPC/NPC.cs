@@ -21,7 +21,7 @@ public class NPC : Location,ITalkable
   
     public Action<List<NearLocation>> onArrowUpdateRequest;
     public Action<Dialog,EventHandler, ITalkable,NPCSound> onDialogDisplayRequested;
-    public Action<Transform, Vector3, float> onCloudUpdateRequested;
+    public Action<Transform, Vector3, float, DialogCloud.Emotion> onCloudUpdateRequested;
     public Action onDialogEnded;
 
     public void Init(Player player,ArrowsManager arrowsManager, DialogDisplayer dialog, DialogCloud dialogCloud)
@@ -84,15 +84,18 @@ public class NPC : Location,ITalkable
     public void StartDisplayingDialog(Dialog dialog,bool setNext)
     {
         onDialogDisplayRequested?.Invoke(dialog, eventHandler,this,sound);
-        onCloudUpdateRequested?.Invoke(transform, transform.rotation * cloudPosition + transform.position, height);
+        onCloudUpdateRequested?.Invoke(transform, transform.rotation * cloudPosition + transform.position, height,dialog.emotion);
 
         if (setNext) nextDialogNumber++;
     }
 
     public override void Select(float distance = 0)
-    {  
-        if (IsDialogsEnded()||blocked==true) return; 
-            base.Select();
+    {
+
+         
+        bool canSelect =  ((!IsDialogsEnded() && blocked == false) && (distance < maxViewDistance));
+        Debug.Log(distance + " | when max: " + maxViewDistance+"| canSelect: "+canSelect);
+        if (canSelect) base.Select();
     } 
 
    

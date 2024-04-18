@@ -9,8 +9,35 @@ public static class TMPutilities
     {
         textContainer.text = "";
 
+
+        textContainer.ForceMeshUpdate();
+
+        Mesh cachedMesh = textContainer.mesh;
+        Vector3[] newVertices = cachedMesh.vertices;
+        Color[] newColors = cachedMesh.colors;
+
         for (int i = 0; i < text.Length; i++)
         {
+            TMP_CharacterInfo charInfo = textContainer.textInfo.characterInfo[i];
+            charInfo.color = Color.clear;
+        }
+        cachedMesh.vertices = newVertices;
+        textContainer.canvasRenderer.SetMesh(cachedMesh);
+
+        for (int i = 0; i < text.Length; i++)
+        {
+
+            TMP_CharacterInfo charInfo = textContainer.textInfo.characterInfo[i];
+
+            float timer = 0.2f;
+            while (timer > 0)
+            {
+                charInfo.color = Color.Lerp(Color.clear, Color.white, (1 - timer * 5f));
+                timer -= Time.fixedDeltaTime;
+                yield return null;
+            }
+            /*
+
             if (text[i] == '<')
             {
                 while (text[i] != '>')
@@ -41,6 +68,13 @@ public static class TMPutilities
                 }
             else yield return new WaitForSeconds(delay);
              
-        }  
+        }
+            */
+            cachedMesh.vertices = newVertices;
+        textContainer.canvasRenderer.SetMesh(cachedMesh);
+             
+
+        }
+
     }
 }

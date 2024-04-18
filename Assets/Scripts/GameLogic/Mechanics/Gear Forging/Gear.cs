@@ -43,14 +43,10 @@ public class Gear : MonoBehaviour
 
         for (int i = 0; i < self.spline.GetPointCount(); i++)
         { 
-            Vector3 dotPos= (transform.localRotation * self.spline.GetPosition(i) * transform.localScale.x*1.5f + transform.position) ;
-          
+            Vector3 dotPos= (transform.localRotation * self.spline.GetPosition(i) * transform.localScale.x*1.5f + transform.position); 
             bool inCircle = Vector3.Distance(dotPos, mousePosition) < radius;
             
-
-            Debug.Log("is dot in circle with r=" + radius + "| intensity=" + intensity + " | " + inCircle);
-            Debug.Log("mousePos: " + mousePosition + "| distance: " + dotPos);
-
+              
             if (inCircle)
             { 
                 dotForgedCache[i] += intensity;

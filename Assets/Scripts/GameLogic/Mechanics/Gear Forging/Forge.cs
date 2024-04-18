@@ -56,8 +56,7 @@ public class Forge : MonoBehaviour
     }
 
     public void StartHeating()
-    {
-        Debug.Log("heating");
+    { 
         StartCoroutine(Heating());
         
     }
@@ -110,8 +109,7 @@ public class Forge : MonoBehaviour
             UpdateColors();
 
             if (currentGear.CheckCompleteForging())
-            {
-                 
+            { 
                 currentGear.CompleteForging();
 
                 if (currentGearIndex == (gearsToForge.Count-1))

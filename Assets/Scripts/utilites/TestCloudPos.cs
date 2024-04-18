@@ -25,7 +25,7 @@ public class TestCloudPos : MonoBehaviour
             if (test == true)
             {
                 cloud.gameObject.SetActive(true);
-
+                 
                 cloud.SetPositions(transform, transform.position + transform.rotation * newPos, npc.Height());
                 npc.cloudPosition = newPos;
             }

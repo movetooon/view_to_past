@@ -69,6 +69,7 @@ struct Charachter
 [System.Serializable]
 public struct Dialog
 {
+    public DialogCloud.Emotion emotion;
     public List<string> taskNames;
     public int countOfTasks;
     public List<Replic> replics; 
