@@ -24,7 +24,7 @@ public class Debuging : MonoBehaviour
                 }
                 catch(Exception e)
                 {
-
+                    Debug.LogException(e);
                 }
                
             }

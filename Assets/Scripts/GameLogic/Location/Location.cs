@@ -54,6 +54,12 @@ public class Location : Selectable
         onEntered += book.DisableDiaryButton;
         else onEntered += book.EnableDiaryButton;
     }
+
+    public void Init(Player player )
+    {
+        onSelected += player.GetState<IdleState>().MoveToNextLocation; 
+        onEntered += player.EnterIn<IdleState>; 
+    }
     /*
 
     public virtual void SetListeners()

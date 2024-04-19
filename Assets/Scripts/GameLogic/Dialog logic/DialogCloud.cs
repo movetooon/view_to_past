@@ -14,6 +14,7 @@ public class DialogCloud : MonoBehaviour
 
     [SerializeField] ParticleSystem[] emotionEffects; 
     [SerializeField] Color [] emotionColors;
+    [SerializeField] private Transform effectHandler;
    
 
     public Animator anim { get; private set; }
@@ -29,6 +30,14 @@ public class DialogCloud : MonoBehaviour
           smallCloudsRender[i] = smallClouds[i].GetComponent<SpriteRenderer>();
         }
         bigCloudRender=bigCloud.GetComponent<SpriteRenderer>();
+    }
+
+    public void StopAllEffects()
+    {
+        foreach(ParticleSystem effect in emotionEffects)
+        {
+            effect.Stop();
+        }
     }
 
     public void SetPositions(Transform npcTransform,Vector3 newPosition, float height,Emotion emotion=Emotion.None)
@@ -52,7 +61,7 @@ public class DialogCloud : MonoBehaviour
             smallClouds[i].position = newCloudPosition;
         }
 
-        SetEmotion(emotion);
+        //SetEmotion(emotion);
     }
 
     public void SetEmotion(Emotion emotion)
@@ -60,18 +69,22 @@ public class DialogCloud : MonoBehaviour
         foreach (SpriteRenderer small in smallCloudsRender)
         {
             small.color = emotionColors[(int)emotion];
+      
         }
         bigCloudRender.color = emotionColors[(int)emotion];
 
         for(int i = 0; i < emotionEffects.Length; i++)
         {
+            effectHandler.position = bigCloud.transform.position;
+            effectHandler.rotation = bigCloud.transform.rotation;
+
             if (i != (int)emotion)
             {
-                emotionEffects[i].gameObject.SetActive(false);
+                emotionEffects[i].Stop();
             }
             else
             {
-                emotionEffects[i].gameObject.SetActive(true);
+                emotionEffects[i].Play();
             }
         }
 

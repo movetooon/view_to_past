@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Bootstrap.unity
     guid: 01b3d0a4c2659bb4cb7d23da3f171085
   - enabled: 1
-    path: Assets/Scenes/AfterRevolution.unity
+    path: Assets/Scenes/IndustrialRevolution/BeforeRevolution.unity
+    guid: b22ddb3a95ec85244aa27cddb3becb31
+  - enabled: 1
+    path: Assets/Scenes/IndustrialRevolution/AfterRevolution.unity
     guid: faeb7a6613dc49249b5b8edb09dc31b7
   - enabled: 1
-    path: Assets/Scenes/BeforeRevolution.unity
-    guid: b22ddb3a95ec85244aa27cddb3becb31
+    path: Assets/Scenes/IndustrialRevolution/IndustrialRevolutionReference.unity
+    guid: c4945093b2e18044d82e38fda6cdd818
   m_configObjects: {}

@@ -38,8 +38,8 @@ public class MonologHandler : Location
 
     public override void Enter()
     {
-         //selected = true;
-       
+        selected = true;
+        Debug.Log("Enter in " + name);
 
         if (playOnce && played)
         {
@@ -48,13 +48,17 @@ public class MonologHandler : Location
             
             return;
         }
+        else
+        {
+            onArrowsCacheUpdateRequest?.Invoke(nearLocations);
+            Monolog newMonolog = DialogStorage.GetMonologByName(monologName);
+            onMonologDisplayRequested?.Invoke(newMonolog, eventHandler);
+            played = true;
 
-        onArrowsCacheUpdateRequest?.Invoke(nearLocations);
-        Monolog newMonolog = DialogStorage.GetMonologByName(monologName);
-        onMonologDisplayRequested?.Invoke(newMonolog,eventHandler); 
-        played = true;
-         
-        onEntered?.Invoke();
+            onEntered?.Invoke();
+        }
+
+       
 
 
     }

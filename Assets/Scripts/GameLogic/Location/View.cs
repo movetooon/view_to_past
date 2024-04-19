@@ -1,4 +1,5 @@
- 
+
+using System;
 using UnityEngine;
 
  [ExecuteInEditMode]
@@ -11,13 +12,17 @@ public class View : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        mesh= GetComponent<MeshRenderer>();
-        camInfo=Camera.main.GetComponent<CameraInfo>();
-
-        if (Application.isPlaying==false)
+        try
         {
-            mesh.enabled = true;
+            mesh = GetComponent<MeshRenderer>();
+            camInfo = Camera.main.GetComponent<CameraInfo>();
+
+            if (Application.isPlaying == false)
+            {
+                mesh.enabled = true;
+            }
         }
+        catch (Exception e) {   }
     }
 #endif
    
@@ -35,21 +40,24 @@ public class View : MonoBehaviour
 
     private void Update()
     {
-        if (Application.isPlaying == false)
+        try
         {
-            if (checkVeiw)
+            if (Application.isPlaying == false)
             {
-                Camera.main.transform.position = transform.position;
-                Camera.main.transform.rotation = transform.rotation;
-                camInfo.busy = true;
-            }
-            else if(camInfo.busy)
-            {
-                Camera.main.transform.position = camInfo.origPos;
-                Camera.main.transform.rotation = camInfo.origRot;
-                camInfo.busy = false;
+                if (checkVeiw)
+                {
+                    Camera.main.transform.position = transform.position;
+                    Camera.main.transform.rotation = transform.rotation;
+                    camInfo.busy = true;
+                }
+                else if (camInfo.busy)
+                {
+                    Camera.main.transform.position = camInfo.origPos;
+                    Camera.main.transform.rotation = camInfo.origRot;
+                    camInfo.busy = false;
 
+                }
             }
-        }
+        }catch (Exception e) { }
     }
 }

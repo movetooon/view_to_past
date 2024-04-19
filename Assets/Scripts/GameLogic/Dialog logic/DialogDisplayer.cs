@@ -43,10 +43,10 @@ public class DialogDisplayer : MonologDisplayer
         onDialogStarted?.Invoke();
 
         try
-        {
+        { 
             onTaskAddRequested?.Invoke(dialog.taskNames);
         }
-        catch (Exception e) { }
+        catch (Exception e) { Debug.Log(e); }
         
         EneblePlayerPanel();
 
@@ -71,6 +71,7 @@ public class DialogDisplayer : MonologDisplayer
                     soundPlayer.Play();
                 }
                 EnebleCharacterPanel();
+                characterPanel.SetEmotion(dialog.emotion);
             }
              
 

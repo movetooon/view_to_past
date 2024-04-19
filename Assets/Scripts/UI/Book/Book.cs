@@ -122,10 +122,12 @@ public class Book : MonoBehaviour
     {
         PlaySound(openSound);
         anim.SetTrigger("Close");
+        DisableDiaryButton();
 
         await Task.Delay((int)(anim.GetCurrentAnimatorStateInfo(0).length * 1000));
         onClosed?.Invoke();
         gameObject.SetActive(false);
+        EnableDiaryButton();
 
     }
 

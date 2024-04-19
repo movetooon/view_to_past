@@ -8,36 +8,11 @@ public static class TMPutilities
     public static IEnumerator SetTextWithDelay(TMP_Text textContainer, string text, float delay, bool pauses = true)
     {
         textContainer.text = "";
+        
 
-
-        textContainer.ForceMeshUpdate();
-
-        Mesh cachedMesh = textContainer.mesh;
-        Vector3[] newVertices = cachedMesh.vertices;
-        Color[] newColors = cachedMesh.colors;
 
         for (int i = 0; i < text.Length; i++)
         {
-            TMP_CharacterInfo charInfo = textContainer.textInfo.characterInfo[i];
-            charInfo.color = Color.clear;
-        }
-        cachedMesh.vertices = newVertices;
-        textContainer.canvasRenderer.SetMesh(cachedMesh);
-
-        for (int i = 0; i < text.Length; i++)
-        {
-
-            TMP_CharacterInfo charInfo = textContainer.textInfo.characterInfo[i];
-
-            float timer = 0.2f;
-            while (timer > 0)
-            {
-                charInfo.color = Color.Lerp(Color.clear, Color.white, (1 - timer * 5f));
-                timer -= Time.fixedDeltaTime;
-                yield return null;
-            }
-            /*
-
             if (text[i] == '<')
             {
                 while (text[i] != '>')
@@ -47,8 +22,38 @@ public static class TMPutilities
                 }
             }
 
+          
 
+           
             textContainer.text += text[i];
+            /*
+         textContainer.ForceMeshUpdate();
+         Mesh cahcedMesh = textContainer.mesh;
+         Vector3[] vertices= cahcedMesh.vertices;
+         Color[] colors= cahcedMesh.colors;
+         float t = 0;
+         while (t < 1f)
+         {
+             for (int j = cahcedMesh.vertices.Length-4; j < cahcedMesh.vertices.Length; j++)
+             {
+
+                 colors[j] = Color.Lerp(Color.clear,Color.black,t);
+                 vertices[j] = Vector3.Lerp(cahcedMesh.vertices[j] + Vector3.one * 10 * Mathf.Sin(j), cahcedMesh.vertices[j],t);
+                 cahcedMesh.vertices = vertices;
+                 cahcedMesh.colors = colors;
+                 textContainer.canvasRenderer.SetMesh(cahcedMesh);
+
+
+             }
+             t += 0.2f;
+             yield return null;
+         }
+
+
+        */
+
+
+
 
             if (pauses)
                 switch (text[i])
@@ -68,13 +73,6 @@ public static class TMPutilities
                 }
             else yield return new WaitForSeconds(delay);
              
-        }
-            */
-            cachedMesh.vertices = newVertices;
-        textContainer.canvasRenderer.SetMesh(cachedMesh);
-             
-
-        }
-
+        }  
     }
 }

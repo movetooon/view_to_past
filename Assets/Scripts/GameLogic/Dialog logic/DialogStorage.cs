@@ -41,6 +41,7 @@ public static class DialogStorage
         }
         catch(Exception ex)
         { 
+            Debug.Log(ex);
             return false;
         }
          
