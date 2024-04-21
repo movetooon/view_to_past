@@ -40,6 +40,7 @@ public class Book : MonoBehaviour
 
         onClosed += arrowsManager.ReUpdateArrows;
         onClosed += player.EnterIn<IdleState>;
+        
         lastbookmark = bookmarks.Last();
 
         audioPlayer = GetComponent<AudioSource>();
@@ -96,6 +97,7 @@ public class Book : MonoBehaviour
 
     public void  EnableDiaryButton()
     {
+        diaryButton.gameObject.SetActive(true);
         diaryButton.image.raycastTarget = true;
 
         //diaryButton.interactable = true;
