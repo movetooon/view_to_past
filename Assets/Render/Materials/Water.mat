@@ -41,9 +41,9 @@ Material:
     - _AlphaStrength: 0
     - _ColorStrength: 5
     - _DistortionStrength: 0.02
-    - _FoamDistance: 9.8
+    - _FoamDistance: 8.25
     - _FoamSpeed: 0
-    - _FoamStrength: 100
+    - _FoamStrength: 50
     - _NoiseScale: 51.07
     - _NoiseScale1: 54.4
     - _NoiseScale2: 31.9

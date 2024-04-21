@@ -1,0 +1,404 @@
+{  
+ 
+"charachters":
+{
+    "crowd1":
+    {    
+            "dialogs":
+            [   
+                {
+                    "emotion":1,
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Неужели Франц Фердинанд и правда проедет у нас?"   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Доброго Вам дня, господа. Не подскажете, где мы находимся?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "И вам-с доброго дня. "   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Находимся мы с Вами в парке на мечждане."   
+                            },
+                            {
+                            "eventsCount":1,
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Ох, сегодня мы отпразднуем приезд нашего эрцгерцога, да также поражение сербов на косовом поле."   
+                            }                     
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "isPlayer":false,
+                        "text": "Ох, долго еще ждать-то?"   
+                        },
+                        {
+                        "isPlayer":false,
+                        "text": "Где же наш эрцгерцог?"   
+                        },
+                        {
+                        "isPlayer":true,
+                        "text": "..."   
+                        }
+                    ]
+
+                }
+            ]
+        },
+    "crowd2":
+    {    
+            "dialogs":
+            [   
+                {
+                    "emotion":1,
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Неужели эрцгерцог и вправду посетит нашу провинцию?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text":"Даже не верится."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Позвольте, почему же Вам не верится?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Ох, ну-с, давненько нас не посещали."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Да уж, эрцгерцоги тем более давно не бывали у нас."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Кто-ж знал-то? Мы будто бесконечно ждали. Холод по коже проходится от такого."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "И какое мероприятие в честь этого проведётся?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Ну-с, эрцгерцог проедет со своим кортежем по соседней улице которая через мост."   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Уж крайне радостен народ."   
+                            }
+                                                    
+                    ]
+                },
+                {
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                        {
+                        "isPlayer":false,
+                        "text": "Кто-нибудь видит эрцгерцога?"   
+                        },
+                        {
+                        "isPlayer":false,
+                        "text": "Быть может, проехал он уже?"   
+                        },
+                        {
+                        "isPlayer":true,
+                        "text": "..."   
+                        }
+                    ]
+
+                }
+                
+            ]
+        },
+    "crowd3":
+    {    
+            "dialogs":
+            [   
+                {
+                    "emotion":1,
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                            {
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Неужто настал час?"   
+                            },
+                            {
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Быть может, мы отсюда даже увидим и оглянем своим взглядом кортеж эрцгерцога?"   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Позвольте, эрцгерцога?"   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Какой же сейчас тогда год?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Сударь, вы чего, умом тронулись? "   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "На дворе 1914 год, да уж самый разгар лета."   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "День и вправду замечательный, довольно тепло. А какая сегодня дата-то?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "И правда-с тронулись головушкой…"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Сейчас ведь 28 июня!"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Тепло пришло и явно не собирается уходить."   
+                            },
+                            {
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Неужто кондоминиум Боснии и Герцеговины сможет возрадоваться…"   
+                            }
+                
+                        ]
+                
+                    },
+                    {
+                        "countOfTasks":0,
+                        "replics":
+                        [
+                            {
+                            "isPlayer":false,
+                            "text": "Быть может, мы прорвемся вперед, судари?"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Мы обязаны увидеть этот кортеж!"   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "..."   
+                            }
+                        ]
+    
+                    }
+            
+                ]
+    
+            },
+        
+    "firstGroupNPC":
+        { 
+            "dialogs":
+            [ 
+                {
+                "emotion":1,
+                "countOfTasks":0,
+                "replics":
+                [
+                         
+                        { 
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Ура! Ура! Ура!"   
+                        }
+                ]
+                }
+            ]
+        },
+    "secondGroupNPC":
+        { 
+            "dialogs":
+            [ 
+                {
+                "emotion":1,
+                "countOfTasks":0,
+                "replics":
+                [
+                         
+                        { 
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Кондоминиум Боснии и Герцеговины сможет обрадовать Вас, эрцгерцог!"   
+                        }
+                ]
+                }
+            ]
+        },
+
+        "threeGroupNPC":
+        { 
+            "dialogs":
+            [ 
+                {
+                "emotion":1,
+                "countOfTasks":0,
+                "replics":
+                [
+                         
+                        { 
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Мы готовы отдать наши жизни в честь Вас, эрцгерцог!"   
+                        }
+
+                ]
+                }
+            ]
+        },
+
+    "fourthGroupNPC":
+            { 
+                "dialogs":
+                [ 
+                    {
+                    "emotion":1,
+                    "countOfTasks":0,
+                    "replics":
+                    [
+                             
+                            { 
+                                "emotion":"surprise",
+                                "isPlayer":false,
+                                "text": "Мы готовы отдать наши жизни в честь Вас, эрцгерцог!"   
+                            }
+    
+                    ]
+                    }
+                ]
+            },
+
+    "journalist":
+            { 
+                "dialogs":
+                [ 
+                    {
+                    "countOfTasks":1,
+                    "replics":
+                    [
+                             
+                            { 
+                                "isPlayer":false,
+                                "text": "Позвольте-с обратиться к Вам."   
+                            },
+                            {
+                                "isPlayer":true,
+                                "text": "И чего-ж Вы ко мне?"   
+                            },
+                            { 
+                                "isPlayer":false,
+                                "text": "Вы единственный из толпы, кто стоял рядом с этой трагичной ситуацией, и выглядите вы не таким обескураженным!"   
+                            },
+                            {
+                                "isPlayer":false,
+                                "text": "Именно такой человек мне и нужен!"   
+                            }, 
+                            {
+                                "isPlayer":false,
+                                "text": "Я уверен, Вы сможете помочь сделать мою газету известной!"   
+                            },
+                            {
+                                "isPlayer":false,
+                                "text": "Это наш с Вами шанс!"   
+                            }, 
+                            {
+                                "isPlayer":true,
+                                "text": "Известной? И как же я сделаю твою газету известной?"   
+                            }, 
+                            {
+                                "isPlayer":false,
+                                "text": "Вы-с, как я заметил, смотрели на эту трагедию наблюдательнее всех!"   
+                            }, 
+                            {
+                                "isPlayer":false,
+                                "text": "Быть может, Вы помните всё до мельчайших подробностей?"   
+                            }, 
+                            {
+                                "isPlayer":true,
+                                "text": "Хм…"   
+                            }, 
+                            {
+                                "isPlayer":false,
+                                "text": "Прошу, Вы должны мне помочь, иначе конкуренты обгонят меня…"   
+                            }, 
+                            {
+                                "isPlayer":true,
+                                "text": "Так и быть, помогу я тебе."   
+                            }, 
+                            {
+                                "isPlayer":true,
+                                "text": "Ну, выкладывай… Чего тебе?"   
+                            }, 
+                            {
+                                "isPlayer":false,
+                                "text": "Уж прошу Вас, помогите расставить правильно события этого происшествия…"   
+                            }, 
+                            {
+                                "isPlayer":true,
+                                "text": "А чего-ж сам-то ты не можешь?"   
+                            }, 
+                            {
+                                "isPlayer":false,
+                                "text": "Ну-с, я не успел увидеть этого. Уж далеко я стоял."   
+                            },
+                            {
+                                "isPlayer":true,
+                                "text": "Раз уж так, то показывай. Чего-ж не помочь тебе."   
+                            }
+    
+                    ]
+                    }, 
+                    {
+                        "emotion":1,
+                        "countOfTasks":0,
+                        "replics":
+                        [
+                            {
+                            "emotion":"surprise",
+                            "isPlayer":false,
+                            "text": "Невероятно!"   
+                            },
+                            {
+                            "isPlayer":false,
+                            "text": "Спасибо Вам, сударь!"   
+                            },
+                            {
+                            "isPlayer":true,
+                            "text": "Не стоит благодарностей."   
+                            }
+                        ]
+    
+                    }
+                ]
+            }
+    
+        }
+
+    }
+
+

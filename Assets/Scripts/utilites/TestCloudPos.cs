@@ -8,6 +8,7 @@ public class TestCloudPos : MonoBehaviour
 {
     [SerializeField] private DialogCloud cloud;
     [SerializeField] Vector3 newPos;
+    [SerializeField] Vector3 startOffset;
     [SerializeField] bool test;
     [SerializeField] NPC npc;
 
@@ -29,8 +30,9 @@ public class TestCloudPos : MonoBehaviour
                 {
                     cloud.gameObject.SetActive(true);
 
-                    cloud.SetPositions(transform, transform.position + transform.rotation * newPos, npc.Height());
+                    cloud.SetPositions(transform, transform.position + transform.rotation * newPos, npc.Height(),startOffset);
                     npc.cloudPosition = newPos;
+                    npc.cloudStartOffset = startOffset;
                 }
                 else
                 {

@@ -40,7 +40,7 @@ public class DialogCloud : MonoBehaviour
         }
     }
 
-    public void SetPositions(Transform npcTransform,Vector3 newPosition, float height,Emotion emotion=Emotion.None)
+    public void SetPositions(Transform npcTransform,Vector3 newPosition, float height, Vector3 startOffset, Emotion emotion=Emotion.None)
     {
         transform.position = newPosition;
         transform.rotation = npcTransform.rotation;
@@ -53,6 +53,7 @@ public class DialogCloud : MonoBehaviour
                 npcTransform.position.y+height/2,
                 npcTransform.position.z);
 
+            npcHeadPosition += startOffset;
             Vector3 newCloudPosition = npcHeadPosition -
                 (npcHeadPosition - transform.position) *
                 directionMultiplier * ((float)(i+1)/smallClouds.Length );

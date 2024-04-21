@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Collections.Generic; 
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,6 +9,7 @@ public class NPC : Location,ITalkable
     private int nextDialogNumber;
     [SerializeField] private float height; 
     [SerializeField] public Vector3 cloudPosition;
+    [SerializeField] public Vector3 cloudStartOffset;
     private SpriteRenderer sprite;
 
     private TaskHandler taskHandler;
@@ -21,7 +21,7 @@ public class NPC : Location,ITalkable
   
     public Action<List<NearLocation>> onArrowUpdateRequest;
     public Action<Dialog,EventHandler, ITalkable,NPCSound> onDialogDisplayRequested;
-    public Action<Transform, Vector3, float, DialogCloud.Emotion> onCloudUpdateRequested;
+    public Action<Transform, Vector3, float,Vector3, DialogCloud.Emotion> onCloudUpdateRequested;
     public Action onDialogEnded;
 
     public void Init(Player player,ArrowsManager arrowsManager, DialogDisplayer dialog, DialogCloud dialogCloud)
@@ -84,7 +84,7 @@ public class NPC : Location,ITalkable
     public void StartDisplayingDialog(Dialog dialog,bool setNext)
     {
         onDialogDisplayRequested?.Invoke(dialog, eventHandler,this,sound);
-        onCloudUpdateRequested?.Invoke(transform, transform.rotation * cloudPosition + transform.position, height,dialog.emotion);
+        onCloudUpdateRequested?.Invoke(transform, transform.rotation * cloudPosition + transform.position, height, cloudStartOffset, dialog.emotion);
 
         if (setNext) nextDialogNumber++;
     }
