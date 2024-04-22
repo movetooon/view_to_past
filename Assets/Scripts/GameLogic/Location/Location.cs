@@ -89,6 +89,7 @@ public class Location : Selectable
             onSelected?.Invoke(this);
             selected = true;
         }
+        onSelectedEvent?.Invoke();
     }
     public virtual void Enter()
     {
