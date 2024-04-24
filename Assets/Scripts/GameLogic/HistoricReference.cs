@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HistoricReference : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class HistoricReference : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] private TMP_Text textContainer;
     [SerializeField] private Animator textAnimator;
+
+    [SerializeField] private UnityEvent onEnd;
+    [SerializeField] private Animator background;
 
      
 
@@ -52,6 +56,11 @@ public class HistoricReference : MonoBehaviour
 
         }
 
-        
+        background.SetTrigger("off");
+        yield return new WaitForSeconds(1.2f);
+        onEnd.Invoke();
+
+
+
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2880969, g: 0.18024275, b: 0.31398505, a: 1}
+  m_IndirectSpecularColor: {r: 0.28792548, g: 0.18029878, b: 0.3139481, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6746,6 +6746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 0}
   newPos: {x: -2.83, y: 1.26, z: -2.4}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 260895944}
 --- !u!114 &260895944
@@ -6777,6 +6778,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.59
   cloudPosition: {x: -2.83, y: 1.26, z: -2.4}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: d0b29b12c6c2fb54e87222b36570b457, type: 2}
@@ -34971,6 +34973,50 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1586934328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586934330}
+  - component: {fileID: 1586934329}
+  m_Layer: 0
+  m_Name: Scene manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586934329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586934328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8264ebaabae924d86230062bca5e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1586934330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586934328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2279668, y: -2.1381319, z: 10.453424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1603795743
 GameObject:
   m_ObjectHideFlags: 0
@@ -35644,6 +35690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 0}
   newPos: {x: 0.98, y: 1.88, z: -2.07}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 1658746148}
 --- !u!114 &1658746148
@@ -35673,6 +35720,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.31
   cloudPosition: {x: 0.98, y: 1.88, z: -2.07}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: d0b29b12c6c2fb54e87222b36570b457, type: 2}
@@ -35894,6 +35942,22 @@ MonoBehaviour:
   player: {fileID: 2106766426}
   textContainer: {fileID: 980616882}
   textAnimator: {fileID: 980616884}
+  onEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1586934329}
+        m_TargetAssemblyTypeName: GameSceneManager, Assembly-CSharp
+        m_MethodName: EnterScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  background: {fileID: 1603795745}
 --- !u!4 &1673334807
 Transform:
   m_ObjectHideFlags: 0
@@ -40470,3 +40534,4 @@ SceneRoots:
   - {fileID: 86775032}
   - {fileID: 1098945688}
   - {fileID: 249033786}
+  - {fileID: 1586934330}

@@ -273,9 +273,12 @@
             },
     "bourgeois":
         {    
+           
+
             "dialogs":
                 [   
                     {
+
                     "countOfTasks":0,
                     "replics":
                     [
@@ -564,6 +567,7 @@
             "dialogs":
             [   
                 {
+                    
                     "countOfTasks":1,
                     "replics":
                     [

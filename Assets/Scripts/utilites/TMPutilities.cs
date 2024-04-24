@@ -59,19 +59,19 @@ public static class TMPutilities
                 switch (text[i])
                 {
                     case '.':
-                        yield return new WaitForSeconds(0.75f);
+                        yield return new WaitForSeconds(0.75f * Time.timeScale);
                         break;
                     case ',':
-                        yield return new WaitForSeconds(0.15f);
+                        yield return new WaitForSeconds(0.15f * Time.timeScale);
                         break;
 
                     default:
-                        yield return new WaitForSeconds(delay);
+                        yield return new WaitForSeconds(delay * Time.timeScale);
 
                         break;
 
                 }
-            else yield return new WaitForSeconds(delay);
+            else yield return new WaitForSeconds(delay*Time.timeScale);
              
         }  
     }

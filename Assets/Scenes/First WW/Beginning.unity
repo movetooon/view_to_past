@@ -8475,7 +8475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b92e9a4001a04940b3197f952e2c8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  busy: 0
+  busy: 1
   origPos: {x: 1.73, y: 2.47, z: 0}
   origRot: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &156248362
@@ -8589,8 +8589,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156248359}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.019163838, y: 0.7849441, z: 0.02974944, w: -0.6185552}
-  m_LocalPosition: {x: -25.08588, y: 5.7881007, z: -160.55681}
+  m_LocalRotation: {x: 0.19662938, y: -0.61590695, z: 0.18445943, w: -0.7402502}
+  m_LocalPosition: {x: -10.805225, y: -4.9530206, z: -9.568462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15611,6 +15611,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 9c93705533179124da146e78459787e1, type: 2}
+    - {fileID: 11400000, guid: 3499154549313024c8b650f3f7a2749f, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -15626,15 +15627,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
         - m_Target: {fileID: 350523898}
           m_TargetAssemblyTypeName: MusicSystem, Assembly-CSharp
-          m_MethodName: SetLoudness
-          m_Mode: 4
+          m_MethodName: StartTransition
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0.2
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -15648,7 +15651,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 62608b063d5ebcc46ad4d2b89edd9405, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 01d90e8836d2fcb4186f16d040f2da70, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.02
   m_Pitch: 1
@@ -15747,7 +15750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelMusic:
-  - {fileID: 8300000, guid: 62608b063d5ebcc46ad4d2b89edd9405, type: 3}
+  - {fileID: 8300000, guid: 01d90e8836d2fcb4186f16d040f2da70, type: 3}
   - {fileID: 8300000, guid: 4fcada8f892626b478a5199fb52f3402, type: 3}
   loudness: 0.02
 --- !u!4 &350523899
@@ -18699,7 +18702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42350cecc2959a246a2afc7215b375c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -235.2
+      value: -243.96
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42350cecc2959a246a2afc7215b375c5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18707,7 +18710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42350cecc2959a246a2afc7215b375c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.399994
+      value: 7.94
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42350cecc2959a246a2afc7215b375c5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28057,12 +28060,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745386704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7224d85139596d42bfc44fa9583dc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkVeiw: 0
+  checkVeiw: 1
   camInfo: {fileID: 156248361}
 --- !u!23 &745386707
 MeshRenderer:
@@ -28071,7 +28074,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745386704}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -34049,6 +34052,8 @@ PlayableDirector:
     value: {fileID: 1770458218}
   - key: {fileID: 1770887728441499765, guid: 5725a15cbfa467e4493e5adcb2d647bd, type: 2}
     value: {fileID: 1770458220}
+  - key: {fileID: -6947984523829038980, guid: 5725a15cbfa467e4493e5adcb2d647bd, type: 2}
+    value: {fileID: 350523896}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &834426647
@@ -37153,9 +37158,9 @@ Transform:
   m_GameObject: {fileID: 1009254428}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.6057283, z: -0, w: -0.7956716}
-  m_LocalPosition: {x: -0.39451778, y: 1.3737149, z: 0.99817145}
-  m_LocalScale: {x: 0.46940538, y: 0.4694054, z: 0.46940538}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.455, y: 1.418, z: 0.978}
+  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1278716696}
   m_LocalEulerAnglesHint: {x: 0, y: -232.01001, z: 0}
@@ -37179,7 +37184,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1a4081a2fa4df194f8424379848e1aa4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -39150,7 +39155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7224d85139596d42bfc44fa9583dc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkVeiw: 0
+  checkVeiw: 1
   camInfo: {fileID: 156248361}
 --- !u!23 &1154304699
 MeshRenderer:
@@ -39159,7 +39164,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154304696}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -44761,8 +44766,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230023210}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.031313322, y: 0.86164224, z: 0.04836691, w: 0.50423485}
-  m_LocalPosition: {x: 134.97, y: 6.5600014, z: -31.550003}
+  m_LocalRotation: {x: -0.0056309863, y: 0.81046087, z: 0.007775583, w: 0.5857142}
+  m_LocalPosition: {x: 123.405, y: 10.192505, z: -50.277145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50112,7 +50117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7224d85139596d42bfc44fa9583dc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkVeiw: 0
+  checkVeiw: 1
   camInfo: {fileID: 156248361}
 --- !u!23 &1258145692
 MeshRenderer:
@@ -50121,7 +50126,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258145689}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -51817,7 +51822,19 @@ MonoBehaviour:
   - {fileID: 1445608405}
   onEnteredEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 350523898}
+        m_TargetAssemblyTypeName: MusicSystem, Assembly-CSharp
+        m_MethodName: StartTransition
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   height: 0
   cloudPosition: {x: -1.76, y: 1.52, z: 5.46}
   cloudStartOffset: {x: -3.09, y: 2.24, z: 2.75}
@@ -56126,8 +56143,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668259852}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.031313322, y: 0.86164224, z: 0.04836691, w: 0.50423485}
-  m_LocalPosition: {x: 134.97, y: 6.5600014, z: -31.550003}
+  m_LocalRotation: {x: 0.007153594, y: 0.92520094, z: -0.01749152, w: 0.37900686}
+  m_LocalPosition: {x: 122.25187, y: 8.49247, z: -32.812958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56781,7 +56798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7224d85139596d42bfc44fa9583dc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkVeiw: 0
+  checkVeiw: 1
   camInfo: {fileID: 156248361}
 --- !u!23 &1712175722
 MeshRenderer:
@@ -56790,7 +56807,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712175719}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

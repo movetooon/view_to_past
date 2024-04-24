@@ -53,7 +53,7 @@ public class MonologDisplayer : MonoBehaviour
             }
              
             
-            yield return new WaitForSeconds(delayBetweenReplics);
+            yield return new WaitForSeconds(delayBetweenReplics * Time.timeScale);
         }
 
         StartCoroutine(DisablePlayerPanel());

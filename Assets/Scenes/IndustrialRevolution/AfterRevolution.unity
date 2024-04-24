@@ -7405,6 +7405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 2.21, y: 0.92, z: 1.36}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 0
   npc: {fileID: 131742983}
 --- !u!114 &131742982
@@ -7450,6 +7451,7 @@ MonoBehaviour:
       m_Calls: []
   height: 1.99
   cloudPosition: {x: 2.21, y: 0.92, z: 1.36}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: d0b29b12c6c2fb54e87222b36570b457, type: 2}
@@ -14647,6 +14649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 1.1, y: 1.1, z: 1.47}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 300337990}
 --- !u!114 &300337990
@@ -14678,6 +14681,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.48
   cloudPosition: {x: 1.1, y: 1.1, z: 1.47}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: 0cf5de22b694e634d96e01dd079320a5, type: 2}
@@ -15554,6 +15558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 0.98, y: 1.88, z: -2.07}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 342782689}
 --- !u!114 &342782689
@@ -15583,6 +15588,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.31
   cloudPosition: {x: 0.98, y: 1.88, z: -2.07}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: d0b29b12c6c2fb54e87222b36570b457, type: 2}
@@ -15759,6 +15765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 2.46, y: 1, z: 1.32}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 342871882}
 --- !u!114 &342871882
@@ -15788,6 +15795,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.49
   cloudPosition: {x: 2.46, y: 1, z: 1.32}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: bb0ac4a07988d8a468f47b53b000cab1, type: 2}
@@ -16291,6 +16299,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.59
   cloudPosition: {x: -2.83, y: 1.26, z: -2.4}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: d0b29b12c6c2fb54e87222b36570b457, type: 2}
@@ -16308,6 +16317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: -2.83, y: 1.26, z: -2.4}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 373841910}
 --- !u!114 &373841912
@@ -19109,6 +19119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 810f79e55f379944c92dcabffba93b73,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 810f79e55f379944c92dcabffba93b73,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -19127,7 +19142,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 690789769}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 810f79e55f379944c92dcabffba93b73,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 529495809}
   m_SourcePrefab: {fileID: 100100000, guid: 810f79e55f379944c92dcabffba93b73, type: 3}
 --- !u!4 &529495807 stripped
 Transform:
@@ -19135,6 +19154,108 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 529495806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &529495808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 810f79e55f379944c92dcabffba93b73,
+    type: 3}
+  m_PrefabInstance: {fileID: 529495806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &529495809
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529495808}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d0c07a1368d2d3c42a7af5d602344878, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.001
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 67.370415
+  MaxDistance: 500
+  Pan2D: 0.177
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &529669695
 GameObject:
   m_ObjectHideFlags: 0
@@ -25737,7 +25858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602888792}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.009525037, y: -0.89644027, z: 0.022187045, w: -0.44250634}
+  m_LocalRotation: {x: -0.015849378, y: -0.20946309, z: -0.003349622, w: 0.9776824}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36982,7 +37103,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
+            m_IntArgument: 4
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -42787,7 +42908,19 @@ MonoBehaviour:
   - {fileID: 1143205052}
   onEnteredEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1598870385}
+        m_TargetAssemblyTypeName: MusicSystem, Assembly-CSharp
+        m_MethodName: StartTransition
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &750943534
 Transform:
   m_ObjectHideFlags: 0
@@ -44020,6 +44153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: -0.89, y: 1.2, z: 2.37}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 816417071}
 --- !u!114 &816417070
@@ -44066,6 +44200,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.49
   cloudPosition: {x: -0.89, y: 1.2, z: 2.37}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 1
   sound: {fileID: 11400000, guid: bb0ac4a07988d8a468f47b53b000cab1, type: 2}
@@ -51826,6 +51961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 1.83, y: 1.32, z: 2.41}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 942688381}
 --- !u!212 &942688379
@@ -51942,6 +52078,7 @@ MonoBehaviour:
         m_CallState: 2
   height: 2.48
   cloudPosition: {x: 1.83, y: 1.32, z: 2.41}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 1
   sound: {fileID: 11400000, guid: 0cf5de22b694e634d96e01dd079320a5, type: 2}
@@ -58746,6 +58883,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2
   cloudPosition: {x: 1.08, y: 0.95, z: 2.88}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: d0b29b12c6c2fb54e87222b36570b457, type: 2}
@@ -58876,6 +59014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 1.08, y: 0.95, z: 2.88}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 1111448788}
 --- !u!4 &1114620954 stripped
@@ -59013,6 +59152,7 @@ GameObject:
   - component: {fileID: 1126486090}
   - component: {fileID: 1126486093}
   - component: {fileID: 1126486094}
+  - component: {fileID: 1126486095}
   m_Layer: 0
   m_Name: luddites
   m_TagString: Untagged
@@ -59034,6 +59174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 2.42, y: 2.81, z: -2.88}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 1126486091}
 --- !u!114 &1126486091
@@ -59063,6 +59204,7 @@ MonoBehaviour:
       m_Calls: []
   height: 5.16
   cloudPosition: {x: 2.42, y: 2.81, z: -2.88}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 1
   sound: {fileID: 11400000, guid: 0cf5de22b694e634d96e01dd079320a5, type: 2}
@@ -59140,6 +59282,102 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!82 &1126486095
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126486089}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: da169ef88f0465e46b6b48871b18444d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.01
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1128462913
 GameObject:
   m_ObjectHideFlags: 0
@@ -69970,6 +70208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 2.8, y: 1.55, z: 2.33}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 1241587069}
 --- !u!114 &1241587067
@@ -70042,6 +70281,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.61
   cloudPosition: {x: 2.8, y: 1.55, z: 2.33}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: bb0ac4a07988d8a468f47b53b000cab1, type: 2}
@@ -70275,6 +70515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 2.09, y: 0.86, z: 1.18}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 1249236266}
 --- !u!114 &1249236265
@@ -70319,6 +70560,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2.49
   cloudPosition: {x: 2.09, y: 0.86, z: 1.18}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: bb0ac4a07988d8a468f47b53b000cab1, type: 2}
@@ -81717,7 +81959,19 @@ MonoBehaviour:
   - {fileID: 638436189}
   onEnteredEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1598870385}
+        m_TargetAssemblyTypeName: MusicSystem, Assembly-CSharp
+        m_MethodName: StartTransition
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1373671126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 131f0e99218533e4c8cbc64f49bc915b,
@@ -82004,6 +82258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 1.39, y: 0.76, z: -0.85}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 1387037869}
 --- !u!114 &1387037869
@@ -82035,6 +82290,7 @@ MonoBehaviour:
       m_Calls: []
   height: 2
   cloudPosition: {x: 1.39, y: 0.76, z: -0.85}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: d0b29b12c6c2fb54e87222b36570b457, type: 2}
@@ -95198,7 +95454,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelMusic:
-  - {fileID: 8300000, guid: 62608b063d5ebcc46ad4d2b89edd9405, type: 3}
+  - {fileID: 8300000, guid: cf65b30418d0e834b8967b0eceeb7324, type: 3}
+  - {fileID: 8300000, guid: 2a90383446fc68344af25f7e342c56cf, type: 3}
   - {fileID: 8300000, guid: 4fcada8f892626b478a5199fb52f3402, type: 3}
   loudness: 0.02
 --- !u!4 &1598870386
@@ -95226,7 +95483,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 62608b063d5ebcc46ad4d2b89edd9405, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cf65b30418d0e834b8967b0eceeb7324, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.02
   m_Pitch: 1
@@ -95337,7 +95594,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -102961,6 +103218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloud: {fileID: 1382805880}
   newPos: {x: 2.02, y: 0.61, z: 0.58}
+  startOffset: {x: 0, y: 0, z: 0}
   test: 1
   npc: {fileID: 1760828321}
 --- !u!65 &1760828320
@@ -103025,6 +103283,7 @@ MonoBehaviour:
         m_CallState: 2
   height: 1.75
   cloudPosition: {x: 2.02, y: 0.61, z: 0.58}
+  cloudStartOffset: {x: 0, y: 0, z: 0}
   waitingForTaskDone: 0
   disableOnStart: 0
   sound: {fileID: 11400000, guid: 6332b9f2fde3b0d429aab93eb354427d, type: 2}
